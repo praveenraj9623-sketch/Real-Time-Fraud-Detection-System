@@ -1,0 +1,31 @@
+{
+  "best_f1_threshold": {
+    "threshold": 0.999,
+    "precision": 0.7410714285714286,
+    "recall": 0.8469387755102041,
+    "f1": 0.7904761904761906,
+    "true_negatives": 56835,
+    "false_positives": 29,
+    "false_negatives": 15,
+    "true_positives": 83,
+    "predicted_fraud_count": 112,
+    "business_cost": 329.0
+  },
+  "best_business_cost_threshold": {
+    "threshold": 0.996,
+    "precision": 0.6115107913669064,
+    "recall": 0.8673469387755102,
+    "f1": 0.7172995780590716,
+    "true_negatives": 56810,
+    "false_positives": 54,
+    "false_negatives": 13,
+    "true_positives": 85,
+    "predicted_fraud_count": 139,
+    "business_cost": 314.0
+  },
+  "false_positive_cost": 1.0,
+  "false_negative_cost": 20.0,
+  "threshold_grid_size": 109,
+  "threshold_metrics_path": "models\\threshold_metrics.csv",
+  "tradeoff_plot_path": "models\\precision_recall_tradeoff.png"
+}

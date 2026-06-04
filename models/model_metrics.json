@@ -1,0 +1,32 @@
+{
+  "best_model": "xgboost",
+  "registered_model_name": "FraudDetector",
+  "xgboost": {
+    "precision": 0.21307506053268765,
+    "recall": 0.8979591836734694,
+    "f1": 0.34442270058708413,
+    "auc": 0.9857179823251754,
+    "auprc": 0.8241247001624632,
+    "threshold": 0.9
+  },
+  "isolation_forest": {
+    "precision": 0.20754716981132076,
+    "recall": 0.336734693877551,
+    "f1": 0.25680933852140075,
+    "auc": 0.9498606772478265,
+    "auprc": 0.12412163575366932,
+    "threshold": 0.6894736842105262
+  },
+  "artifacts": {
+    "xgboost": {
+      "confusion_matrix": "models\\artifacts\\xgboost_confusion_matrix.png",
+      "roc_curve": "models\\artifacts\\xgboost_roc_curve.png",
+      "precision_recall_curve": "models\\artifacts\\xgboost_precision_recall_curve.png"
+    },
+    "isolation_forest": {
+      "confusion_matrix": "models\\artifacts\\isolation_forest_confusion_matrix.png",
+      "roc_curve": "models\\artifacts\\isolation_forest_roc_curve.png",
+      "precision_recall_curve": "models\\artifacts\\isolation_forest_precision_recall_curve.png"
+    }
+  }
+}

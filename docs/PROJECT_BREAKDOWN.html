@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Real-Time Fraud Detection System - Project Breakdown</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #607086;
+      --line: #d8e0ea;
+      --panel: #f8fbff;
+      --blue: #2563eb;
+      --red: #dc2626;
+      --orange: #d97706;
+      --green: #16a34a;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: #ffffff;
+      line-height: 1.55;
+    }
+    main { max-width: 1120px; margin: 0 auto; padding: 32px 22px 64px; }
+    h1 { font-size: 38px; margin: 0 0 8px; letter-spacing: 0; }
+    h2 { margin-top: 34px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+    h3 { margin-top: 24px; }
+    p { color: var(--muted); }
+    code, pre { font-family: Consolas, Monaco, monospace; }
+    pre {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 14px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    .hero {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 22px;
+    }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fff;
+    }
+    .tag { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; margin: 4px 4px 0 0; font-size: 12px; }
+    table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+    th, td { border: 1px solid var(--line); padding: 9px; text-align: left; vertical-align: top; }
+    th { background: var(--panel); }
+    .note { border-left: 4px solid var(--blue); padding: 10px 14px; background: #eff6ff; color: #1e3a8a; }
+    .decision b { color: #fff; border-radius: 999px; padding: 3px 9px; }
+    .review { background: var(--blue); }
+    .flagged { background: var(--orange); }
+    .blocked { background: var(--red); }
+    .approved { background: var(--green); }
+    @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true, theme: "default" });
+  </script>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <h1>Real-Time Fraud Detection System</h1>
+    <p>
+      A portfolio project that simulates how a bank or payment company could score credit-card
+      transactions, block high-risk activity, store fraud alerts, and give analysts a dashboard for monitoring
+      and investigation.
+    </p>
+    <span class="tag">Python</span>
+    <span class="tag">XGBoost</span>
+    <span class="tag">Isolation Forest</span>
+    <span class="tag">SMOTE</span>
+    <span class="tag">FastAPI</span>
+    <span class="tag">MongoDB</span>
+    <span class="tag">Streamlit</span>
+    <span class="tag">Kafka/Spark architecture</span>
+    <span class="tag">SHAP</span>
+  </section>
+
+  <h2>1. What This Project Is For</h2>
+  <p>
+    Credit card fraud is rare, but expensive. A simple accuracy metric is misleading because a model can be
+    highly accurate by predicting almost every transaction as legitimate. This project focuses on the metrics
+    that matter for rare fraud: AUPRC, recall, precision, F1, false positives, and false negatives.
+  </p>
+  <p>
+    The dashboard is designed for a recruiter or interviewer to see the full machine-learning lifecycle:
+    feature engineering, class imbalance handling, model training, threshold tuning, API scoring, alert storage,
+    and analyst investigation.
+  </p>
+
+  <div class="mermaid">
+mindmap
+  root((Fraud Detection Portfolio))
+    Data
+      creditcard.csv
+      Time Amount V1-V28 Class
+      rare fraud labels
+    ML
+      feature engineering
+      SMOTE
+      XGBoost classifier
+      Isolation Forest
+      threshold tuning
+    Serving
+      FastAPI health
+      FastAPI score
+      FastAPI batch-score
+      SHAP explanations
+    Streaming
+      Kafka producer
+      Spark consumer
+      local demo generator
+    Storage
+      MongoDB fraud_alerts
+      hourly analytics
+      merchant analytics
+    Dashboard
+      Live Feed
+      Analytics
+      Model Performance
+      Risk Investigation
+  </div>
+
+  <h2>2. End-to-End Data Flow</h2>
+  <div class="mermaid">
+flowchart LR
+  A["creditcard.csv"] --> B["Feature Engineering"]
+  B --> C["Processed Parquet"]
+  C --> D["Train XGBoost and Isolation Forest"]
+  D --> E["Tune Threshold"]
+  E --> F["FastAPI /score"]
+  G["Kafka Producer or Demo Generator"] --> F
+  F --> H["MongoDB fraud_alerts"]
+  H --> I["Streamlit Dashboard"]
+  I --> J["Analyst reviews alerts"]
+  </div>
+
+  <h2>3. Main Files</h2>
+  <table>
+    <thead><tr><th>File</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td><code>src/processing/feature_engineering.py</code></td><td>Loads raw CSV, creates amount_log, hour_of_day, night flag, amount_zscore, and processed parquet/stat files.</td></tr>
+      <tr><td><code>src/modeling/train_batch.py</code></td><td>Trains XGBoost and Isolation Forest, logs MLflow metrics/artifacts, saves models, validation data, and model metrics.</td></tr>
+      <tr><td><code>src/modeling/threshold_tuner.py</code></td><td>Searches thresholds from 0.01 to 0.999, saves best F1 threshold and best business-cost threshold.</td></tr>
+      <tr><td><code>src/api/main.py</code></td><td>FastAPI service with health, single scoring, batch scoring, risk bands, risk score, and SHAP drivers.</td></tr>
+      <tr><td><code>src/storage/mongodb_client.py</code></td><td>MongoDB storage layer for inserting alerts and reading recent, hourly, amount, and merchant analytics.</td></tr>
+      <tr><td><code>src/streaming/transaction_producer.py</code></td><td>Publishes CSV rows to Kafka with transaction_id, timestamp, and merchant name.</td></tr>
+      <tr><td><code>src/streaming/fraud_consumer.py</code></td><td>Spark Structured Streaming consumer that scores Kafka transactions and stores high-risk alerts.</td></tr>
+      <tr><td><code>src/streaming/demo_alert_generator.py</code></td><td>Beginner-friendly local demo path that scores real CSV rows and inserts realistic alerts into MongoDB.</td></tr>
+      <tr><td><code>app.py</code></td><td>Streamlit monitoring dashboard with Live Feed, Analytics, Model Performance, and Risk Investigation tabs.</td></tr>
+      <tr><td><code>src/utils/risk.py</code></td><td>Shared validation and decision logic so API, storage, generator, and dashboard agree.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>4. Risk Decision Logic</h2>
+  <p>The project now uses clear bands. Probabilities are always clipped to 0-1 and risk scores to 0-100.</p>
+  <table class="decision">
+    <thead><tr><th>Condition</th><th>Decision</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><code>probability &lt; save_threshold</code></td><td><b class="approved">APPROVED</b></td><td>Not saved as an alert unless explicitly requested.</td></tr>
+      <tr><td><code>save_threshold <= probability &lt; 0.50</code></td><td><b class="review">REVIEW</b></td><td>Medium-low risk. Put in a monitoring or review queue.</td></tr>
+      <tr><td><code>0.50 <= probability &lt; model_threshold</code></td><td><b class="flagged">FLAGGED</b></td><td>Suspicious. Hold for step-up authentication or analyst review.</td></tr>
+      <tr><td><code>probability >= model_threshold</code></td><td><b class="blocked">BLOCKED</b></td><td>High-risk. Block and investigate.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>5. What app.py Displays</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Live Feed</h3>
+      <p>Shows recent saved alerts from MongoDB, KPI counts, average risk gauge, blocked amount, highest-risk transactions, and a formatted alert table.</p>
+    </div>
+    <div class="card">
+      <h3>Analytics</h3>
+      <p>Shows alert count by hour, amount distribution, merchant risk scatter plot, and high-risk merchant ranking with average/max risk instead of summed probability.</p>
+    </div>
+    <div class="card">
+      <h3>Model Performance</h3>
+      <p>Shows XGBoost vs Isolation Forest metrics, confusion counts, false positives, missed fraud, threshold tradeoff, PR curve, ROC curve, and AUPRC explanation.</p>
+    </div>
+    <div class="card">
+      <h3>Risk Investigation</h3>
+      <p>Lets the analyst choose or paste a transaction_id, then view decision, risk, merchant, amount, timestamp, SHAP drivers, and the full MongoDB alert JSON.</p>
+    </div>
+  </div>
+
+  <h2>6. Local Demo Flow</h2>
+  <p>
+    On Windows, Kafka and Docker can be harder for beginners. The dashboard includes a local demo button so you
+    can still show the project end to end.
+  </p>
+  <div class="mermaid">
+sequenceDiagram
+  participant User
+  participant Dashboard as Streamlit Dashboard
+  participant Generator as Demo Alert Generator
+  participant Model as XGBoost Model
+  participant Mongo as MongoDB
+  User->>Dashboard: Click Generate Demo Alerts
+  Dashboard->>Generator: Scan rows from creditcard.csv
+  Generator->>Model: Predict fraud probabilities
+  Model-->>Generator: Scores from 0 to 1
+  Generator->>Generator: Select varied review/flagged/blocked rows
+  Generator->>Mongo: Insert alert documents
+  Dashboard->>Mongo: Read recent alerts and analytics
+  Mongo-->>Dashboard: Alerts for tables and charts
+  </div>
+
+  <h2>7. Beginner Command Prompt Commands</h2>
+  <p>Open Command Prompt in the project folder. Activate the virtual environment first:</p>
+  <pre><code>cd /d "C:\Users\admin\Desktop\Real-Time Fraud Detection System"
+venv\Scripts\activate.bat</code></pre>
+
+  <p>Install/repair packages:</p>
+  <pre><code>python -m pip install --upgrade pip setuptools wheel
+pip install -r requirements.txt</code></pre>
+
+  <p>Build features, train, and tune:</p>
+  <pre><code>python -m src.processing.feature_engineering
+python -m src.modeling.train_batch
+python -m src.modeling.threshold_tuner</code></pre>
+
+  <p>Start FastAPI in one Command Prompt:</p>
+  <pre><code>cd /d "C:\Users\admin\Desktop\Real-Time Fraud Detection System"
+venv\Scripts\activate.bat
+uvicorn src.api.main:app --host 127.0.0.1 --port 8001 --reload</code></pre>
+
+  <p>Start Streamlit in another Command Prompt:</p>
+  <pre><code>cd /d "C:\Users\admin\Desktop\Real-Time Fraud Detection System"
+venv\Scripts\activate.bat
+streamlit run app.py --server.port 8502</code></pre>
+
+  <div class="note">
+    Open the API at <code>http://127.0.0.1:8001/docs</code> and the dashboard at
+    <code>http://127.0.0.1:8502</code>. If the dashboard is empty, click <b>Generate Demo Alerts</b>.
+  </div>
+
+  <h2>8. Assumptions and Limitations</h2>
+  <ul>
+    <li>The Kaggle dataset has anonymized PCA features, so explanations are mathematical rather than direct business explanations.</li>
+    <li>The local demo generator simulates streaming alerts for easy Windows demos. Kafka and Spark files are still present for the full architecture.</li>
+    <li>The model is trained on a public dataset, not real bank production data.</li>
+    <li>Threshold tuning includes F1 and business-cost views, but business costs are configurable assumptions.</li>
+    <li>The zip package excludes the virtual environment and raw Kaggle CSV to keep the package portable.</li>
+  </ul>
+</main>
+</body>
+</html>

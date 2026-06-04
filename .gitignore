@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+ENV/
+
+# Environment
+.env
+
+# Data and models
+# Keep folders, but do not push the real Kaggle dataset or trained binaries.
+data/raw/
+models/*.joblib
+
+# MLflow / local artifacts
+mlruns/
+dist/
+processed/
+*.db
+*.sqlite
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
