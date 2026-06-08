@@ -17,6 +17,7 @@ from dotenv import load_dotenv
 from kafka import KafkaProducer
 
 from src.processing.feature_engineering import ALL_COLUMNS, BASE_FEATURE_COLUMNS, TARGET_COLUMN
+from src.utils.risk import extract_transaction_amount
 
 load_dotenv()
 
@@ -57,7 +58,12 @@ def build_producer(bootstrap_servers: str = KAFKA_BOOTSTRAP_SERVERS) -> KafkaPro
 def coerce_csv_row(row: Dict[str, str]) -> Dict[str, Any]:
     """Convert CSV strings into numeric transaction values."""
     event: Dict[str, Any] = {}
+    amount = extract_transaction_amount(row)
+    amount_source = "raw_creditcard_csv" if amount is not None else "fallback_missing_amount"
     for column in ALL_COLUMNS:
+        if column == "Amount":
+            event[column] = float(amount if amount is not None else 0.0)
+            continue
         value = row.get(column)
         if value is None or value == "":
             continue
@@ -65,6 +71,7 @@ def coerce_csv_row(row: Dict[str, str]) -> Dict[str, Any]:
             event[column] = int(float(value))
         else:
             event[column] = float(value)
+    event["amount_source"] = amount_source
     missing = [column for column in BASE_FEATURE_COLUMNS if column not in event]
     if missing:
         raise ValueError(f"CSV row missing required transaction fields: {missing}")

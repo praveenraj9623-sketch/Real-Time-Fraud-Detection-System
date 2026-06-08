@@ -53,6 +53,19 @@ def normalize_amount(value: Any) -> float:
     return max(to_float(value, 0.0), 0.0)
 
 
+def extract_transaction_amount(row: Any) -> float | None:
+    """Extract a real transaction amount from a CSV row-like object."""
+    if not hasattr(row, "get"):
+        return None
+    amount = row.get("Amount", row.get("amount"))
+    if amount is None:
+        return None
+    number = to_float(amount, math.nan)
+    if math.isnan(number) or math.isinf(number):
+        return None
+    return float(number)
+
+
 def normalize_threshold(value: Any, minimum: float = 0.0) -> float:
     """Return a clipped probability threshold with a lower bound."""
     return max(clip_probability(value), minimum)

@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Real-Time Fraud Detection System - Full Project Breakdown</title>
+  <style>
+    :root {
+      --ink: #0f172a;
+      --muted: #64748b;
+      --line: #dbe3ef;
+      --soft: #f6f8fb;
+      --panel: #ffffff;
+      --blue: #1d4ed8;
+      --red: #dc2626;
+      --amber: #d97706;
+      --green: #16a34a;
+    }
+    body {
+      margin: 0;
+      background: var(--soft);
+      color: var(--ink);
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      line-height: 1.55;
+    }
+    header {
+      background: linear-gradient(135deg, #10213f, #1d4ed8);
+      color: white;
+      padding: 42px 6vw;
+    }
+    header h1 { margin: 0 0 10px; font-size: 34px; }
+    header p { margin: 0; max-width: 1000px; color: #dbeafe; }
+    main { max-width: 1180px; margin: 0 auto; padding: 28px 18px 56px; }
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      margin: 18px 0;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
+    }
+    h2 { margin: 0 0 14px; font-size: 24px; }
+    h3 { margin: 20px 0 8px; font-size: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px;
+      background: #fbfdff;
+    }
+    .metric { font-size: 24px; font-weight: 700; color: var(--blue); }
+    .label { color: var(--muted); font-size: 13px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border: 1px solid var(--line); padding: 10px; vertical-align: top; }
+    th { background: #f1f5f9; text-align: left; }
+    code, pre {
+      font-family: Consolas, Menlo, monospace;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+    }
+    code { padding: 2px 5px; }
+    pre { padding: 14px; overflow-x: auto; }
+    .note {
+      border-left: 4px solid var(--blue);
+      background: #eff6ff;
+      color: #1e3a8a;
+      padding: 12px 14px;
+      border-radius: 8px;
+    }
+    .warn {
+      border-left: 4px solid var(--amber);
+      background: #fffbeb;
+      color: #92400e;
+      padding: 12px 14px;
+      border-radius: 8px;
+    }
+    .mermaid { background: #ffffff; }
+    @media (max-width: 1000px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 680px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Real-Time Fraud Detection System - Full Project Breakdown</h1>
+    <p>
+      A complete portfolio-grade project that simulates real-time credit-card fraud
+      detection with batch model training, threshold tuning, an API scoring layer,
+      streaming ingestion, MongoDB alert storage, and a Streamlit monitoring dashboard.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Project At A Glance</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="metric">284,807</div>
+          <div class="label">Expected rows in Kaggle credit-card dataset</div>
+        </div>
+        <div class="card">
+          <div class="metric">31</div>
+          <div class="label">Original columns: Time, V1-V28, Amount, Class</div>
+        </div>
+        <div class="card">
+          <div class="metric">4</div>
+          <div class="label">Engineered features added for fraud scoring</div>
+        </div>
+        <div class="card">
+          <div class="metric">4</div>
+          <div class="label">Dashboard tabs: Live, Analytics, Model, Investigation</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Problem Statement</h2>
+      <p>
+        Credit-card fraud detection is a rare-event classification problem. The goal
+        is not only to produce a model, but to show how a data science model would
+        be wrapped in a usable monitoring system. This project demonstrates:
+      </p>
+      <ul>
+        <li>Feature engineering for batch and real-time inference.</li>
+        <li>Imbalanced classification using SMOTE and XGBoost.</li>
+        <li>Anomaly detection with Isolation Forest as a comparison model.</li>
+        <li>Threshold tuning with precision, recall, F1, AUC, AUPRC, and business-cost logic.</li>
+        <li>FastAPI scoring endpoints with SHAP explanation output.</li>
+        <li>Kafka and Spark Structured Streaming simulation.</li>
+        <li>MongoDB alert storage and Streamlit monitoring dashboard.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>High-Level Mind Map</h2>
+      <pre class="mermaid">
+mindmap
+  root((Fraud Detection System))
+    Data
+      raw creditcard.csv
+      processed parquet
+      feature_stats.json
+    Modeling
+      SMOTE
+      XGBoost
+      Isolation Forest
+      MLflow metrics
+      threshold tuning
+    Serving
+      FastAPI health
+      FastAPI score
+      batch score
+      SHAP output
+    Streaming
+      Kafka producer
+      Spark consumer
+      MongoDB alerts
+    Dashboard
+      Live Feed
+      Analytics
+      Model Performance
+      Risk Investigation
+    Packaging
+      Docker Compose
+      tests
+      review zip
+      HTML docs
+      </pre>
+    </section>
+
+    <section>
+      <h2>Repository Map</h2>
+      <table>
+        <thead>
+          <tr><th>Path</th><th>Purpose</th><th>What reviewers should inspect</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>app.py</code></td>
+            <td>Streamlit dashboard with live feed, analytics, model performance, and risk investigation tabs.</td>
+            <td>UI logic, active-threshold model metrics, event-time analytics, MongoDB interactions.</td>
+          </tr>
+          <tr>
+            <td><code>src/api/main.py</code></td>
+            <td>FastAPI scoring service.</td>
+            <td>Feature engineering consistency, probability clipping, SHAP output, decision thresholds.</td>
+          </tr>
+          <tr>
+            <td><code>src/processing/feature_engineering.py</code></td>
+            <td>Creates processed features from the Kaggle CSV.</td>
+            <td>Feature parity between batch and inference paths.</td>
+          </tr>
+          <tr>
+            <td><code>src/modeling/train_batch.py</code></td>
+            <td>Trains XGBoost and Isolation Forest with MLflow tracking.</td>
+            <td>SMOTE handling, metrics, artifact writing, validation split, model registration attempt.</td>
+          </tr>
+          <tr>
+            <td><code>src/modeling/threshold_tuner.py</code></td>
+            <td>Finds tuned thresholds and writes threshold artifacts.</td>
+            <td>Precision-recall tradeoff, business-cost threshold, active threshold summary.</td>
+          </tr>
+          <tr>
+            <td><code>src/storage/mongodb_client.py</code></td>
+            <td>MongoDB insert/query/analytics wrapper.</td>
+            <td>Alert normalization, merchant risk summary, hourly fraud analytics, event-time handling.</td>
+          </tr>
+          <tr>
+            <td><code>src/streaming/</code></td>
+            <td>Kafka producer, Spark consumer, and local demo generator.</td>
+            <td>Streaming data flow, score URL handling, MongoDB alert insert behavior.</td>
+          </tr>
+          <tr>
+            <td><code>src/utils/risk.py</code></td>
+            <td>Shared risk and decision helper functions.</td>
+            <td>Decision bands, probability/risk clipping, timestamp normalization.</td>
+          </tr>
+          <tr>
+            <td><code>src/utils/demo_selection.py</code></td>
+            <td>Lightweight demo alert sampler.</td>
+            <td>Ensures demo alerts use real model scores while balancing decision and amount variety.</td>
+          </tr>
+          <tr>
+            <td><code>tests/</code></td>
+            <td>Fast regression tests.</td>
+            <td>Risk logic, active-threshold confusion consistency, event-time timeline, merchant block rate.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Modeling Breakdown</h2>
+      <table>
+        <thead>
+          <tr><th>Model</th><th>Role</th><th>Strength</th><th>Dashboard handling</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>XGBoost Classifier</td>
+            <td>Main supervised fraud classifier.</td>
+            <td>Strong performance on rare fraud classification when threshold is tuned.</td>
+            <td>Displayed as champion model in the fraud monitor's Model Performance tab.</td>
+          </tr>
+          <tr>
+            <td>Isolation Forest</td>
+            <td>Unsupervised anomaly detector comparison.</td>
+            <td>Useful baseline when labels are weak or unavailable.</td>
+            <td>Shown in model comparison with AUC/AUPRC and threshold-related metrics where available.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">
+        AUPRC is highlighted because fraud is highly imbalanced. Accuracy can look excellent
+        even when a model misses most fraud cases.
+      </p>
+    </section>
+
+    <section>
+      <h2>Recent Logic Fixes Included In This Version</h2>
+      <ul>
+        <li>Model Performance table uses active-threshold XGBoost metrics rather than stale 0.90 metrics.</li>
+        <li>Dynamic confusion matrix matches active-threshold table counts.</li>
+        <li>Threshold chart marks best F1 and best business-cost thresholds separately.</li>
+        <li>Alert analytics use <code>event_time_utc</code>, then <code>transaction_time_utc</code>, then <code>stored_at_utc</code>.</li>
+        <li>Night-time alerts use simulated transaction event time and define night as 10 PM to 6 AM.</li>
+        <li>Merchant intelligence includes block rate, review count, median risk score, and improved sorting.</li>
+        <li>Demo alert selection avoids showing too many zero-dollar or one-dollar alerts at the top when larger examples are available.</li>
+        <li>Plotly mode bars are hidden for cleaner portfolio screenshots unless debug mode is enabled.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Architecture And Workflow Links</h2>
+      <ul>
+        <li><a href="ARCHITECTURE.html">Architecture HTML</a></li>
+        <li><a href="WORKFLOW.html">Workflow HTML</a></li>
+        <li><a href="PROJECT_BREAKDOWN.html">Existing Project Breakdown HTML</a></li>
+        <li><a href="LLM_REVIEW_NOTES.md">LLM Review Notes Markdown</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How To Run Locally</h2>
+      <pre><code>cd /d "C:\Users\admin\Desktop\Real-Time Fraud Detection System"
+venv\Scripts\activate.bat
+python -m pip install --upgrade pip setuptools wheel
+pip install -r requirements.txt
+python -m src.processing.feature_engineering
+python -m src.modeling.train_batch
+python -m src.modeling.threshold_tuner</code></pre>
+
+      <p>Start FastAPI:</p>
+      <pre><code>cd /d "C:\Users\admin\Desktop\Real-Time Fraud Detection System"
+venv\Scripts\activate.bat
+uvicorn src.api.main:app --host 127.0.0.1 --port 8001 --reload</code></pre>
+
+      <p>Start Streamlit:</p>
+      <pre><code>cd /d "C:\Users\admin\Desktop\Real-Time Fraud Detection System"
+venv\Scripts\activate.bat
+streamlit run app.py --server.port 8502</code></pre>
+    </section>
+
+    <section>
+      <h2>Review Package Contents</h2>
+      <p>The generated zip is intended for another LLM to review project logic and bugs.</p>
+      <table>
+        <thead>
+          <tr><th>Included</th><th>Excluded</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <ul>
+                <li><code>app.py</code></li>
+                <li><code>src/</code></li>
+                <li><code>tests/</code></li>
+                <li><code>docs/</code></li>
+                <li><code>README.md</code>, <code>requirements.txt</code>, Docker files</li>
+                <li>Lightweight model metadata such as JSON, CSV, TXT, and PNG artifacts</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><code>venv/</code> and <code>.venv/</code></li>
+                <li><code>__pycache__/</code> and <code>*.pyc</code></li>
+                <li><code>.env</code></li>
+                <li><code>data/raw/creditcard.csv</code></li>
+                <li><code>mlruns/</code></li>
+                <li><code>models/*.joblib</code> binary artifacts</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Suggested Questions For Another LLM</h2>
+      <ol>
+        <li>Is the active threshold logic robust when some model artifacts are missing?</li>
+        <li>Should the default production threshold optimize F1 or business cost?</li>
+        <li>Is the demo alert sampler balanced enough without misrepresenting model scores?</li>
+        <li>Are the FastAPI and dashboard feature engineering paths consistent?</li>
+        <li>Should the large Streamlit <code>app.py</code> be split into smaller modules?</li>
+        <li>Are MongoDB aggregations correct for event-time and stored-time use cases?</li>
+        <li>What additional tests should be added for API scoring and streaming consumers?</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Limitations</h2>
+      <ul>
+        <li>The raw dataset must be downloaded separately from Kaggle.</li>
+        <li>The review zip cannot retrain models without raw data and binary dependencies.</li>
+        <li>V1-V28 are anonymized PCA features, so explanations are mathematical rather than direct business narratives.</li>
+        <li>Real-time streaming requires Kafka, Spark, and Java, which can be heavier on Windows.</li>
+        <li>Dashboard demo alerts are generated from real scored dataset rows, but the event timestamps and merchant names are simulated for portfolio demonstration.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true, theme: "base" });
+  </script>
+</body>
+</html>

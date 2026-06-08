@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Real-Time Fraud Detection System - Project Breakdown</title>
+  <title>Real-Time Fraud Detection System - Full Project Breakdown</title>
   <style>
     :root {
-      --ink: #172033;
-      --muted: #607086;
-      --line: #d8e0ea;
-      --panel: #f8fbff;
+      --ink: #152033;
+      --muted: #5d6b82;
+      --line: #d8e1ee;
+      --panel: #f7fbff;
+      --panel2: #fbfcfe;
       --blue: #2563eb;
       --red: #dc2626;
       --orange: #d97706;
       --green: #16a34a;
+      --purple: #7c3aed;
     }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -22,62 +25,58 @@
       background: #ffffff;
       line-height: 1.55;
     }
-    main { max-width: 1120px; margin: 0 auto; padding: 32px 22px 64px; }
-    h1 { font-size: 38px; margin: 0 0 8px; letter-spacing: 0; }
+    main { max-width: 1180px; margin: 0 auto; padding: 30px 22px 72px; }
+    h1 { font-size: 38px; line-height: 1.12; margin: 0 0 8px; letter-spacing: 0; }
     h2 { margin-top: 34px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
-    h3 { margin-top: 24px; }
-    p { color: var(--muted); }
+    h3 { margin: 22px 0 8px; }
+    p, li { color: var(--muted); }
     code, pre { font-family: Consolas, Monaco, monospace; }
-    pre {
-      background: #0f172a;
-      color: #e2e8f0;
-      padding: 14px;
-      border-radius: 8px;
-      overflow-x: auto;
-    }
-    .hero {
-      border: 1px solid var(--line);
-      background: var(--panel);
-      border-radius: 8px;
-      padding: 22px;
-    }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-    .card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px;
-      background: #fff;
-    }
-    .tag { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; margin: 4px 4px 0 0; font-size: 12px; }
+    pre { background: #0f172a; color: #e2e8f0; padding: 14px; border-radius: 8px; overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; margin: 14px 0; }
     th, td { border: 1px solid var(--line); padding: 9px; text-align: left; vertical-align: top; }
-    th { background: var(--panel); }
-    .note { border-left: 4px solid var(--blue); padding: 10px 14px; background: #eff6ff; color: #1e3a8a; }
-    .decision b { color: #fff; border-radius: 999px; padding: 3px 9px; }
+    th { background: var(--panel); color: var(--ink); }
+    .hero { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); padding: 22px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .card { border: 1px solid var(--line); border-radius: 8px; padding: 14px; background: #fff; }
+    .note { border-left: 4px solid var(--blue); padding: 10px 14px; background: #eff6ff; color: #1e3a8a; border-radius: 0 8px 8px 0; }
+    .warn { border-left-color: var(--orange); background: #fff7ed; color: #7c2d12; }
+    .tag { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; margin: 4px 4px 0 0; font-size: 12px; background: #fff; }
+    .pill { display: inline-block; border-radius: 999px; padding: 3px 9px; color: #fff; font-weight: 700; font-size: 12px; }
+    .approved { background: var(--green); }
     .review { background: var(--blue); }
     .flagged { background: var(--orange); }
     .blocked { background: var(--red); }
-    .approved { background: var(--green); }
-    @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+    .metric { font-size: 28px; color: var(--ink); font-weight: 700; }
+    .caption { color: var(--muted); font-size: 13px; }
+    .mermaid { border: 1px solid var(--line); border-radius: 8px; background: var(--panel2); padding: 12px; margin: 14px 0; overflow-x: auto; }
+    .chart-wrap { border: 1px solid var(--line); border-radius: 8px; padding: 14px; background: #fff; }
+    @media (max-width: 850px) {
+      .grid, .grid3 { grid-template-columns: 1fr; }
+      h1 { font-size: 30px; }
+    }
   </style>
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
     mermaid.initialize({ startOnLoad: true, theme: "default" });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
 <main>
   <section class="hero">
     <h1>Real-Time Fraud Detection System</h1>
     <p>
-      A portfolio project that simulates how a bank or payment company could score credit-card
-      transactions, block high-risk activity, store fraud alerts, and give analysts a dashboard for monitoring
-      and investigation.
+      Full project breakdown for portfolio review and LLM cross-checking. This project simulates a payment-company
+      fraud workflow: feature engineering, imbalanced model training, threshold tuning, API scoring, alert storage,
+      real-time-style demo generation, and a Streamlit analyst dashboard.
     </p>
     <span class="tag">Python</span>
+    <span class="tag">PySpark/Pandas feature engineering</span>
+    <span class="tag">SMOTE</span>
     <span class="tag">XGBoost</span>
     <span class="tag">Isolation Forest</span>
-    <span class="tag">SMOTE</span>
+    <span class="tag">MLflow</span>
     <span class="tag">FastAPI</span>
     <span class="tag">MongoDB</span>
     <span class="tag">Streamlit</span>
@@ -85,173 +84,330 @@
     <span class="tag">SHAP</span>
   </section>
 
-  <h2>1. What This Project Is For</h2>
+  <h2>1. Executive Summary</h2>
+  <div class="grid3">
+    <div class="card">
+      <div class="metric">0.999</div>
+      <div class="caption">Active XGBoost block threshold after extended tuning.</div>
+    </div>
+    <div class="card">
+      <div class="metric">0.8241</div>
+      <div class="caption">XGBoost AUPRC from model training metadata.</div>
+    </div>
+    <div class="card">
+      <div class="metric">10 tests</div>
+      <div class="caption">Current lightweight pytest suite for logic and dashboard helpers.</div>
+    </div>
+  </div>
   <p>
-    Credit card fraud is rare, but expensive. A simple accuracy metric is misleading because a model can be
-    highly accurate by predicting almost every transaction as legitimate. This project focuses on the metrics
-    that matter for rare fraud: AUPRC, recall, precision, F1, false positives, and false negatives.
-  </p>
-  <p>
-    The dashboard is designed for a recruiter or interviewer to see the full machine-learning lifecycle:
-    feature engineering, class imbalance handling, model training, threshold tuning, API scoring, alert storage,
-    and analyst investigation.
+    The main production-style flow is Kafka producer to Spark streaming consumer to FastAPI scoring to MongoDB
+    alerts to Streamlit monitoring. Because Windows/Docker/Kafka setup can be heavy for demos, the dashboard
+    also includes a local demo generator that scores real rows from <code>creditcard.csv</code> and inserts a
+    realistic mixed set of review, flagged, and blocked alerts into MongoDB.
   </p>
 
+  <h2>2. Portfolio Mind Map</h2>
   <div class="mermaid">
 mindmap
-  root((Fraud Detection Portfolio))
-    Data
+  root((Real-Time Fraud Detection System))
+    Dataset
       creditcard.csv
+      284807 rows
       Time Amount V1-V28 Class
-      rare fraud labels
-    ML
-      feature engineering
-      SMOTE
+      Highly imbalanced labels
+    Feature Engineering
+      amount_log
+      hour_of_day
+      is_night_transaction
+      amount_zscore
+      parquet and stats output
+    Modeling
+      SMOTE imbalance handling
       XGBoost classifier
-      Isolation Forest
-      threshold tuning
+      Isolation Forest anomaly detector
+      MLflow runs and artifacts
+      AUPRC and ROC/AUC metrics
+    Thresholding
+      extended grid 0.01 to 0.999
+      best F1 threshold
+      business-cost threshold
+      active dynamic confusion matrix
     Serving
       FastAPI health
       FastAPI score
       FastAPI batch-score
-      SHAP explanations
+      SHAP top features
     Streaming
-      Kafka producer
-      Spark consumer
+      Kafka transaction producer
+      Spark Structured Streaming consumer
       local demo generator
     Storage
       MongoDB fraud_alerts
+      recent alerts
       hourly analytics
-      merchant analytics
+      merchant risk analytics
     Dashboard
       Live Feed
       Analytics
       Model Performance
       Risk Investigation
+    Quality
+      shared risk utilities
+      path normalization
+      pytest tests
+      GitHub-ready packaging
   </div>
 
-  <h2>2. End-to-End Data Flow</h2>
+  <h2>3. System Architecture</h2>
   <div class="mermaid">
 flowchart LR
-  A["creditcard.csv"] --> B["Feature Engineering"]
-  B --> C["Processed Parquet"]
-  C --> D["Train XGBoost and Isolation Forest"]
-  D --> E["Tune Threshold"]
-  E --> F["FastAPI /score"]
-  G["Kafka Producer or Demo Generator"] --> F
-  F --> H["MongoDB fraud_alerts"]
-  H --> I["Streamlit Dashboard"]
-  I --> J["Analyst reviews alerts"]
+  A["Raw dataset: data/raw/creditcard.csv"] --> B["Feature engineering"]
+  B --> C["data/processed/fraud_features.parquet"]
+  C --> D["Batch training"]
+  D --> E["XGBoost + Isolation Forest"]
+  E --> F["Threshold tuner"]
+  F --> G["models/optimal_threshold.txt = 0.999"]
+  G --> H["FastAPI /score"]
+  I["Kafka producer"] --> J["Spark streaming consumer"]
+  J --> H
+  K["Local demo generator"] --> H
+  H --> L["MongoDB fraud_alerts"]
+  L --> M["Streamlit dashboard"]
+  M --> N["Analyst/recruiter demo"]
   </div>
 
-  <h2>3. Main Files</h2>
+  <h2>4. File Map</h2>
   <table>
-    <thead><tr><th>File</th><th>Purpose</th></tr></thead>
+    <thead><tr><th>Path</th><th>Role</th><th>Important Notes</th></tr></thead>
     <tbody>
-      <tr><td><code>src/processing/feature_engineering.py</code></td><td>Loads raw CSV, creates amount_log, hour_of_day, night flag, amount_zscore, and processed parquet/stat files.</td></tr>
-      <tr><td><code>src/modeling/train_batch.py</code></td><td>Trains XGBoost and Isolation Forest, logs MLflow metrics/artifacts, saves models, validation data, and model metrics.</td></tr>
-      <tr><td><code>src/modeling/threshold_tuner.py</code></td><td>Searches thresholds from 0.01 to 0.999, saves best F1 threshold and best business-cost threshold.</td></tr>
-      <tr><td><code>src/api/main.py</code></td><td>FastAPI service with health, single scoring, batch scoring, risk bands, risk score, and SHAP drivers.</td></tr>
-      <tr><td><code>src/storage/mongodb_client.py</code></td><td>MongoDB storage layer for inserting alerts and reading recent, hourly, amount, and merchant analytics.</td></tr>
-      <tr><td><code>src/streaming/transaction_producer.py</code></td><td>Publishes CSV rows to Kafka with transaction_id, timestamp, and merchant name.</td></tr>
-      <tr><td><code>src/streaming/fraud_consumer.py</code></td><td>Spark Structured Streaming consumer that scores Kafka transactions and stores high-risk alerts.</td></tr>
-      <tr><td><code>src/streaming/demo_alert_generator.py</code></td><td>Beginner-friendly local demo path that scores real CSV rows and inserts realistic alerts into MongoDB.</td></tr>
-      <tr><td><code>app.py</code></td><td>Streamlit monitoring dashboard with Live Feed, Analytics, Model Performance, and Risk Investigation tabs.</td></tr>
-      <tr><td><code>src/utils/risk.py</code></td><td>Shared validation and decision logic so API, storage, generator, and dashboard agree.</td></tr>
+      <tr><td><code>src/processing/feature_engineering.py</code></td><td>Feature pipeline</td><td>Creates <code>amount_log</code>, <code>hour_of_day</code>, <code>is_night_transaction</code>, and <code>amount_zscore</code>.</td></tr>
+      <tr><td><code>src/modeling/train_batch.py</code></td><td>Batch model training</td><td>Trains XGBoost and Isolation Forest, logs MLflow artifacts, saves model metadata.</td></tr>
+      <tr><td><code>src/modeling/threshold_tuner.py</code></td><td>Threshold tuning</td><td>Searches 0.01 to 0.999 and stores best F1 plus business-cost thresholds.</td></tr>
+      <tr><td><code>src/api/main.py</code></td><td>FastAPI scoring</td><td>Returns probability, decision, risk score, SHAP drivers, and recommended action.</td></tr>
+      <tr><td><code>src/storage/mongodb_client.py</code></td><td>MongoDB access layer</td><td>Normalizes alerts and computes hourly/merchant analytics using event time.</td></tr>
+      <tr><td><code>src/streaming/transaction_producer.py</code></td><td>Kafka producer</td><td>Publishes simulated transaction messages to Kafka topic <code>transactions</code>.</td></tr>
+      <tr><td><code>src/streaming/fraud_consumer.py</code></td><td>Spark streaming consumer</td><td>Consumes Kafka messages, calls FastAPI scoring, stores high-risk alerts.</td></tr>
+      <tr><td><code>src/streaming/demo_alert_generator.py</code></td><td>Local demo generator</td><td>Scores real CSV rows and samples review/flagged/blocked demo alerts.</td></tr>
+      <tr><td><code>src/utils/risk.py</code></td><td>Shared validation/decision logic</td><td>Clips probability/risk, validates amount, computes risk bands, parses timestamps.</td></tr>
+      <tr><td><code>src/utils/demo_selection.py</code></td><td>Lightweight demo selection</td><td>No FastAPI, SHAP, or PySpark imports, so tests stay fast.</td></tr>
+      <tr><td><code>src/dashboard/helpers.py</code></td><td>Dashboard helper utilities</td><td>Prepares tables, merchant summaries, active-threshold metrics, and confusion values.</td></tr>
+      <tr><td><code>app.py</code></td><td>Streamlit dashboard</td><td>Four tabs: Live Feed, Analytics, Model Performance, Risk Investigation.</td></tr>
     </tbody>
   </table>
 
-  <h2>4. Risk Decision Logic</h2>
-  <p>The project now uses clear bands. Probabilities are always clipped to 0-1 and risk scores to 0-100.</p>
-  <table class="decision">
-    <thead><tr><th>Condition</th><th>Decision</th><th>Meaning</th></tr></thead>
+  <h2>5. Key Fixes Already Completed</h2>
+  <table>
+    <thead><tr><th>Area</th><th>Problem</th><th>Fix</th></tr></thead>
     <tbody>
-      <tr><td><code>probability &lt; save_threshold</code></td><td><b class="approved">APPROVED</b></td><td>Not saved as an alert unless explicitly requested.</td></tr>
-      <tr><td><code>save_threshold <= probability &lt; 0.50</code></td><td><b class="review">REVIEW</b></td><td>Medium-low risk. Put in a monitoring or review queue.</td></tr>
-      <tr><td><code>0.50 <= probability &lt; model_threshold</code></td><td><b class="flagged">FLAGGED</b></td><td>Suspicious. Hold for step-up authentication or analyst review.</td></tr>
-      <tr><td><code>probability >= model_threshold</code></td><td><b class="blocked">BLOCKED</b></td><td>High-risk. Block and investigate.</td></tr>
+      <tr><td>Probability/risk validation</td><td>Probability/risk could be displayed inconsistently.</td><td>Added shared clipping: probability 0-1, risk score 0-100.</td></tr>
+      <tr><td>Decision bands</td><td>Old logic used a moving block threshold and did not show REVIEW.</td><td>Now: APPROVED, REVIEW, FLAGGED, BLOCKED based on save threshold, 0.50, and model threshold.</td></tr>
+      <tr><td>Demo realism</td><td>Generated alerts could look like all probability 1.0 and all BLOCKED.</td><td>New sampler mixes REVIEW, FLAGGED, and BLOCKED rows and favors some larger amount transactions.</td></tr>
+      <tr><td>Timestamp semantics</td><td>All alerts inserted in one batch could share the same stored timestamp.</td><td>Added <code>event_time_utc</code> / <code>transaction_time_utc</code>; Mongo insert time remains <code>stored_at_utc</code>.</td></tr>
+      <tr><td>Analytics</td><td>Charts risked summing probabilities or using same-hour data.</td><td>Use average/max probability and event-time hourly analytics.</td></tr>
+      <tr><td>Model Performance mismatch</td><td>Dashboard showed threshold 0.999 but old table/image used threshold 0.90.</td><td>XGBoost row and dynamic confusion matrix now use active threshold counts.</td></tr>
+      <tr><td>Docker health</td><td>Streamlit container could call localhost instead of FastAPI service.</td><td>Added <code>FASTAPI_HEALTH_URL=http://fastapi-fraud:8001/health</code> in Docker Compose.</td></tr>
+      <tr><td>Packaging</td><td>Raw data, venv, MLflow runs, and old zips should not go to GitHub or review package.</td><td>Updated <code>.gitignore</code> and created lean reviewer zip.</td></tr>
+      <tr><td>Tests</td><td>Risk tests imported heavy demo generator stack.</td><td>Moved demo selection into <code>src/utils/demo_selection.py</code>; tests run quickly.</td></tr>
     </tbody>
   </table>
 
-  <h2>5. What app.py Displays</h2>
+  <h2>6. Active Risk Decision Logic</h2>
+  <table>
+    <thead><tr><th>Condition</th><th>Decision</th><th>Dashboard Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><code>probability &lt; save_threshold</code></td><td><span class="pill approved">APPROVED</span></td><td>Not normally saved as a dashboard alert.</td></tr>
+      <tr><td><code>save_threshold &lt;= probability &lt; 0.50</code></td><td><span class="pill review">REVIEW</span></td><td>Medium-low risk; analyst/review queue.</td></tr>
+      <tr><td><code>0.50 &lt;= probability &lt; model_threshold</code></td><td><span class="pill flagged">FLAGGED</span></td><td>Suspicious; step-up authentication or manual review.</td></tr>
+      <tr><td><code>probability &gt;= model_threshold</code></td><td><span class="pill blocked">BLOCKED</span></td><td>High risk; block and investigate.</td></tr>
+    </tbody>
+  </table>
+  <div class="note">
+    Current active XGBoost threshold is <code>0.999</code>. The lower alert save threshold defaults to <code>0.10</code>.
+  </div>
+
+  <h2>7. Model Metrics and Threshold Fix</h2>
+  <div class="grid">
+    <div class="chart-wrap">
+      <canvas id="thresholdChart" height="245"></canvas>
+      <p class="caption">Best F1 threshold and business-cost threshold from <code>models/threshold_tuning_summary.json</code>.</p>
+    </div>
+    <div class="chart-wrap">
+      <canvas id="confusionChart" height="245"></canvas>
+      <p class="caption">Dynamic active-threshold confusion counts: [[56835, 29], [15, 83]].</p>
+    </div>
+  </div>
+  <table>
+    <thead><tr><th>Threshold</th><th>Precision</th><th>Recall</th><th>F1</th><th>TN</th><th>FP</th><th>FN</th><th>TP</th><th>Predicted Fraud</th></tr></thead>
+    <tbody>
+      <tr><td>Best F1: 0.999</td><td>0.7411</td><td>0.8469</td><td>0.7905</td><td>56835</td><td>29</td><td>15</td><td>83</td><td>112</td></tr>
+      <tr><td>Best cost: 0.996</td><td>0.6115</td><td>0.8673</td><td>0.7173</td><td>56810</td><td>54</td><td>13</td><td>85</td><td>139</td></tr>
+      <tr><td>Old training artifact: 0.900</td><td>0.2131</td><td>0.8980</td><td>0.3444</td><td>Stored artifact</td><td>Stored artifact</td><td>Stored artifact</td><td>Stored artifact</td><td>Not active</td></tr>
+    </tbody>
+  </table>
+  <p>
+    The dashboard previously mixed old <code>models/model_metrics.json</code> values at threshold 0.90 with the new
+    active threshold 0.999. This has been fixed: the XGBoost table row and dynamic confusion matrix now come from
+    active-threshold recomputation or <code>threshold_tuning_summary.json</code> fallback.
+  </p>
+
+  <h2>8. Dashboard Tab Breakdown</h2>
   <div class="grid">
     <div class="card">
       <h3>Live Feed</h3>
-      <p>Shows recent saved alerts from MongoDB, KPI counts, average risk gauge, blocked amount, highest-risk transactions, and a formatted alert table.</p>
+      <p>Shows recent alerts, Review/Flagged/Blocked counts, alerted amount, average risk, blocked amount, and a selectable chart view.</p>
+      <ul>
+        <li>Highest Risk</li>
+        <li>Recent Mixed Alerts</li>
+        <li>Group by Decision</li>
+      </ul>
     </div>
     <div class="card">
       <h3>Analytics</h3>
-      <p>Shows alert count by hour, amount distribution, merchant risk scatter plot, and high-risk merchant ranking with average/max risk instead of summed probability.</p>
+      <p>Uses event time for hour-of-day charts and uses average/max probability rather than summing probability.</p>
+      <ul>
+        <li>Alert Count by Hour</li>
+        <li>Amount Distribution</li>
+        <li>Merchant Volume vs Risk</li>
+        <li>High-Risk Merchants</li>
+      </ul>
     </div>
     <div class="card">
       <h3>Model Performance</h3>
-      <p>Shows XGBoost vs Isolation Forest metrics, confusion counts, false positives, missed fraud, threshold tradeoff, PR curve, ROC curve, and AUPRC explanation.</p>
+      <p>Displays active-threshold XGBoost metrics, Isolation Forest comparison, threshold chart, dynamic confusion matrix, PR curve, and ROC curve.</p>
     </div>
     <div class="card">
       <h3>Risk Investigation</h3>
-      <p>Lets the analyst choose or paste a transaction_id, then view decision, risk, merchant, amount, timestamp, SHAP drivers, and the full MongoDB alert JSON.</p>
+      <p>Search/dropdown by transaction ID, decision/risk/amount/merchant/time, SHAP risk-increasing and protective features, and full alert JSON.</p>
     </div>
   </div>
 
-  <h2>6. Local Demo Flow</h2>
-  <p>
-    On Windows, Kafka and Docker can be harder for beginners. The dashboard includes a local demo button so you
-    can still show the project end to end.
-  </p>
+  <h2>9. Sequence Diagrams</h2>
+  <h3>Local Demo Path</h3>
   <div class="mermaid">
 sequenceDiagram
   participant User
-  participant Dashboard as Streamlit Dashboard
-  participant Generator as Demo Alert Generator
-  participant Model as XGBoost Model
+  participant UI as Streamlit app.py
+  participant Gen as demo_alert_generator.py
+  participant Model as XGBoost model
   participant Mongo as MongoDB
-  User->>Dashboard: Click Generate Demo Alerts
-  Dashboard->>Generator: Scan rows from creditcard.csv
-  Generator->>Model: Predict fraud probabilities
-  Model-->>Generator: Scores from 0 to 1
-  Generator->>Generator: Select varied review/flagged/blocked rows
-  Generator->>Mongo: Insert alert documents
-  Dashboard->>Mongo: Read recent alerts and analytics
-  Mongo-->>Dashboard: Alerts for tables and charts
+  User->>UI: Click Generate Demo Alerts
+  UI->>Gen: Scan real creditcard.csv rows
+  Gen->>Model: Predict fraud probabilities
+  Model-->>Gen: Scores 0 to 1
+  Gen->>Gen: Select varied review/flagged/blocked alerts
+  Gen->>Mongo: Insert normalized alert documents
+  UI->>Mongo: Read recent alerts and analytics
+  Mongo-->>UI: Dashboard tables and charts
   </div>
 
-  <h2>7. Beginner Command Prompt Commands</h2>
-  <p>Open Command Prompt in the project folder. Activate the virtual environment first:</p>
+  <h3>Streaming Architecture Path</h3>
+  <div class="mermaid">
+sequenceDiagram
+  participant Producer as Kafka Producer
+  participant Kafka
+  participant Spark as Spark Consumer
+  participant API as FastAPI
+  participant Mongo as MongoDB
+  Producer->>Kafka: Publish transaction JSON
+  Kafka->>Spark: Stream micro-batch
+  Spark->>API: POST /score
+  API-->>Spark: Probability, decision, SHAP, action
+  Spark->>Mongo: Save fraud alert when high risk
+  </div>
+
+  <h2>10. Test Coverage</h2>
+  <p>Current test command:</p>
+  <pre><code>venv\Scripts\python.exe -m pytest -q</code></pre>
+  <p>Current result:</p>
+  <pre><code>10 passed</code></pre>
+  <table>
+    <thead><tr><th>Test Area</th><th>What It Protects</th></tr></thead>
+    <tbody>
+      <tr><td>Feature column smoke tests</td><td>Ensures expected raw and engineered feature counts exist.</td></tr>
+      <tr><td>Probability/risk clipping</td><td>Prevents invalid probabilities and risk scores from leaking into API/dashboard.</td></tr>
+      <tr><td>Decision bands</td><td>Confirms APPROVED/REVIEW/FLAGGED/BLOCKED threshold logic.</td></tr>
+      <tr><td>Merchant aggregation</td><td>Confirms probabilities are averaged/maxed, not summed.</td></tr>
+      <tr><td>Demo selection</td><td>Confirms generated demo sample can include REVIEW, FLAGGED, and BLOCKED bands.</td></tr>
+      <tr><td>Path normalization</td><td>Confirms Windows-style artifact paths work in the dashboard.</td></tr>
+      <tr><td>Active metrics/confusion consistency</td><td>Confirms active-threshold table row and confusion matrix use the same counts.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>11. Command Prompt Runbook</h2>
+  <p>Use Command Prompt from the project folder:</p>
   <pre><code>cd /d "C:\Users\admin\Desktop\Real-Time Fraud Detection System"
 venv\Scripts\activate.bat</code></pre>
-
-  <p>Install/repair packages:</p>
+  <p>Install or repair packages:</p>
   <pre><code>python -m pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt</code></pre>
-
-  <p>Build features, train, and tune:</p>
+  <p>Build/train/tune:</p>
   <pre><code>python -m src.processing.feature_engineering
 python -m src.modeling.train_batch
 python -m src.modeling.threshold_tuner</code></pre>
+  <p>Start FastAPI:</p>
+  <pre><code>uvicorn src.api.main:app --host 127.0.0.1 --port 8001 --reload</code></pre>
+  <p>Start Streamlit in a second Command Prompt:</p>
+  <pre><code>streamlit run app.py --server.port 8502</code></pre>
 
-  <p>Start FastAPI in one Command Prompt:</p>
-  <pre><code>cd /d "C:\Users\admin\Desktop\Real-Time Fraud Detection System"
-venv\Scripts\activate.bat
-uvicorn src.api.main:app --host 127.0.0.1 --port 8001 --reload</code></pre>
-
-  <p>Start Streamlit in another Command Prompt:</p>
-  <pre><code>cd /d "C:\Users\admin\Desktop\Real-Time Fraud Detection System"
-venv\Scripts\activate.bat
-streamlit run app.py --server.port 8502</code></pre>
-
-  <div class="note">
-    Open the API at <code>http://127.0.0.1:8001/docs</code> and the dashboard at
-    <code>http://127.0.0.1:8502</code>. If the dashboard is empty, click <b>Generate Demo Alerts</b>.
-  </div>
-
-  <h2>8. Assumptions and Limitations</h2>
+  <h2>12. Reviewer / Other LLM Checklist</h2>
   <ul>
-    <li>The Kaggle dataset has anonymized PCA features, so explanations are mathematical rather than direct business explanations.</li>
-    <li>The local demo generator simulates streaming alerts for easy Windows demos. Kafka and Spark files are still present for the full architecture.</li>
-    <li>The model is trained on a public dataset, not real bank production data.</li>
-    <li>Threshold tuning includes F1 and business-cost views, but business costs are configurable assumptions.</li>
-    <li>The zip package excludes the virtual environment and raw Kaggle CSV to keep the package portable.</li>
+    <li>Check whether <code>app.py</code> can be split into smaller dashboard modules without breaking Streamlit simplicity.</li>
+    <li>Review whether Docker should include a health check and wait/retry logic for FastAPI and MongoDB readiness.</li>
+    <li>Review SHAP performance and caching; per-alert SHAP can become slow with larger demo batches.</li>
+    <li>Review whether model binaries should be stored through Git LFS or excluded entirely in a production repo.</li>
+    <li>Review whether the local demo generator should support deterministic seed and amount/risk balancing controls in the UI.</li>
+    <li>Review whether README should include screenshots once final GitHub repository is created.</li>
+    <li>Review whether active threshold should prefer best F1 or best business-cost threshold for the chosen business story.</li>
+  </ul>
+
+  <h2>13. Known Limitations</h2>
+  <ul>
+    <li>The Kaggle dataset features <code>V1</code> to <code>V28</code> are PCA-anonymized, so SHAP explanations are mathematical drivers, not direct business reasons.</li>
+    <li>Kafka/Spark streaming exists in the project, but the easiest Windows demo path is the local demo generator.</li>
+    <li>The reviewer zip excludes raw data, model binaries, validation CSV, parquet, venv, and MLflow runs to keep it small and shareable.</li>
+    <li>Static model artifacts may show old training thresholds; the dashboard now labels or replaces threshold-specific artifacts with dynamic active-threshold views.</li>
   </ul>
 </main>
+<script>
+  const thresholdCtx = document.getElementById("thresholdChart");
+  if (thresholdCtx && window.Chart) {
+    new Chart(thresholdCtx, {
+      type: "bar",
+      data: {
+        labels: ["Best F1 0.999", "Best Cost 0.996", "Old Artifact 0.900"],
+        datasets: [
+          { label: "Precision", data: [0.7411, 0.6115, 0.2131], backgroundColor: "#2563eb" },
+          { label: "Recall", data: [0.8469, 0.8673, 0.8980], backgroundColor: "#16a34a" },
+          { label: "F1", data: [0.7905, 0.7173, 0.3444], backgroundColor: "#d97706" }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: { title: { display: true, text: "Threshold Metric Comparison" } },
+        scales: { y: { beginAtZero: true, max: 1 } }
+      }
+    });
+  }
+
+  const confusionCtx = document.getElementById("confusionChart");
+  if (confusionCtx && window.Chart) {
+    new Chart(confusionCtx, {
+      type: "bar",
+      data: {
+        labels: ["TN", "FP", "FN", "TP"],
+        datasets: [{
+          label: "Active threshold 0.999 counts",
+          data: [56835, 29, 15, 83],
+          backgroundColor: ["#1d4ed8", "#dc2626", "#d97706", "#16a34a"]
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { title: { display: true, text: "Dynamic Confusion Matrix Counts" } },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  }
+</script>
 </body>
 </html>

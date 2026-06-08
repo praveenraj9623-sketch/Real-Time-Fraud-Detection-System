@@ -1,28 +1,42 @@
-Real-Time Fraud Detection System - Package Notes
+Real-Time Fraud Detection System - LLM Review Package Notes
 
-This zip contains the portfolio project code, documentation, tests, dashboard,
-API, model artifacts, and generated monitoring artifacts.
+This zip is intentionally trimmed for review by another LLM. It contains the
+project source code, tests, documentation, Docker files, and lightweight model
+metadata. It does not include the large raw dataset, virtual environments,
+MLflow run history, or binary model files.
 
 Included:
 - app.py
 - src/
 - tests/
-- docs/PROJECT_BREAKDOWN.html
+- docs/
 - README.md
 - requirements.txt
 - Dockerfile and docker-compose.yml
-- models/ artifacts generated during local training
-- data/processed/ if present
+- .env.example and .gitignore
+- PACKAGE_NOTES.txt
+- models/*.json, models/*.csv except validation_data.csv, models/*.txt, models/*.png
+- models/artifacts/*.png
 
 Not included:
-- venv/ virtual environment
-- __pycache__/ folders
+- venv/ and .venv/
+- __pycache__/ and *.pyc
+- .env
 - data/raw/creditcard.csv
-- mlruns/ local MLflow tracking history
+- data/processed/
+- mlruns/
+- dist/
+- models/*.joblib
+- models/validation_data.csv
 
 Why the raw dataset is excluded:
-The creditcard.csv dataset is a Kaggle dataset. Keep your local copy in:
+The creditcard.csv dataset is an external Kaggle dataset. Keep your local copy in:
 data/raw/creditcard.csv
+
+Main HTML docs:
+- docs/FULL_PROJECT_BREAKDOWN.html
+- docs/ARCHITECTURE.html
+- docs/WORKFLOW.html
 
 Beginner run order:
 1. Open Command Prompt.
@@ -34,4 +48,3 @@ Beginner run order:
 7. Start FastAPI: uvicorn src.api.main:app --host 127.0.0.1 --port 8001 --reload
 8. Start Streamlit in another Command Prompt: streamlit run app.py --server.port 8502
 9. Open http://127.0.0.1:8502 and click Generate Demo Alerts if the Live Feed is empty.
-

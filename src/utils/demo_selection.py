@@ -24,6 +24,28 @@ def _sample_without_replacement(
     return rng.choice(candidates, size=actual_take, replace=False).astype(int).tolist()
 
 
+def _amount_bucket_pools(candidates: np.ndarray, amount_values: np.ndarray) -> list[np.ndarray]:
+    """Split candidates into low/medium/high amount pools when possible."""
+    if len(candidates) == 0:
+        return []
+
+    finite_amounts = np.nan_to_num(amount_values[candidates], nan=0.0, posinf=0.0, neginf=0.0)
+    non_tiny = candidates[finite_amounts > 1.0]
+    source = non_tiny if len(non_tiny) >= 3 else candidates
+    source_amounts = np.nan_to_num(amount_values[source], nan=0.0, posinf=0.0, neginf=0.0)
+
+    if len(source) < 3 or len(np.unique(source_amounts)) < 2:
+        return [source]
+
+    low_cutoff, high_cutoff = np.nanpercentile(source_amounts, [33, 66])
+    pools = [
+        source[source_amounts <= low_cutoff],
+        source[(source_amounts > low_cutoff) & (source_amounts <= high_cutoff)],
+        source[source_amounts > high_cutoff],
+    ]
+    return [pool for pool in pools if len(pool) > 0]
+
+
 def select_demo_indices(
     probabilities: Iterable[float],
     *,
@@ -67,24 +89,37 @@ def select_demo_indices(
     for band, quota in zip(bands, quotas):
         if len(band) == 0:
             continue
+        quota = min(quota, max_alerts - len(selected))
+        if quota <= 0:
+            break
 
-        high_amount_take = 0
-        if amount_values is not None and len(band) > 2:
-            band_amounts = amount_values[band]
-            high_cutoff = np.nanpercentile(band_amounts, 70)
-            high_amount_pool = band[band_amounts >= high_cutoff]
-            high_amount_take = max(1, quota // 3)
-            selected.extend(_sample_without_replacement(rng, high_amount_pool, high_amount_take))
+        band_selected = 0
+        if amount_values is not None:
+            for pool in _amount_bucket_pools(band, amount_values):
+                if band_selected >= quota or len(selected) >= max_alerts:
+                    break
+                pool = np.array([idx for idx in pool if int(idx) not in set(selected)], dtype=int)
+                take = max(1, quota // 3)
+                sampled = _sample_without_replacement(rng, pool, min(take, quota - band_selected))
+                selected.extend(sampled)
+                band_selected += len(sampled)
 
         remaining_pool = np.array([idx for idx in band if int(idx) not in set(selected)], dtype=int)
-        remaining_take = min(quota - high_amount_take, max_alerts - len(selected))
+        if amount_values is not None:
+            amount_pool = np.nan_to_num(amount_values[remaining_pool], nan=0.0, posinf=0.0, neginf=0.0)
+            non_tiny_pool = remaining_pool[amount_pool > 1.0]
+            if len(non_tiny_pool) > 0:
+                remaining_pool = non_tiny_pool
+        remaining_take = min(quota - band_selected, max_alerts - len(selected))
         selected.extend(_sample_without_replacement(rng, remaining_pool, remaining_take))
 
     if len(selected) < max_alerts:
         candidates = np.where(probs >= save_at)[0]
         if amount_values is not None and len(candidates) > 0:
-            high_cutoff = np.nanpercentile(amount_values[candidates], 70)
-            candidates = candidates[amount_values[candidates] >= high_cutoff]
+            amount_candidates = np.nan_to_num(amount_values[candidates], nan=0.0, posinf=0.0, neginf=0.0)
+            varied_candidates = candidates[amount_candidates > 1.0]
+            if len(varied_candidates) > 0:
+                candidates = varied_candidates
         remaining = np.array([idx for idx in candidates if int(idx) not in set(selected)], dtype=int)
         selected.extend(_sample_without_replacement(rng, remaining, max_alerts - len(selected)))
 
@@ -93,6 +128,13 @@ def select_demo_indices(
         remaining = np.array([idx for idx in candidates if int(idx) not in set(selected)], dtype=int)
         selected.extend(_sample_without_replacement(rng, remaining, max_alerts - len(selected)))
 
-    selected = sorted(set(selected), key=lambda idx: probs[idx], reverse=True)
-    return selected[:max_alerts]
+    unique_selected = list(dict.fromkeys(selected))
+    if amount_values is not None:
+        def sort_key(idx: int) -> tuple[float, float, float]:
+            amount = float(np.nan_to_num(amount_values[idx], nan=0.0, posinf=0.0, neginf=0.0))
+            return (1.0 if amount > 1.0 else 0.0, float(probs[idx]), amount)
 
+        unique_selected = sorted(unique_selected, key=sort_key, reverse=True)
+    else:
+        unique_selected = sorted(unique_selected, key=lambda idx: probs[idx], reverse=True)
+    return unique_selected[:max_alerts]

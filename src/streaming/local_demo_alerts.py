@@ -22,7 +22,7 @@ from dotenv import load_dotenv
 
 from src.processing.feature_engineering import ALL_COLUMNS, BASE_FEATURE_COLUMNS, TARGET_COLUMN
 from src.storage.mongodb_client import MongoDBClient
-from src.utils.risk import clip_probability, normalize_alert_document
+from src.utils.risk import clip_probability, extract_transaction_amount, normalize_alert_document
 
 load_dotenv()
 
@@ -46,11 +46,17 @@ MERCHANT_NAMES = [
 def coerce_csv_row(row: Dict[str, str]) -> Dict[str, Any]:
     """Convert one CSV row into a transaction dictionary."""
     event: Dict[str, Any] = {}
+    amount = extract_transaction_amount(row)
+    amount_source = "raw_creditcard_csv" if amount is not None else "fallback_missing_amount"
     for column in ALL_COLUMNS:
+        if column == "Amount":
+            event[column] = float(amount if amount is not None else 0.0)
+            continue
         value = row.get(column)
         if value is None or value == "":
             continue
         event[column] = int(float(value)) if column == TARGET_COLUMN else float(value)
+    event["amount_source"] = amount_source
 
     missing = [column for column in BASE_FEATURE_COLUMNS if column not in event]
     if missing:

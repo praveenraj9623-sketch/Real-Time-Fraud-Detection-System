@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Real-Time Fraud Detection System - Workflow</title>
+  <style>
+    :root {
+      --ink: #0f172a;
+      --muted: #64748b;
+      --line: #dbe3ef;
+      --soft: #f6f8fb;
+      --panel: #ffffff;
+      --blue: #1d4ed8;
+      --red: #dc2626;
+      --green: #16a34a;
+      --amber: #d97706;
+    }
+    body {
+      margin: 0;
+      background: var(--soft);
+      color: var(--ink);
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      line-height: 1.55;
+    }
+    header {
+      background: linear-gradient(135deg, #10213f, #1d4ed8);
+      color: #fff;
+      padding: 42px 6vw;
+    }
+    header h1 { margin: 0 0 10px; font-size: 34px; }
+    header p { margin: 0; max-width: 980px; color: #dbeafe; }
+    main { max-width: 1180px; margin: 0 auto; padding: 28px 18px 56px; }
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      margin: 18px 0;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
+    }
+    h2 { margin: 0 0 14px; font-size: 24px; }
+    h3 { margin: 20px 0 8px; font-size: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border: 1px solid var(--line); padding: 10px; vertical-align: top; }
+    th { background: #f1f5f9; text-align: left; }
+    code, pre {
+      font-family: Consolas, Menlo, monospace;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+    }
+    code { padding: 2px 5px; }
+    pre { padding: 14px; overflow-x: auto; }
+    .step {
+      border-left: 4px solid var(--blue);
+      background: #fbfdff;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 12px 0;
+    }
+    .step b { color: #1e3a8a; }
+    .note {
+      border-left: 4px solid var(--amber);
+      background: #fffbeb;
+      color: #92400e;
+      padding: 12px 14px;
+      border-radius: 8px;
+    }
+    .ok {
+      border-left: 4px solid var(--green);
+      background: #ecfdf5;
+      color: #065f46;
+      padding: 12px 14px;
+      border-radius: 8px;
+    }
+    .mermaid { background: #ffffff; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Real-Time Fraud Detection System - Workflow</h1>
+    <p>
+      This document explains how the project runs from raw dataset to model
+      training, threshold tuning, API scoring, streaming alerts, MongoDB storage,
+      and Streamlit monitoring.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>End-to-End Workflow Diagram</h2>
+      <pre class="mermaid">
+flowchart TD
+  A["Download creditcard.csv"] --> B["Place file in data/raw/creditcard.csv"]
+  B --> C["Feature engineering<br/>python -m src.processing.feature_engineering"]
+  C --> D["Processed parquet<br/>data/processed/fraud_features.parquet"]
+  C --> E["Feature stats<br/>data/processed/feature_stats.json"]
+  D --> F["Train batch models<br/>python -m src.modeling.train_batch"]
+  F --> G["XGBoost classifier"]
+  F --> H["Isolation Forest"]
+  G --> I["MLflow metrics and artifacts"]
+  H --> I
+  G --> J["Threshold tuning<br/>python -m src.modeling.threshold_tuner"]
+  J --> K["optimal_threshold.txt<br/>threshold_metrics.csv"]
+  G --> L["FastAPI scoring service"]
+  K --> L
+  L --> M["/score returns probability, decision, risk, SHAP"]
+  M --> N["MongoDB fraud_alerts"]
+  N --> O["Streamlit dashboard"]
+      </pre>
+    </section>
+
+    <section>
+      <h2>Workflow Stages</h2>
+      <div class="step">
+        <b>1. Raw dataset setup</b>
+        <p>Put the Kaggle credit-card fraud file at <code>data/raw/creditcard.csv</code>. The expected columns are <code>Time</code>, <code>V1</code> through <code>V28</code>, <code>Amount</code>, and <code>Class</code>.</p>
+      </div>
+      <div class="step">
+        <b>2. Feature engineering</b>
+        <p>The project creates four extra fraud-focused features: <code>amount_log</code>, <code>hour_of_day</code>, <code>is_night_transaction</code>, and <code>amount_zscore</code>. The same logic is reused during API inference.</p>
+      </div>
+      <div class="step">
+        <b>3. Batch model training</b>
+        <p><code>train_batch.py</code> loads processed parquet, applies SMOTE to balance the minority class for XGBoost training, trains XGBoost and Isolation Forest, logs MLflow runs, saves metrics, plots, validation data, and model bundles.</p>
+      </div>
+      <div class="step">
+        <b>4. Threshold tuning</b>
+        <p><code>threshold_tuner.py</code> evaluates threshold candidates and stores active-threshold metrics. This is important because fraud systems usually choose thresholds by precision, recall, F1, or business cost rather than default 0.5.</p>
+      </div>
+      <div class="step">
+        <b>5. Real-time scoring API</b>
+        <p>FastAPI receives one transaction or a batch of transactions, engineers the extra features, calls the model, applies the active threshold, and returns the final decision band.</p>
+      </div>
+      <div class="step">
+        <b>6. Alert creation</b>
+        <p>Alerts are written to MongoDB when transactions are REVIEW, FLAGGED, or BLOCKED. Each alert contains the original transaction, score, risk level, decision, recommended action, merchant metadata, event time, stored time, and SHAP explanation.</p>
+      </div>
+      <div class="step">
+        <b>7. Monitoring dashboard</b>
+        <p>Streamlit reads MongoDB and model artifacts to show live alerts, risk analytics, model performance, and investigation views.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Decision Workflow</h2>
+      <pre class="mermaid">
+flowchart LR
+  TX["Transaction JSON"] --> FE["Engineer features"]
+  FE --> PROB["Model probability"]
+  PROB --> LOW{"probability < save threshold?"}
+  LOW -- yes --> APPROVED["APPROVED<br/>not saved as alert"]
+  LOW -- no --> REVIEW{"probability < 0.50?"}
+  REVIEW -- yes --> REV["REVIEW<br/>stored for monitoring"]
+  REVIEW -- no --> FLAG{"probability < active block threshold?"}
+  FLAG -- yes --> FLG["FLAGGED<br/>manual review"]
+  FLAG -- no --> BLK["BLOCKED<br/>high-risk action"]
+      </pre>
+      <p class="note">
+        The active block threshold is read from <code>models/optimal_threshold.txt</code>
+        and training statistics. The dashboard model comparison now uses active-threshold
+        metrics rather than stale training-threshold values.
+      </p>
+    </section>
+
+    <section>
+      <h2>FastAPI Workflow</h2>
+      <table>
+        <thead>
+          <tr><th>Endpoint</th><th>Input</th><th>Output</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>GET /health</code></td>
+            <td>None</td>
+            <td>Model path, threshold, dataset/training statistics</td>
+            <td>Checks whether the API can load artifacts and serve scoring requests.</td>
+          </tr>
+          <tr>
+            <td><code>POST /score</code></td>
+            <td>One transaction with <code>Time</code>, <code>V1-V28</code>, and <code>Amount</code></td>
+            <td>Fraud probability, decision, risk score, SHAP features, recommended action</td>
+            <td>Primary real-time scoring endpoint.</td>
+          </tr>
+          <tr>
+            <td><code>POST /batch-score</code></td>
+            <td>List of transaction JSON objects</td>
+            <td>Per-transaction scores and aggregate decision counts</td>
+            <td>Useful for testing or batch scoring small lists.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Streaming Workflow</h2>
+      <pre class="mermaid">
+sequenceDiagram
+  participant P as transaction_producer.py
+  participant K as Kafka topic transactions
+  participant S as Spark fraud_consumer.py
+  participant A as FastAPI /score
+  participant M as MongoDB fraud_alerts
+  participant D as Streamlit dashboard
+
+  P->>K: Publish transaction JSON with UUID, timestamp, merchant
+  K->>S: Micro-batch read
+  S->>A: Score each transaction
+  A-->>S: Probability, decision, risk, SHAP
+  S->>M: Insert REVIEW / FLAGGED / BLOCKED alerts
+  D->>M: Read alerts and analytics
+      </pre>
+      <p>
+        This path is the production-style architecture. For a simple Windows demo,
+        the dashboard's <b>Generate Demo Alerts</b> button performs a shorter path:
+        CSV rows -> model score -> MongoDB -> dashboard.
+      </p>
+    </section>
+
+    <section>
+      <h2>Dashboard Workflow</h2>
+      <table>
+        <thead>
+          <tr><th>Dashboard tab</th><th>How it works</th><th>What to verify</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Live Feed</td>
+            <td>Loads recent MongoDB alerts, normalizes probabilities/risk scores, and shows KPIs plus alert tables.</td>
+            <td>Decision counts should include REVIEW, FLAGGED, and BLOCKED after demo alerts are generated.</td>
+          </tr>
+          <tr>
+            <td>Analytics</td>
+            <td>Uses event-time-first logic for hourly charts and cumulative amount. Merchant table sorts by blocked count, block rate, risk, and amount.</td>
+            <td>Cumulative chart should be titled "Cumulative Alerted Amount by Event Time".</td>
+          </tr>
+          <tr>
+            <td>Model Performance</td>
+            <td>Reads stored model metrics and recomputes or loads active-threshold metrics for XGBoost. Displays dynamic active-threshold confusion matrix.</td>
+            <td>XGBoost row should match the active threshold, not an older 0.90 training threshold.</td>
+          </tr>
+          <tr>
+            <td>Risk Investigation</td>
+            <td>Lets the user choose an alert from MongoDB and inspect score, action, event time, stored time, SHAP drivers, and raw JSON.</td>
+            <td>Dropdown should populate once alerts exist. SHAP note should explain that V1-V28 are PCA features.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Command Prompt Run Workflow</h2>
+      <p>Run these from the project root:</p>
+      <pre><code>cd /d "C:\Users\admin\Desktop\Real-Time Fraud Detection System"
+venv\Scripts\activate.bat
+python -m pip install --upgrade pip setuptools wheel
+pip install -r requirements.txt
+python -m src.processing.feature_engineering
+python -m src.modeling.train_batch
+python -m src.modeling.threshold_tuner</code></pre>
+
+      <p>Start the API in one Command Prompt:</p>
+      <pre><code>cd /d "C:\Users\admin\Desktop\Real-Time Fraud Detection System"
+venv\Scripts\activate.bat
+uvicorn src.api.main:app --host 127.0.0.1 --port 8001 --reload</code></pre>
+
+      <p>Start Streamlit in another Command Prompt:</p>
+      <pre><code>cd /d "C:\Users\admin\Desktop\Real-Time Fraud Detection System"
+venv\Scripts\activate.bat
+streamlit run app.py --server.port 8502</code></pre>
+    </section>
+
+    <section>
+      <h2>Testing Workflow</h2>
+      <pre><code>cd /d "C:\Users\admin\Desktop\Real-Time Fraud Detection System"
+venv\Scripts\activate.bat
+python -m compileall src app.py tests
+python -m pytest -q</code></pre>
+      <p class="ok">
+        Latest local validation for the current workspace passed:
+        <code>15 passed</code>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Known Limitations</h2>
+      <ul>
+        <li>The Kaggle dataset is anonymized, so V1-V28 cannot be explained as direct business features.</li>
+        <li>Small transaction amounts can be real fraud examples in this dataset, so the dashboard notes that small-dollar fraud rows are expected.</li>
+        <li>Kafka/Spark setup on Windows can be heavier than the local demo path.</li>
+        <li>The review zip excludes raw data and binary model files, so another LLM can review logic but cannot retrain without the dataset.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Related Documents</h2>
+      <ul>
+        <li><a href="FULL_PROJECT_BREAKDOWN.html">Full Project Breakdown</a></li>
+        <li><a href="ARCHITECTURE.html">Architecture</a></li>
+        <li><a href="PROJECT_BREAKDOWN.html">Existing Project Breakdown</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true, theme: "base" });
+  </script>
+</body>
+</html>

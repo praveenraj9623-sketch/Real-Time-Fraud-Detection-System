@@ -14,6 +14,18 @@ from src.utils.risk import (
     normalize_alert_document,
 )
 
+EVENT_TIME_COLUMNS = ("event_time_utc", "transaction_time_utc", "stored_at_utc")
+TRANSACTION_TIME_COLUMNS = ("event_time_utc", "transaction_time_utc")
+ANALYTICS_SCOPE_CAPTION = (
+    "Analytics are calculated from all stored alerts. The sidebar recent-alert limit only controls "
+    "the live feed table."
+)
+ACTIVE_THRESHOLD_EXPLANATION = (
+    "The active threshold is selected from validation-set threshold tuning. Fraud is rare, so the "
+    "threshold is optimized using precision, recall, F1, AUPRC, and/or business-cost tradeoff "
+    "instead of the default 0.5."
+)
+
 
 def normalize_artifact_path(value: Any, fallback: Path | str | None = None) -> Path:
     """Normalize Windows/Linux artifact paths for display."""
@@ -44,6 +56,22 @@ def format_percent(value: Any) -> str:
         return f"{float(value) * 100:.1f}%"
     except (TypeError, ValueError):
         return "0.0%"
+
+
+def format_probability_display(value: Any) -> str:
+    """Format probabilities for display without changing stored numeric values."""
+    if value is None:
+        return "N/A"
+    try:
+        probability = float(value)
+    except (TypeError, ValueError):
+        return "N/A"
+    if pd.isna(probability):
+        return "N/A"
+    probability = min(max(probability, 0.0), 1.0)
+    if probability >= 0.9995:
+        return "≥99.95%"
+    return f"{probability * 100:.2f}%"
 
 
 def format_risk(value: Any) -> str:
@@ -92,12 +120,54 @@ def prepare_alert_dataframe(
 
     df["short_transaction_id"] = df["transaction_id"].map(short_transaction_id)
     df["amount_display"] = df["Amount"].map(format_currency)
-    df["probability_display"] = df["fraud_probability"].map(format_percent)
+    df["probability_display"] = df["fraud_probability"].map(format_probability_display)
     df["risk_display"] = df["risk_score"].map(format_risk)
     if "recommended_action" not in df.columns:
         df["recommended_action"] = ""
     df["action_short"] = df["recommended_action"].astype(str).str.slice(0, 92)
     return df
+
+
+def event_time_series(df: pd.DataFrame, *, include_stored_at: bool = True) -> pd.Series:
+    """Return row-wise event time using event, transaction, then stored time."""
+    columns = EVENT_TIME_COLUMNS if include_stored_at else TRANSACTION_TIME_COLUMNS
+    event_time: pd.Series | None = None
+    for column in columns:
+        if column in df.columns:
+            values = pd.to_datetime(df[column], errors="coerce", utc=True)
+            event_time = values if event_time is None else event_time.combine_first(values)
+    if event_time is None:
+        event_time = pd.Series(pd.NaT, index=df.index)
+    return pd.to_datetime(event_time, errors="coerce", utc=True)
+
+
+def night_time_mask(df: pd.DataFrame) -> pd.Series:
+    """Return alerts from 10 PM through 6 AM using simulated transaction time."""
+    if df.empty:
+        return pd.Series(False, index=df.index)
+
+    event_time = event_time_series(df, include_stored_at=False)
+    if event_time.notna().any():
+        hours = event_time.dt.hour
+        return ((hours >= 22) | (hours < 6)).fillna(False)
+
+    if "hour_of_day" not in df.columns:
+        return pd.Series(False, index=df.index)
+    hours = pd.to_numeric(df["hour_of_day"], errors="coerce")
+    return ((hours >= 22) | (hours < 6)).fillna(False)
+
+
+def cumulative_alerted_amount_by_event_time(df: pd.DataFrame) -> pd.DataFrame:
+    """Return alerts sorted by event time with a cumulative amount column."""
+    if df.empty:
+        return pd.DataFrame(columns=list(df.columns) + ["_event_time", "cum_amount"])
+
+    timeline = df.copy()
+    timeline["_event_time"] = event_time_series(timeline, include_stored_at=True)
+    timeline["Amount"] = pd.to_numeric(timeline.get("Amount", 0.0), errors="coerce").fillna(0.0)
+    timeline = timeline.dropna(subset=["_event_time"]).sort_values("_event_time")
+    timeline["cum_amount"] = timeline["Amount"].cumsum()
+    return timeline
 
 
 def summarize_alerts(df: pd.DataFrame) -> Dict[str, float | int]:
@@ -130,36 +200,39 @@ def merchant_risk_summary(df: pd.DataFrame) -> pd.DataFrame:
     if df.empty or "merchant_name" not in df.columns:
         return pd.DataFrame()
     df = df.copy()
-    if "event_time_utc" in df.columns:
-        df["alert_event_time"] = pd.to_datetime(df["event_time_utc"], errors="coerce")
-    elif "transaction_time_utc" in df.columns:
-        df["alert_event_time"] = pd.to_datetime(df["transaction_time_utc"], errors="coerce")
-    elif "stored_at_utc" in df.columns:
-        df["alert_event_time"] = pd.to_datetime(df["stored_at_utc"], errors="coerce")
-    else:
-        df["alert_event_time"] = pd.NaT
+    df["alert_event_time"] = event_time_series(df, include_stored_at=True)
+    df["decision"] = df.get("decision", "REVIEW").astype(str).str.upper()
+    df["fraud_probability"] = pd.to_numeric(df.get("fraud_probability", 0.0), errors="coerce").fillna(0.0).clip(0, 1)
+    df["risk_score"] = pd.to_numeric(df.get("risk_score", 0.0), errors="coerce").fillna(0.0).clip(0, 100)
+    df["Amount"] = pd.to_numeric(df.get("Amount", 0.0), errors="coerce").fillna(0.0).clip(lower=0)
     grouped = (
         df.assign(
-            is_flagged=df["decision"].isin(["REVIEW", "FLAGGED"]).astype(int),
+            is_review=(df["decision"] == "REVIEW").astype(int),
+            is_flagged=(df["decision"] == "FLAGGED").astype(int),
             is_blocked=(df["decision"] == "BLOCKED").astype(int),
         )
         .groupby("merchant_name", dropna=False)
         .agg(
-            alert_count=("transaction_id", "count"),
+            alert_count=("decision", "size"),
+            review_count=("is_review", "sum"),
             flagged_count=("is_flagged", "sum"),
             blocked_count=("is_blocked", "sum"),
             avg_probability=("fraud_probability", "mean"),
             max_probability=("fraud_probability", "max"),
+            avg_risk_score=("risk_score", "mean"),
+            median_risk_score=("risk_score", "median"),
+            max_risk_score=("risk_score", "max"),
             total_amount=("Amount", "sum"),
             last_alert_time=("alert_event_time", "max"),
         )
         .reset_index()
     )
-    grouped["avg_risk_score"] = (grouped["avg_probability"] * 100).clip(0, 100)
-    grouped["max_risk_score"] = (grouped["max_probability"] * 100).clip(0, 100)
+    grouped["block_rate"] = (
+        grouped["blocked_count"] / grouped["alert_count"].replace(0, pd.NA)
+    ).fillna(0.0)
     return grouped.sort_values(
-        ["blocked_count", "avg_risk_score", "total_amount"],
-        ascending=[False, False, False],
+        ["blocked_count", "block_rate", "avg_risk_score", "total_amount"],
+        ascending=[False, False, False, False],
     )
 
 

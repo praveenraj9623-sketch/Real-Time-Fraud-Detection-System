@@ -13,6 +13,7 @@ from bson import ObjectId
 from dotenv import load_dotenv
 from pymongo import ASCENDING, DESCENDING, MongoClient
 
+from src.dashboard.helpers import event_time_series
 from src.utils.risk import normalize_alert_document
 
 load_dotenv()
@@ -190,7 +191,7 @@ class MongoDBClient:
         return float(result[0].get("total_amount") or 0.0)
 
     def get_high_risk_merchants(self, limit: int = 10) -> List[Dict[str, Any]]:
-        """Return merchants ranked by alert count and risk probability."""
+        """Return merchants ranked by blocked volume, block rate, and risk."""
         documents = [
             normalize_alert_document(serialize_document(doc))
             for doc in self.collection.find({})
@@ -204,39 +205,38 @@ class MongoDBClient:
         df["risk_score"] = pd.to_numeric(df.get("risk_score", 0.0), errors="coerce").fillna(0.0).clip(0, 100)
         df["Amount"] = pd.to_numeric(df.get("Amount", 0.0), errors="coerce").fillna(0.0).clip(lower=0)
         df["decision"] = df.get("decision", "REVIEW").astype(str).str.upper()
-        if "event_time_utc" in df.columns:
-            df["alert_event_time"] = pd.to_datetime(df["event_time_utc"], errors="coerce")
-        elif "transaction_time_utc" in df.columns:
-            df["alert_event_time"] = pd.to_datetime(df["transaction_time_utc"], errors="coerce")
-        elif "stored_at_utc" in df.columns:
-            df["alert_event_time"] = pd.to_datetime(df["stored_at_utc"], errors="coerce")
-        else:
-            df["alert_event_time"] = pd.NaT
+        df["alert_event_time"] = event_time_series(df, include_stored_at=True)
         if "stored_at_utc" in df.columns:
             df["stored_at_utc"] = pd.to_datetime(df["stored_at_utc"], errors="coerce")
 
         grouped = (
             df.assign(
-                is_flagged=df["decision"].isin(["REVIEW", "FLAGGED"]).astype(int),
+                is_review=(df["decision"] == "REVIEW").astype(int),
+                is_flagged=(df["decision"] == "FLAGGED").astype(int),
                 is_blocked=(df["decision"] == "BLOCKED").astype(int),
             )
             .groupby("merchant_name", dropna=False)
             .agg(
-                alert_count=("transaction_id", "count"),
+                alert_count=("decision", "size"),
+                review_count=("is_review", "sum"),
                 flagged_count=("is_flagged", "sum"),
                 blocked_count=("is_blocked", "sum"),
                 avg_probability=("fraud_probability", "mean"),
                 max_probability=("fraud_probability", "max"),
                 avg_risk_score=("risk_score", "mean"),
+                median_risk_score=("risk_score", "median"),
                 max_risk_score=("risk_score", "max"),
                 total_amount=("Amount", "sum"),
                 last_alert_time=("alert_event_time", "max"),
             )
             .reset_index()
         )
+        grouped["block_rate"] = (
+            grouped["blocked_count"] / grouped["alert_count"].replace(0, pd.NA)
+        ).fillna(0.0)
         grouped = grouped.sort_values(
-            ["blocked_count", "avg_risk_score", "total_amount"],
-            ascending=[False, False, False],
+            ["blocked_count", "block_rate", "avg_risk_score", "total_amount"],
+            ascending=[False, False, False, False],
         ).head(limit)
         grouped["last_alert_time"] = grouped["last_alert_time"].astype(str)
         return grouped.to_dict(orient="records")

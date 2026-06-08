@@ -33,6 +33,7 @@ from src.utils.demo_selection import select_demo_indices
 from src.utils.risk import (
     classify_probability,
     clip_probability,
+    extract_transaction_amount,
     normalize_alert_document,
     risk_score_from_probability,
 )
@@ -83,7 +84,12 @@ def build_transaction(row: pd.Series, rng: random.Random | None = None) -> dict[
     """Create a transaction event with merchant and transaction metadata."""
     rng = rng or random.Random()
     event: dict[str, Any] = {}
+    amount = extract_transaction_amount(row)
+    amount_source = "raw_creditcard_csv" if amount is not None else "fallback_missing_amount"
     for column in ALL_COLUMNS:
+        if column == "Amount":
+            event[column] = float(amount if amount is not None else 0.0)
+            continue
         value = row[column]
         event[column] = int(value) if column == TARGET_COLUMN else float(value)
 
@@ -99,6 +105,7 @@ def build_transaction(row: pd.Series, rng: random.Random | None = None) -> dict[
     event["transaction_time_utc"] = simulated_event_time.isoformat()
     event["processing_timestamp"] = datetime.now(timezone.utc).isoformat()
     event["merchant_name"] = rng.choice(MERCHANT_NAMES)
+    event["amount_source"] = amount_source
     return event
 
 

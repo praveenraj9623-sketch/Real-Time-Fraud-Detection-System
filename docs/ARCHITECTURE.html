@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Real-Time Fraud Detection System - Architecture</title>
+  <style>
+    :root {
+      --ink: #0f172a;
+      --muted: #64748b;
+      --line: #dbe3ef;
+      --panel: #ffffff;
+      --soft: #f6f8fb;
+      --blue: #1d4ed8;
+      --red: #dc2626;
+      --amber: #d97706;
+      --green: #16a34a;
+    }
+    body {
+      margin: 0;
+      background: var(--soft);
+      color: var(--ink);
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      line-height: 1.55;
+    }
+    header {
+      background: linear-gradient(135deg, #10213f, #1d4ed8);
+      color: white;
+      padding: 42px 6vw;
+    }
+    header h1 { margin: 0 0 10px; font-size: 34px; }
+    header p { margin: 0; max-width: 980px; color: #dbeafe; }
+    main { max-width: 1180px; margin: 0 auto; padding: 28px 18px 56px; }
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      margin: 18px 0;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
+    }
+    h2 { margin: 0 0 14px; font-size: 24px; }
+    h3 { margin: 20px 0 8px; font-size: 18px; }
+    a { color: var(--blue); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px;
+      background: #fbfdff;
+    }
+    .card b { display: block; margin-bottom: 6px; }
+    .pill {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 9px;
+      margin: 3px 4px 3px 0;
+      font-size: 12px;
+      background: #fff;
+      color: var(--muted);
+    }
+    .note {
+      border-left: 4px solid var(--blue);
+      background: #eff6ff;
+      padding: 12px 14px;
+      border-radius: 8px;
+      color: #1e3a8a;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border: 1px solid var(--line); padding: 10px; vertical-align: top; }
+    th { background: #f1f5f9; text-align: left; }
+    code, pre {
+      font-family: Consolas, Menlo, monospace;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+    }
+    code { padding: 2px 5px; }
+    pre { padding: 14px; overflow-x: auto; }
+    .mermaid { background: #ffffff; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Real-Time Fraud Detection System - Architecture</h1>
+    <p>
+      Portfolio architecture for a credit-card fraud monitor using feature engineering,
+      XGBoost, Isolation Forest, threshold tuning, FastAPI scoring, Kafka/Spark streaming,
+      MongoDB alert storage, and a Streamlit investigation dashboard.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Architecture Summary</h2>
+      <p>
+        The system has two operating paths. The full production-style path sends
+        CSV transactions into Kafka, consumes them with Spark Structured Streaming,
+        calls the FastAPI scoring service, and stores suspicious transactions in MongoDB.
+        The Windows-friendly demo path uses the Streamlit sidebar to score real rows from
+        <code>data/raw/creditcard.csv</code> and insert REVIEW, FLAGGED, and BLOCKED alerts
+        directly into MongoDB.
+      </p>
+      <div>
+        <span class="pill">Dataset: Kaggle creditcard.csv</span>
+        <span class="pill">Features: Time, V1-V28, Amount, engineered features</span>
+        <span class="pill">Champion: XGBoost in local fraud monitor</span>
+        <span class="pill">Storage: MongoDB fraud_alerts</span>
+        <span class="pill">Dashboard: Streamlit on port 8502</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>System Context Diagram</h2>
+      <pre class="mermaid">
+flowchart LR
+  User["Analyst / Portfolio Viewer"] --> UI["Streamlit Dashboard<br/>app.py"]
+  UI --> Mongo["MongoDB<br/>fraud_alerts"]
+  UI --> Demo["Demo Alert Generator<br/>scores real CSV rows"]
+  Demo --> Model["Trained XGBoost Bundle<br/>models/fraud_classifier.joblib"]
+  Demo --> Mongo
+
+  CSV["data/raw/creditcard.csv"] --> FE["Feature Engineering<br/>src/processing/feature_engineering.py"]
+  FE --> Processed["data/processed/fraud_features.parquet"]
+  Processed --> Train["Batch Training<br/>src/modeling/train_batch.py"]
+  Train --> Model
+  Train --> Metrics["models/model_metrics.json<br/>plots and training stats"]
+  Train --> Tune["Threshold Tuning<br/>src/modeling/threshold_tuner.py"]
+  Tune --> Threshold["models/optimal_threshold.txt<br/>threshold metrics"]
+
+  Producer["Kafka Producer<br/>transaction_producer.py"] --> Kafka["Kafka topic: transactions"]
+  Kafka --> Spark["Spark Structured Streaming<br/>fraud_consumer.py"]
+  Spark --> API["FastAPI Scoring<br/>src/api/main.py"]
+  API --> Model
+  Spark --> Mongo
+      </pre>
+    </section>
+
+    <section>
+      <h2>Core Components</h2>
+      <div class="grid">
+        <div class="card">
+          <b>Feature Engineering</b>
+          <p><code>src/processing/feature_engineering.py</code></p>
+          <p>Adds <code>amount_log</code>, <code>hour_of_day</code>, <code>is_night_transaction</code>, and <code>amount_zscore</code>. Saves processed parquet and feature statistics.</p>
+        </div>
+        <div class="card">
+          <b>Batch Modeling</b>
+          <p><code>src/modeling/train_batch.py</code></p>
+          <p>Uses SMOTE for imbalance, trains XGBoost and Isolation Forest, logs metrics/artifacts with MLflow, saves model bundles and validation data.</p>
+        </div>
+        <div class="card">
+          <b>Threshold Tuning</b>
+          <p><code>src/modeling/threshold_tuner.py</code></p>
+          <p>Evaluates precision, recall, F1, AUC, AUPRC, and business-cost tradeoffs across thresholds. Writes the active threshold artifacts.</p>
+        </div>
+        <div class="card">
+          <b>FastAPI Scoring</b>
+          <p><code>src/api/main.py</code></p>
+          <p>Exposes <code>/health</code>, <code>/score</code>, and <code>/batch-score</code>. Applies inference-time features, returns probability, decision, risk score, SHAP drivers, and recommended action.</p>
+        </div>
+        <div class="card">
+          <b>Streaming Simulation</b>
+          <p><code>src/streaming/</code></p>
+          <p>Publishes transactions to Kafka and consumes micro-batches through Spark. The consumer calls FastAPI and saves alerts to MongoDB.</p>
+        </div>
+        <div class="card">
+          <b>Dashboard</b>
+          <p><code>app.py</code></p>
+          <p>Shows live alerts, analytics, model performance, and risk investigation. Uses MongoDB as the dashboard source of truth.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Data Architecture</h2>
+      <table>
+        <thead>
+          <tr><th>Layer</th><th>Path or Service</th><th>Purpose</th><th>Review Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Raw data</td>
+            <td><code>data/raw/creditcard.csv</code></td>
+            <td>Original Kaggle credit-card fraud dataset.</td>
+            <td>Excluded from zip because it is a large external dataset.</td>
+          </tr>
+          <tr>
+            <td>Processed data</td>
+            <td><code>data/processed/fraud_features.parquet</code></td>
+            <td>Engineered model-ready feature table.</td>
+            <td>Can be regenerated from raw CSV.</td>
+          </tr>
+          <tr>
+            <td>Feature stats</td>
+            <td><code>data/processed/feature_stats.json</code></td>
+            <td>Amount mean/std and feature order used during inference.</td>
+            <td>Important for consistent API and dashboard scoring.</td>
+          </tr>
+          <tr>
+            <td>Model artifacts</td>
+            <td><code>models/</code></td>
+            <td>Trained model bundles, metrics, validation data, plots, and thresholds.</td>
+            <td>Binary <code>.joblib</code> files are excluded from the review zip.</td>
+          </tr>
+          <tr>
+            <td>Alert store</td>
+            <td>MongoDB <code>fraud_detection.fraud_alerts</code></td>
+            <td>Stores scored suspicious transactions with decision, SHAP features, merchant, event time, and stored time.</td>
+            <td><code>event_time_utc</code> is used for analytics; <code>stored_at_utc</code> is insert time.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Deployment Architecture</h2>
+      <pre class="mermaid">
+flowchart TB
+  subgraph Host["Local Windows Host"]
+    CMD["Command Prompt"]
+    CSV2["data/raw/creditcard.csv"]
+    VENV["Python virtual environment"]
+    SparkLocal["Optional host Spark jobs"]
+  end
+
+  subgraph Docker["Docker Compose"]
+    ZK["zookeeper:2181"]
+    KAF["kafka:9092 / 29092"]
+    MDB["mongodb:27017"]
+    API2["fastapi-fraud:8001"]
+    ST["streamlit-fraud:8502"]
+  end
+
+  CMD --> VENV
+  VENV --> SparkLocal
+  VENV --> API2
+  VENV --> ST
+  ZK --> KAF
+  API2 --> MDB
+  ST --> MDB
+  ST --> API2
+  CSV2 --> SparkLocal
+      </pre>
+      <p class="note">
+        The compose file includes Zookeeper, Kafka, MongoDB, FastAPI, and Streamlit.
+        On Windows, the easiest demo is often MongoDB plus local FastAPI/Streamlit, then
+        the Streamlit <b>Generate Demo Alerts</b> button.
+      </p>
+    </section>
+
+    <section>
+      <h2>Dashboard Architecture</h2>
+      <table>
+        <thead>
+          <tr><th>Tab</th><th>Primary source</th><th>What it displays</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Live Feed</td>
+            <td>MongoDB recent alerts</td>
+            <td>KPI cards, decision donut, risk gauge, recent mixed alerts, highest-risk rows, CSV export.</td>
+          </tr>
+          <tr>
+            <td>Analytics</td>
+            <td>MongoDB aggregations and dashboard helpers</td>
+            <td>Hourly alerts, amount distribution, cumulative amount by event time, probability vs amount, merchant risk intelligence.</td>
+          </tr>
+          <tr>
+            <td>Model Performance</td>
+            <td><code>models/model_metrics.json</code>, threshold files, validation data</td>
+            <td>XGBoost and Isolation Forest comparison, active-threshold confusion matrix, PR/ROC artifacts, threshold tradeoff.</td>
+          </tr>
+          <tr>
+            <td>Risk Investigation</td>
+            <td>MongoDB alert document</td>
+            <td>Single transaction lookup, risk score, action, event/stored time, SHAP top drivers, raw JSON.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Important Design Choices</h2>
+      <ul>
+        <li><b>AUPRC matters more than accuracy</b> because fraud is rare.</li>
+        <li><b>Threshold tuning is separated from model training</b> so business policy can change without retraining.</li>
+        <li><b>Event time and stored time are separate</b>. Event time powers demo analytics; stored time tracks database insert time.</li>
+        <li><b>Demo alerts still use real model probabilities</b>. The sampler chooses rows for visual variety but does not fabricate fraud scores.</li>
+        <li><b>SHAP drivers are mathematical</b> because V1-V28 are anonymized PCA features, not named business fields.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Related Documents</h2>
+      <ul>
+        <li><a href="FULL_PROJECT_BREAKDOWN.html">Full Project Breakdown</a></li>
+        <li><a href="WORKFLOW.html">Workflow and How the Project Works</a></li>
+        <li><a href="PROJECT_BREAKDOWN.html">Existing Project Breakdown</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true, theme: "base" });
+  </script>
+</body>
+</html>
