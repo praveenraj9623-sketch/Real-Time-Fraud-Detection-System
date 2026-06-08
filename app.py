@@ -30,6 +30,7 @@ from src.dashboard.helpers import (
     format_percent,
     format_probability_display,
     format_risk,
+    has_confusion_count_fields,
     merchant_risk_summary,
     metrics_from_confusion_counts,
     night_time_mask,
@@ -1032,15 +1033,21 @@ with performance_tab:
         visible = [c for c in preferred if c in comparison.columns]
         st.dataframe(comparison[visible], use_container_width=True, hide_index=True)
 
-    if computed_counts:
+    if computed_counts and has_confusion_count_fields(computed_counts):
         caught  = computed_counts["true_positives"]
-        total_f = computed_counts["fraud_cases"]
+        total_f = computed_counts.get("fraud_cases", caught + computed_counts["false_negatives"])
         false_a = computed_counts["false_positives"]
         missed  = computed_counts["false_negatives"]
         st.info(
             f"At threshold **{optimal_threshold:.3f}**, XGBoost catches **{caught}** of "
             f"**{total_f}** fraud cases, flags **{false_a}** legitimate transactions incorrectly, "
             f"and misses **{missed}** fraud cases."
+        )
+    elif computed_counts:
+        st.info(
+            f"At threshold **{optimal_threshold:.3f}**, active threshold metrics were loaded from "
+            "the tuning summary. Validation confusion-matrix count fields are not available in the "
+            "deployed artifacts, so count-based wording is hidden."
         )
 
     threshold_metrics = pd.DataFrame()
@@ -1093,7 +1100,7 @@ with performance_tab:
     st.markdown('<div class="section-label">Active Threshold Decision Quality</div>', unsafe_allow_html=True)
     cm_col, artifact_col = st.columns(2)
     with cm_col:
-        if computed_counts:
+        if computed_counts and has_confusion_count_fields(computed_counts):
             st.plotly_chart(
                 render_dynamic_confusion_matrix(computed_counts, optimal_threshold),
                 use_container_width=True,
@@ -1104,7 +1111,10 @@ with performance_tab:
                 "Counts are recomputed for the active decision threshold."
             )
         else:
-            st.warning("Could not compute the dynamic confusion matrix. Check validation_data.csv.")
+            st.warning(
+                "Could not compute the dynamic confusion matrix. Check validation_data.csv or "
+                "include threshold summary artifacts with confusion count fields."
+            )
 
     with artifact_col:
         confusion_path    = artifact_path(model_metrics, "xgboost", "confusion_matrix", DEFAULT_XGB_CONFUSION)

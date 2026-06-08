@@ -13,6 +13,7 @@ from src.dashboard.helpers import (
     decision_from_probability,
     format_probability_display,
     merchant_risk_summary,
+    has_confusion_count_fields,
     night_time_mask,
     normalize_artifact_path,
     prepare_alert_dataframe,
@@ -279,3 +280,24 @@ def test_active_model_metrics_override_old_training_threshold_and_match_confusio
     assert row["f1"] == active_counts["f1"]
     assert row["metric_source"] == "active_threshold_recomputed"
     assert confusion_matrix_values(row) == [[56835, 29], [15, 83]]
+
+
+def test_partial_threshold_summary_metrics_do_not_claim_confusion_counts():
+    summary_only_metrics = {
+        "precision": 0.74,
+        "recall": 0.84,
+        "f1": 0.79,
+        "threshold": 0.999,
+        "metric_source": "best_f1_threshold_summary",
+    }
+
+    assert has_confusion_count_fields(summary_only_metrics) is False
+
+    full_count_metrics = {
+        **summary_only_metrics,
+        "true_negatives": 56835,
+        "false_positives": 29,
+        "false_negatives": 15,
+        "true_positives": 83,
+    }
+    assert has_confusion_count_fields(full_count_metrics) is True

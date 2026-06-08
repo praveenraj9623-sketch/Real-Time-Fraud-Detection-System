@@ -16,6 +16,12 @@ from src.utils.risk import (
 
 EVENT_TIME_COLUMNS = ("event_time_utc", "transaction_time_utc", "stored_at_utc")
 TRANSACTION_TIME_COLUMNS = ("event_time_utc", "transaction_time_utc")
+CONFUSION_COUNT_KEYS = (
+    "true_negatives",
+    "false_positives",
+    "false_negatives",
+    "true_positives",
+)
 ANALYTICS_SCOPE_CAPTION = (
     "Analytics are calculated from all stored alerts. The sidebar recent-alert limit only controls "
     "the live feed table."
@@ -300,3 +306,8 @@ def confusion_matrix_values(metrics: Dict[str, Any]) -> list[list[int]]:
         [int(metrics.get("true_negatives", 0)), int(metrics.get("false_positives", 0))],
         [int(metrics.get("false_negatives", 0)), int(metrics.get("true_positives", 0))],
     ]
+
+
+def has_confusion_count_fields(metrics: Dict[str, Any]) -> bool:
+    """Return True when a metric row has all confusion-matrix count fields."""
+    return all(metrics.get(key) is not None for key in CONFUSION_COUNT_KEYS)
