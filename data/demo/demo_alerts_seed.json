@@ -1,0 +1,6002 @@
+[
+  {
+    "transaction_id": "7bca5e45-72db-4dfd-8756-a51b1cdf4ef6",
+    "merchant_name": "Silverline Pharmacy",
+    "amount": 99.99,
+    "fraud_probability": 0.9999994039535522,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-06T00:09:06.476000+00:00",
+    "transaction_time_utc": "2026-06-06T00:09:06.476000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -8.00915938639777,
+        "value": -8.00915938639777,
+        "shap_value": 1.9953057765960693,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -5.58044712038062,
+        "value": -5.58044712038062,
+        "shap_value": 1.850806713104248,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -11.5885435992809,
+        "value": -11.5885435992809,
+        "shap_value": 1.7763415575027466,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -19.2108964179086,
+        "value": -19.2108964179086,
+        "shap_value": 1.6206122636795044,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -6.00866000668561,
+        "value": -6.00866000668561,
+        "shap_value": 1.4440313577651978,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "e7309e9d-4237-4873-a3cf-808e0f0a2146",
+    "merchant_name": "Harbor Hotel",
+    "amount": 99.99,
+    "fraud_probability": 0.9999994039535522,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-04T06:28:06.363000+00:00",
+    "transaction_time_utc": "2026-06-04T06:28:06.363000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -8.303239351259,
+        "value": -8.303239351259,
+        "shap_value": 1.9954614639282227,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -6.57627643636006,
+        "value": -6.57627643636006,
+        "shap_value": 1.8564162254333496,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -12.2184817176797,
+        "value": -12.2184817176797,
+        "shap_value": 1.7764146327972412,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -17.9712120192706,
+        "value": -17.9712120192706,
+        "shap_value": 1.621464729309082,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -6.6992520739678,
+        "value": -6.6992520739678,
+        "shap_value": 1.4416123628616333,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "b3bd190a-2989-4cf6-9b56-1b54d569d1ee",
+    "merchant_name": "Metro Grocers",
+    "amount": 99.99,
+    "fraud_probability": 0.9999994039535522,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-03T14:46:06.340000+00:00",
+    "transaction_time_utc": "2026-06-03T14:46:06.340000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -8.51176669710133,
+        "value": -8.51176669710133,
+        "shap_value": 1.9954619407653809,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -7.3272215995796,
+        "value": -7.3272215995796,
+        "shap_value": 1.869422197341919,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -12.6888576275064,
+        "value": -12.6888576275064,
+        "shap_value": 1.776773452758789,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -17.1004924771637,
+        "value": -17.1004924771637,
+        "shap_value": 1.621464729309082,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -7.22001986441493,
+        "value": -7.22001986441493,
+        "shap_value": 1.4404455423355103,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "6225130e-b6ba-4898-89bb-cdb31d8f1a36",
+    "merchant_name": "Northstar Apparel",
+    "amount": 99.99,
+    "fraud_probability": 0.9999994039535522,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-02T19:25:06.447000+00:00",
+    "transaction_time_utc": "2026-06-02T19:25:06.447000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -8.12096173759343,
+        "value": -8.12096173759343,
+        "shap_value": 1.9953057765960693,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -5.84352838067721,
+        "value": -5.84352838067721,
+        "shap_value": 1.8503450155258179,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -11.7562556050179,
+        "value": -11.7562556050179,
+        "shap_value": 1.7764146327972412,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -18.7094788213717,
+        "value": -18.7094788213717,
+        "shap_value": 1.6206122636795044,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -6.21094112120869,
+        "value": -6.21094112120869,
+        "shap_value": 1.4416123628616333,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "640d7b57-78d2-485b-be06-daa09bfce2b4",
+    "merchant_name": "Peak Fitness",
+    "amount": 99.99,
+    "fraud_probability": 0.9999994039535522,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-04T06:51:06.306000+00:00",
+    "transaction_time_utc": "2026-06-04T06:51:06.306000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -8.85919405880884,
+        "value": -8.85919405880884,
+        "shap_value": 1.993710994720459,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -8.57897327333454,
+        "value": -8.57897327333454,
+        "shap_value": 1.8676867485046387,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -13.4728970076501,
+        "value": -13.4728970076501,
+        "shap_value": 1.778967022895813,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -15.6485074722661,
+        "value": -15.6485074722661,
+        "shap_value": 1.5929526090621948,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -8.08803351213651,
+        "value": -8.08803351213651,
+        "shap_value": 1.4377080202102661,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "2c07c204-c72e-47ea-a5d3-3eb2c76bb438",
+    "merchant_name": "QuickServe Dining",
+    "amount": 99.99,
+    "fraud_probability": 0.9999994039535522,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-08T12:33:06.333000+00:00",
+    "transaction_time_utc": "2026-06-08T12:33:06.333000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -8.6507583293562,
+        "value": -8.6507583293562,
+        "shap_value": 1.9954619407653809,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -7.82789139878016,
+        "value": -7.82789139878016,
+        "shap_value": 1.869422197341919,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -13.0024594617382,
+        "value": -13.0024594617382,
+        "shap_value": 1.7759557962417603,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -16.519835984614,
+        "value": -16.519835984614,
+        "shap_value": 1.6206862926483154,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -7.56721354069937,
+        "value": -7.56721354069937,
+        "shap_value": 1.4404455423355103,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "7e505db4-3645-4610-bb2f-96f6d89d625a",
+    "merchant_name": "Bluebird Electronics",
+    "amount": 1218.89,
+    "fraud_probability": 0.9999990463256836,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-08T13:35:05.897000+00:00",
+    "transaction_time_utc": "2026-06-08T13:35:05.897000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -11.2014000859835,
+        "value": -11.2014000859835,
+        "shap_value": 2.060582160949707,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -17.5066115481045,
+        "value": -17.5066115481045,
+        "shap_value": 1.9149168729782104,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -21.9228110340575,
+        "value": -21.9228110340575,
+        "shap_value": 1.7677867412567139,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -10.140200337183,
+        "value": -10.140200337183,
+        "shap_value": 1.5192418098449707,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -13.1049334662012,
+        "value": -13.1049334662012,
+        "shap_value": 1.4426556825637817,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "76e85abc-3501-460a-8870-c5d32055b5b6",
+    "merchant_name": "Urban Fuel",
+    "amount": 99.99,
+    "fraud_probability": 0.9999966621398926,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-04T14:43:06.206000+00:00",
+    "transaction_time_utc": "2026-06-04T14:43:06.206000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -9.22282550730978,
+        "value": -9.22282550730978,
+        "shap_value": 1.936447262763977,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -14.2595985921417,
+        "value": -14.2595985921417,
+        "shap_value": 1.7486107349395752,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -14.1188648469369,
+        "value": -14.1188648469369,
+        "shap_value": 1.5179142951965332,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -8.95219071159749,
+        "value": -8.95219071159749,
+        "shap_value": 1.4361480474472046,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -9.82505442102721,
+        "value": -9.82505442102721,
+        "shap_value": 1.4140803813934326,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "06152985-155a-4738-9376-5b293ceeb96f",
+    "merchant_name": "Bluebird Electronics",
+    "amount": 717.15,
+    "fraud_probability": 0.9999947547912598,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-05T04:37:07.090000+00:00",
+    "transaction_time_utc": "2026-06-05T04:37:07.090000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V17",
+        "feature_value": -5.07947908460579,
+        "value": -5.07947908460579,
+        "shap_value": 2.1352596282958984,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -3.50054226479879,
+        "value": -3.50054226479879,
+        "shap_value": 1.532623529434204,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -3.58281002008802,
+        "value": -3.58281002008802,
+        "shap_value": 1.4901498556137085,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V16",
+        "feature_value": -4.04629299726117,
+        "value": -4.04629299726117,
+        "shap_value": 0.8138827085494995,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V15",
+        "feature_value": 1.67025110352247,
+        "value": 1.67025110352247,
+        "shap_value": -0.7536849975585938,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "45047341-eb99-465a-8c73-07d1f680b800",
+    "merchant_name": "Peak Fitness",
+    "amount": 730.86,
+    "fraud_probability": 0.9999933242797852,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-05T23:29:06.452000+00:00",
+    "transaction_time_utc": "2026-06-05T23:29:06.452000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V17",
+        "feature_value": -5.84121800175148,
+        "value": -5.84121800175148,
+        "shap_value": 1.7436742782592773,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -3.65142656863483,
+        "value": -3.65142656863483,
+        "shap_value": 1.6146948337554932,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -3.83478156926117,
+        "value": -3.83478156926117,
+        "shap_value": 1.0984662771224976,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -3.18216808481143,
+        "value": -3.18216808481143,
+        "shap_value": 0.7811697125434875,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V27",
+        "feature_value": 0.220694023253282,
+        "value": 0.220694023253282,
+        "shap_value": -0.5693926811218262,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "4c6077d0-e614-490b-a0bb-b53cb6540e89",
+    "merchant_name": "Silverline Pharmacy",
+    "amount": 89.99,
+    "fraud_probability": 0.9999839067459106,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-01T18:27:06.134000+00:00",
+    "transaction_time_utc": "2026-06-01T18:27:06.134000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -10.2306201984125,
+        "value": -10.2306201984125,
+        "shap_value": 1.7704343795776367,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -14.9387484996662,
+        "value": -14.9387484996662,
+        "shap_value": 1.6165878772735596,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -10.6369941284279,
+        "value": -10.6369941284279,
+        "shap_value": 1.4593182802200317,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -13.0178336706427,
+        "value": -13.0178336706427,
+        "shap_value": 1.4460638761520386,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -11.5583391302888,
+        "value": -11.5583391302888,
+        "shap_value": 0.9810961484909058,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "e0429b1f-0d6e-4a0c-9a35-060fc8f3fb6a",
+    "merchant_name": "Acme Marketplace",
+    "amount": 204.03,
+    "fraud_probability": 0.9999834299087524,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-06T02:30:04.863000+00:00",
+    "transaction_time_utc": "2026-06-06T02:30:04.863000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "Time",
+        "feature_value": 347.0,
+        "value": 347.0,
+        "shap_value": -2.1257574558258057,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -4.88759815712332,
+        "value": -4.88759815712332,
+        "shap_value": 1.7023497819900513,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -2.31102388434087,
+        "value": -2.31102388434087,
+        "shap_value": 1.6982903480529785,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -2.36104984988645,
+        "value": -2.36104984988645,
+        "shap_value": 1.0887876749038696,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -2.00337457519686,
+        "value": -2.00337457519686,
+        "shap_value": 0.8698810935020447,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "72f2398f-8d18-4e9c-b531-d119f75b0d77",
+    "merchant_name": "Acme Marketplace",
+    "amount": 89.99,
+    "fraud_probability": 0.9999829530715942,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-03T18:14:05.907000+00:00",
+    "transaction_time_utc": "2026-06-03T18:14:05.907000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -10.95755089007,
+        "value": -10.95755089007,
+        "shap_value": 1.663077473640442,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -16.5111433452125,
+        "value": -16.5111433452125,
+        "shap_value": 1.6022135019302368,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -13.1279711679022,
+        "value": -13.1279711679022,
+        "shap_value": 1.3842344284057617,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -14.7458493424181,
+        "value": -14.7458493424181,
+        "shap_value": 1.3764806985855103,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V27",
+        "feature_value": 2.07422617595988,
+        "value": 2.07422617595988,
+        "shap_value": -0.9922167658805847,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "947a4344-a698-4338-a626-1dafeef5d774",
+    "merchant_name": "Acme Marketplace",
+    "amount": 89.99,
+    "fraud_probability": 0.9999825954437256,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-01T21:12:06.174000+00:00",
+    "transaction_time_utc": "2026-06-01T21:12:06.174000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -9.87533126890905,
+        "value": -9.87533126890905,
+        "shap_value": 1.914719581604004,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -14.1531470387412,
+        "value": -14.1531470387412,
+        "shap_value": 1.7488263845443726,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -13.0516970232644,
+        "value": -13.0516970232644,
+        "shap_value": 1.4793428182601929,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -12.1515838726847,
+        "value": -12.1515838726847,
+        "shap_value": 1.4342845678329468,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -9.38762445000577,
+        "value": -9.38762445000577,
+        "shap_value": 1.3131427764892578,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "2c565faf-2d4d-4d23-902d-4fa9b7177ba4",
+    "merchant_name": "Metro Grocers",
+    "amount": 89.99,
+    "fraud_probability": 0.9999822378158569,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-03T11:06:06.110000+00:00",
+    "transaction_time_utc": "2026-06-03T11:06:06.110000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -10.3726252459688,
+        "value": -10.3726252459688,
+        "shap_value": 1.7153478860855103,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -15.2530634406203,
+        "value": -15.2530634406203,
+        "shap_value": 1.6119270324707031,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -11.1369069257137,
+        "value": -11.1369069257137,
+        "shap_value": 1.4774593114852905,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -13.3643965399656,
+        "value": -13.3643965399656,
+        "shap_value": 1.4470752477645874,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V27",
+        "feature_value": 1.90793842059604,
+        "value": 1.90793842059604,
+        "shap_value": -0.977448046207428,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "dea4f744-bb50-41ea-a075-347796d64b67",
+    "merchant_name": "Crescent Jewelry",
+    "amount": 89.99,
+    "fraud_probability": 0.9999815225601196,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-05T09:14:06.062000+00:00",
+    "transaction_time_utc": "2026-06-05T09:14:06.062000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -10.5853663749267,
+        "value": -10.5853663749267,
+        "shap_value": 1.7136379480361938,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -15.724715104531,
+        "value": -15.724715104531,
+        "shap_value": 1.6068164110183716,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -11.8871737109064,
+        "value": -11.8871737109064,
+        "shap_value": 1.4032765626907349,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -13.8843925987509,
+        "value": -13.8843925987509,
+        "shap_value": 1.3882209062576294,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V27",
+        "feature_value": 1.97982515921143,
+        "value": 1.97982515921143,
+        "shap_value": -0.990504801273346,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "697d08ec-9ba6-4df1-96e8-b071505b680b",
+    "merchant_name": "Peak Fitness",
+    "amount": 239.93,
+    "fraud_probability": 0.9999797344207764,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-08T11:56:05.310000+00:00",
+    "transaction_time_utc": "2026-06-08T11:56:05.310000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V17",
+        "feature_value": -4.78183085597533,
+        "value": -4.78183085597533,
+        "shap_value": 1.5625100135803223,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -6.56012429505962,
+        "value": -6.56012429505962,
+        "shap_value": 1.4807665348052979,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V2",
+        "feature_value": 1.759247460267,
+        "value": 1.759247460267,
+        "shap_value": -1.079659342765808,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -1.52541162656194,
+        "value": -1.52541162656194,
+        "shap_value": 0.9249202609062195,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V16",
+        "feature_value": -2.28219382856251,
+        "value": -2.28219382856251,
+        "shap_value": 0.7340629696846008,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "59009e33-5ac1-4458-bff6-1b97e9e79c9a",
+    "merchant_name": "Urban Fuel",
+    "amount": 179.66,
+    "fraud_probability": 0.9998891353607178,
+    "risk_score": 99.99,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-04T22:07:05.714000+00:00",
+    "transaction_time_utc": "2026-06-04T22:07:05.714000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": 1.01511287978593,
+        "value": 1.01511287978593,
+        "shap_value": -2.130631923675537,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -6.22060535304292,
+        "value": -6.22060535304292,
+        "shap_value": 1.6915348768234253,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -7.00432728360605,
+        "value": -7.00432728360605,
+        "shap_value": 1.448485016822815,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -5.04473569177435,
+        "value": -5.04473569177435,
+        "shap_value": 1.254306435585022,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V9",
+        "feature_value": 2.82082866173719,
+        "value": 2.82082866173719,
+        "shap_value": -1.2017757892608643,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "74205db0-5611-462b-b0c3-db065d6ce4e1",
+    "merchant_name": "Harbor Hotel",
+    "amount": 3.12,
+    "fraud_probability": 0.9996021389961243,
+    "risk_score": 99.96,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-02T06:36:06.196000+00:00",
+    "transaction_time_utc": "2026-06-02T06:36:06.196000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V4",
+        "feature_value": 3.1236723071222,
+        "value": 3.1236723071222,
+        "shap_value": 1.4686299562454224,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.415853163361435,
+        "value": 1.415853163361435,
+        "shap_value": 1.0715105533599854,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -3.76387384832398,
+        "value": -3.76387384832398,
+        "shap_value": 0.9276371598243713,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V6",
+        "feature_value": -1.18432299431215,
+        "value": -1.18432299431215,
+        "shap_value": -0.8419384956359863,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -0.971757538368114,
+        "value": -0.971757538368114,
+        "shap_value": -0.6985231041908264,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "750d9163-36e9-4685-b878-34436f940344",
+    "merchant_name": "Crescent Jewelry",
+    "amount": 39.0,
+    "fraud_probability": 0.999420166015625,
+    "risk_score": 99.94,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-06T15:41:05.784000+00:00",
+    "transaction_time_utc": "2026-06-06T15:41:05.784000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": -0.56894860659901,
+        "value": -0.56894860659901,
+        "shap_value": -2.8913395404815674,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -3.78602023396384,
+        "value": -3.78602023396384,
+        "shap_value": 2.0565898418426514,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -2.31111901443051,
+        "value": -2.31111901443051,
+        "shap_value": 1.6198093891143799,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 14446.0,
+        "value": 14446.0,
+        "shap_value": -1.1660897731781006,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -4.73493583012037,
+        "value": -4.73493583012037,
+        "shap_value": 0.8848055005073547,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "31584767-0ff2-4f17-a169-57383a4f513f",
+    "merchant_name": "Bluebird Electronics",
+    "amount": 104.81,
+    "fraud_probability": 0.9993782043457031,
+    "risk_score": 99.94,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-03T22:51:06.751000+00:00",
+    "transaction_time_utc": "2026-06-03T22:51:06.751000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": 3.24508640095346,
+        "value": 3.24508640095346,
+        "shap_value": -1.5725071430206299,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -0.677096334427304,
+        "value": -0.677096334427304,
+        "shap_value": 1.283692717552185,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 1.19993009832405,
+        "value": 1.19993009832405,
+        "shap_value": -1.2428942918777466,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V15",
+        "feature_value": 1.60333192308268,
+        "value": 1.60333192308268,
+        "shap_value": -0.8513321280479431,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.86129223993172,
+        "value": 2.86129223993172,
+        "shap_value": 0.8168789744377136,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "d8413b2d-c35c-48ca-995b-6924ee877a02",
+    "merchant_name": "Cloud Nine Digital",
+    "amount": 3.93,
+    "fraud_probability": 0.9971259236335754,
+    "risk_score": 99.71,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-04T09:38:05.877000+00:00",
+    "transaction_time_utc": "2026-06-04T09:38:05.877000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V3",
+        "feature_value": 2.04100272504592,
+        "value": 2.04100272504592,
+        "shap_value": -2.9061343669891357,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": 1.50079377517002,
+        "value": 1.50079377517002,
+        "shap_value": -2.55653977394104,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -3.0217601822032,
+        "value": -3.0217601822032,
+        "shap_value": 1.1759295463562012,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 1.73159516277684,
+        "value": 1.73159516277684,
+        "shap_value": 0.9757470488548279,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.5953389880545987,
+        "value": 1.5953389880545987,
+        "shap_value": 0.9603646397590637,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "c2a9b95b-ca1b-40e5-a616-cfde7671af2a",
+    "merchant_name": "Northstar Apparel",
+    "amount": 2.5,
+    "fraud_probability": 0.9255785346031189,
+    "risk_score": 92.56,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-02T12:09:06.490000+00:00",
+    "transaction_time_utc": "2026-06-02T12:09:06.490000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V12",
+        "feature_value": 0.787678742099831,
+        "value": 0.787678742099831,
+        "shap_value": -2.104123592376709,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.252762968495368,
+        "value": 1.252762968495368,
+        "shap_value": 1.0603151321411133,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 28759.0,
+        "value": 28759.0,
+        "shap_value": -0.9941781759262085,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 1.02085354537886,
+        "value": 1.02085354537886,
+        "shap_value": -0.8662230968475342,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 7.0,
+        "value": 7.0,
+        "shap_value": -0.7458019256591797,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "4b26775d-48fd-41ff-8b5f-5b5f7eb89576",
+    "merchant_name": "Cloud Nine Digital",
+    "amount": 189.64,
+    "fraud_probability": 0.9115810990333557,
+    "risk_score": 91.16,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-08T04:15:06.179000+00:00",
+    "transaction_time_utc": "2026-06-08T04:15:06.179000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 2.61994818073873,
+        "value": 2.61994818073873,
+        "shap_value": -5.343779563903809,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.64306636574086,
+        "value": 2.64306636574086,
+        "shap_value": 1.3557056188583374,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.414179849133903,
+        "value": 0.414179849133903,
+        "shap_value": -1.0379502773284912,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 5.250386832790487,
+        "value": 5.250386832790487,
+        "shap_value": -0.7300336956977844,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -2.74511183388058,
+        "value": -2.74511183388058,
+        "shap_value": 0.7192614078521729,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "024f2e9b-ed5e-4178-8bae-fd212f7cf517",
+    "merchant_name": "Peak Fitness",
+    "amount": 1.49,
+    "fraud_probability": 0.8715522289276123,
+    "risk_score": 87.16,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-05T18:12:06.799000+00:00",
+    "transaction_time_utc": "2026-06-05T18:12:06.799000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V15",
+        "feature_value": 1.43167510592938,
+        "value": 1.43167510592938,
+        "shap_value": -1.889049768447876,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V25",
+        "feature_value": 0.700116566498015,
+        "value": 0.700116566498015,
+        "shap_value": -1.6786872148513794,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -0.930599204013263,
+        "value": -0.930599204013263,
+        "shap_value": 1.0820751190185547,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 3.17360184279991,
+        "value": 3.17360184279991,
+        "shap_value": -0.9417566061019897,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V6",
+        "feature_value": -1.57685313546584,
+        "value": -1.57685313546584,
+        "shap_value": -0.8698936104774475,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "4c6ce4e0-c255-423c-b466-d8ae84846bbf",
+    "merchant_name": "Northstar Apparel",
+    "amount": 7.6,
+    "fraud_probability": 0.8522599339485168,
+    "risk_score": 85.23,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-02T11:10:06.280000+00:00",
+    "transaction_time_utc": "2026-06-02T11:10:06.280000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V12",
+        "feature_value": 0.120659367935089,
+        "value": 0.120659367935089,
+        "shap_value": -1.8456661701202393,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V8",
+        "feature_value": 0.482873988563869,
+        "value": 0.482873988563869,
+        "shap_value": -1.7096917629241943,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -0.798626173768538,
+        "value": -0.798626173768538,
+        "shap_value": -1.6476696729660034,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.70046696289748,
+        "value": 2.70046696289748,
+        "shap_value": 1.36387300491333,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 26148.0,
+        "value": 26148.0,
+        "shap_value": -0.8191282153129578,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "8c29e689-3612-4da0-b84f-8a8f26dbb1a7",
+    "merchant_name": "Nova Travel",
+    "amount": 46.49,
+    "fraud_probability": 0.815636396408081,
+    "risk_score": 81.56,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-02T01:06:06.518000+00:00",
+    "transaction_time_utc": "2026-06-02T01:06:06.518000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V15",
+        "feature_value": 1.80478172371581,
+        "value": 1.80478172371581,
+        "shap_value": -1.5139734745025635,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V6",
+        "feature_value": -1.08042182731149,
+        "value": -1.08042182731149,
+        "shap_value": -0.9378018379211426,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 8.0,
+        "value": 8.0,
+        "shap_value": -0.8871869444847107,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 1.95282359765897,
+        "value": 1.95282359765897,
+        "shap_value": 0.8550464510917664,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -0.142211198086287,
+        "value": -0.142211198086287,
+        "shap_value": -0.6834877133369446,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "8766ace8-f9bf-4373-9d42-d0673bb53f7b",
+    "merchant_name": "Northstar Apparel",
+    "amount": 29.56,
+    "fraud_probability": 0.7830188870429993,
+    "risk_score": 78.3,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-01T21:00:06.533000+00:00",
+    "transaction_time_utc": "2026-06-01T21:00:06.533000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V12",
+        "feature_value": 0.101068179964064,
+        "value": 0.101068179964064,
+        "shap_value": -1.1272532939910889,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 8.0,
+        "value": 8.0,
+        "shap_value": -0.8874443769454956,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -0.576080905957749,
+        "value": -0.576080905957749,
+        "shap_value": -0.8410338759422302,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 29118.0,
+        "value": 29118.0,
+        "shap_value": -0.8199244737625122,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -1.12945893629927,
+        "value": -1.12945893629927,
+        "shap_value": -0.6261311173439026,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "84ad26cd-ac1b-4398-b15f-f9eb28131fa1",
+    "merchant_name": "Bluebird Electronics",
+    "amount": 24.58,
+    "fraud_probability": 0.7286158800125122,
+    "risk_score": 72.86,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-03T04:41:06.091000+00:00",
+    "transaction_time_utc": "2026-06-03T04:41:06.091000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 2.25789820438497,
+        "value": 2.25789820438497,
+        "shap_value": -5.303381443023682,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.40339437146734,
+        "value": 2.40339437146734,
+        "shap_value": 1.267932653427124,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 1.15565234946147,
+        "value": 1.15565234946147,
+        "shap_value": -0.8585157990455627,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -2.6360584362063,
+        "value": -2.6360584362063,
+        "shap_value": 0.7242317199707031,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V2",
+        "feature_value": 1.38548207020965,
+        "value": 1.38548207020965,
+        "shap_value": -0.5484107136726379,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "5e9482e0-47b5-4320-a5d6-7d493e60ee42",
+    "merchant_name": "Crescent Jewelry",
+    "amount": 124.4,
+    "fraud_probability": 0.7172870635986328,
+    "risk_score": 71.73,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-08T06:35:06.281000+00:00",
+    "transaction_time_utc": "2026-06-08T06:35:06.281000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V12",
+        "feature_value": 0.617787423996547,
+        "value": 0.617787423996547,
+        "shap_value": -1.9049875736236572,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 7.0,
+        "value": 7.0,
+        "shap_value": -1.022276759147644,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 4.83150862819882,
+        "value": 4.83150862819882,
+        "shap_value": -0.7981113195419312,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 26166.0,
+        "value": 26166.0,
+        "shap_value": -0.7656097412109375,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -0.783556012066945,
+        "value": -0.783556012066945,
+        "shap_value": -0.7513322830200195,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "e4ca41a2-adda-4091-86bd-3328544c4a05",
+    "merchant_name": "Crescent Jewelry",
+    "amount": 43.06,
+    "fraud_probability": 0.685344398021698,
+    "risk_score": 68.53,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-07T03:08:05.879000+00:00",
+    "transaction_time_utc": "2026-06-07T03:08:05.879000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.383871466768383,
+        "value": 0.383871466768383,
+        "shap_value": -4.1658759117126465,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -0.884608819804057,
+        "value": -0.884608819804057,
+        "shap_value": -0.9883276224136353,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -1.54154687430343,
+        "value": -1.54154687430343,
+        "shap_value": 0.8321234583854675,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 1.742362598241,
+        "value": 1.742362598241,
+        "shap_value": -0.7085002660751343,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V13",
+        "feature_value": 1.40367277100824,
+        "value": 1.40367277100824,
+        "shap_value": -0.6211671829223633,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "3877af0f-ba52-40ff-abc3-efcd7cb1cdec",
+    "merchant_name": "Bluebird Electronics",
+    "amount": 29.56,
+    "fraud_probability": 0.6448753476142883,
+    "risk_score": 64.49,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-02T18:03:07.110000+00:00",
+    "transaction_time_utc": "2026-06-02T18:03:07.110000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V12",
+        "feature_value": 0.694827425958953,
+        "value": 0.694827425958953,
+        "shap_value": -2.0827553272247314,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 1.50071981047142,
+        "value": 1.50071981047142,
+        "shap_value": -0.8504777550697327,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V18",
+        "feature_value": -0.58640310099518,
+        "value": -0.58640310099518,
+        "shap_value": -0.7888229489326477,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 9.0,
+        "value": 9.0,
+        "shap_value": -0.7702497243881226,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -0.844018096061181,
+        "value": -0.844018096061181,
+        "shap_value": -0.7455548644065857,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "9da15416-17cc-4cd9-bb69-7b591fc4a6ba",
+    "merchant_name": "Acme Marketplace",
+    "amount": 5.3,
+    "fraud_probability": 0.6410439610481262,
+    "risk_score": 64.1,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-06T20:19:05.301000+00:00",
+    "transaction_time_utc": "2026-06-06T20:19:05.301000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 1.76931054154314,
+        "value": 1.76931054154314,
+        "shap_value": -6.560850620269775,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 4291.0,
+        "value": 4291.0,
+        "shap_value": -1.4408948421478271,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.71969787933598,
+        "value": 2.71969787933598,
+        "shap_value": 1.2186055183410645,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.277781475683958,
+        "value": 0.277781475683958,
+        "shap_value": -0.9957589507102966,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.840549633397487,
+        "value": 1.840549633397487,
+        "shap_value": 0.69017094373703,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "e87e7f57-4743-4ccb-80ce-0116b9b71714",
+    "merchant_name": "Metro Grocers",
+    "amount": 5.49,
+    "fraud_probability": 0.6129874587059021,
+    "risk_score": 61.3,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-01T20:35:05.444000+00:00",
+    "transaction_time_utc": "2026-06-01T20:35:05.444000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V18",
+        "feature_value": 1.74429408041545,
+        "value": 1.74429408041545,
+        "shap_value": -2.2470734119415283,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V2",
+        "feature_value": 1.75929294912248,
+        "value": 1.75929294912248,
+        "shap_value": -1.4032567739486694,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -2.62079820836163,
+        "value": -2.62079820836163,
+        "shap_value": 1.0426853895187378,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -2.62238723145044,
+        "value": -2.62238723145044,
+        "shap_value": 0.8917865753173828,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 3.18892175149401,
+        "value": 3.18892175149401,
+        "shap_value": -0.8295588493347168,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "27d26d4d-cda9-4174-8821-9024bb42b90c",
+    "merchant_name": "Metro Grocers",
+    "amount": 30.9,
+    "fraud_probability": 0.5957192778587341,
+    "risk_score": 59.57,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-01T21:46:05.130000+00:00",
+    "transaction_time_utc": "2026-06-01T21:46:05.130000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "Time",
+        "feature_value": 2713.0,
+        "value": 2713.0,
+        "shap_value": -1.5614111423492432,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 0.0,
+        "value": 0.0,
+        "shap_value": -1.2294816970825195,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 1.82560640839197,
+        "value": 1.82560640839197,
+        "shap_value": -1.2193799018859863,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V28",
+        "feature_value": -1.08264214670519,
+        "value": -1.08264214670519,
+        "shap_value": -1.185442328453064,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V27",
+        "feature_value": -0.972764405960786,
+        "value": -0.972764405960786,
+        "shap_value": -1.0956000089645386,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "f5e6a964-b40a-4d5e-97b4-5d0c5dd0542a",
+    "merchant_name": "Harbor Hotel",
+    "amount": 144.26,
+    "fraud_probability": 0.5902619361877441,
+    "risk_score": 59.03,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-07T01:08:07.343000+00:00",
+    "transaction_time_utc": "2026-06-07T01:08:07.343000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V3",
+        "feature_value": 1.38001016983473,
+        "value": 1.38001016983473,
+        "shap_value": -3.720461368560791,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 1.67650084252647,
+        "value": 1.67650084252647,
+        "shap_value": -1.5012274980545044,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V15",
+        "feature_value": 2.40162591532115,
+        "value": 2.40162591532115,
+        "shap_value": -1.084030270576477,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V27",
+        "feature_value": -0.529513726206027,
+        "value": -0.529513726206027,
+        "shap_value": -0.829761266708374,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V8",
+        "feature_value": -2.03675362315846,
+        "value": -2.03675362315846,
+        "shap_value": 0.8034659028053284,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "27dec2fa-5f02-44df-8038-3311b5380cb4",
+    "merchant_name": "QuickServe Dining",
+    "amount": 200.0,
+    "fraud_probability": 0.5219557285308838,
+    "risk_score": 52.2,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-03T09:34:07.076000+00:00",
+    "transaction_time_utc": "2026-06-03T09:34:07.076000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.651979063457854,
+        "value": 0.651979063457854,
+        "shap_value": -4.203232288360596,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.66108143689756,
+        "value": 2.66108143689756,
+        "shap_value": 1.3256291151046753,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.649568265160255,
+        "value": 0.649568265160255,
+        "shap_value": -1.209873914718628,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 9.0,
+        "value": 9.0,
+        "shap_value": -0.8094655275344849,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V11",
+        "feature_value": -0.701971563382516,
+        "value": -0.701971563382516,
+        "shap_value": -0.7884411811828613,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "395f3621-a7f8-4ecf-9700-a8ecc591a5f1",
+    "merchant_name": "Peak Fitness",
+    "amount": 89.99,
+    "fraud_probability": 0.5161238312721252,
+    "risk_score": 51.61,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-04T17:31:07.321000+00:00",
+    "transaction_time_utc": "2026-06-04T17:31:07.321000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V18",
+        "feature_value": 1.69370385231903,
+        "value": 1.69370385231903,
+        "shap_value": -2.009690761566162,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V2",
+        "feature_value": 1.64247794091806,
+        "value": 1.64247794091806,
+        "shap_value": -1.4816443920135498,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V15",
+        "feature_value": 1.14423936696184,
+        "value": 1.14423936696184,
+        "shap_value": -1.4751229286193848,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 3.03397618148502,
+        "value": 3.03397618148502,
+        "shap_value": -1.085549235343933,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -3.03086152033738,
+        "value": -3.03086152033738,
+        "shap_value": 0.8546016812324524,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "dce2a978-f61e-4beb-9100-39422703be03",
+    "merchant_name": "QuickServe Dining",
+    "amount": 89.99,
+    "fraud_probability": 0.5016456246376038,
+    "risk_score": 50.16,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-05T14:10:06.117000+00:00",
+    "transaction_time_utc": "2026-06-05T14:10:06.117000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V18",
+        "feature_value": 2.18801496766039,
+        "value": 2.18801496766039,
+        "shap_value": -2.0130774974823,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V2",
+        "feature_value": 1.70653997081572,
+        "value": 1.70653997081572,
+        "shap_value": -1.3843967914581299,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 3.61458736882807,
+        "value": 3.61458736882807,
+        "shap_value": -1.246182918548584,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -1.82169853254358,
+        "value": -1.82169853254358,
+        "shap_value": 0.9193610548973083,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -3.89613630014757,
+        "value": -3.89613630014757,
+        "shap_value": 0.8803657293319702,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "8debc237-1273-4059-b03d-b3ba338038fb",
+    "merchant_name": "Northstar Apparel",
+    "amount": 7.55,
+    "fraud_probability": 0.4843188524246216,
+    "risk_score": 48.43,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-05T22:41:05.358000+00:00",
+    "transaction_time_utc": "2026-06-05T22:41:05.358000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": -0.626113676757534,
+        "value": -0.626113676757534,
+        "shap_value": -2.553849220275879,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 5340.0,
+        "value": 5340.0,
+        "shap_value": -1.2141542434692383,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.35401359291499,
+        "value": 2.35401359291499,
+        "shap_value": 1.1069191694259644,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 1.0,
+        "value": 1.0,
+        "shap_value": -0.8274539709091187,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V11",
+        "feature_value": -0.505067676431372,
+        "value": -0.505067676431372,
+        "shap_value": -0.7630730271339417,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "4acde77a-c824-4ce7-8ad3-8c8db69d3d8b",
+    "merchant_name": "QuickServe Dining",
+    "amount": 18.92,
+    "fraud_probability": 0.4178948998451233,
+    "risk_score": 41.79,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-08T16:43:06.801000+00:00",
+    "transaction_time_utc": "2026-06-08T16:43:06.801000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.686555461633588,
+        "value": 0.686555461633588,
+        "shap_value": -4.367453575134277,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.851134724187245,
+        "value": 0.851134724187245,
+        "shap_value": -1.4120538234710693,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.37205927498004,
+        "value": 2.37205927498004,
+        "shap_value": 1.106742262840271,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 31200.0,
+        "value": 31200.0,
+        "shap_value": -0.8297245502471924,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -0.0360041387849088,
+        "value": -0.0360041387849088,
+        "shap_value": -0.8186343312263489,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "e2821df1-647f-4547-84c1-080d7dfc659c",
+    "merchant_name": "Peak Fitness",
+    "amount": 26.99,
+    "fraud_probability": 0.4063231945037842,
+    "risk_score": 40.63,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-03T20:44:06.745000+00:00",
+    "transaction_time_utc": "2026-06-03T20:44:06.745000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": -3.72285883365111,
+        "value": -3.72285883365111,
+        "shap_value": 2.2566285133361816,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V2",
+        "feature_value": 1.89283045356741,
+        "value": 1.89283045356741,
+        "shap_value": -1.5628230571746826,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.676584161993343,
+        "value": 0.676584161993343,
+        "shap_value": -1.412605881690979,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V18",
+        "feature_value": 2.00861516845097,
+        "value": 2.00861516845097,
+        "shap_value": -1.4121696949005127,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": 1.19121067621916,
+        "value": 1.19121067621916,
+        "shap_value": -1.2502604722976685,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "137fd3f3-7b82-45a7-a5a0-fa3d0457bdf6",
+    "merchant_name": "Crescent Jewelry",
+    "amount": 767.45,
+    "fraud_probability": 0.36330047249794006,
+    "risk_score": 36.33,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-05T06:31:07.263000+00:00",
+    "transaction_time_utc": "2026-06-05T06:31:07.263000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.442417973359676,
+        "value": 0.442417973359676,
+        "shap_value": -3.016998291015625,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V11",
+        "feature_value": -1.49493476781942,
+        "value": -1.49493476781942,
+        "shap_value": -1.3815674781799316,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 1.95254040204943,
+        "value": 1.95254040204943,
+        "shap_value": 0.9530423283576965,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 9.0,
+        "value": 9.0,
+        "shap_value": -0.9165817499160767,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 6.6443754990533215,
+        "value": 6.6443754990533215,
+        "shap_value": -0.8446438312530518,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "01964724-cf3c-41eb-b14b-e3d113378ef7",
+    "merchant_name": "Urban Fuel",
+    "amount": 2.74,
+    "fraud_probability": 0.35723501443862915,
+    "risk_score": 35.72,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-08T17:50:07.506000+00:00",
+    "transaction_time_utc": "2026-06-08T17:50:07.506000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 1.00355321882194,
+        "value": 1.00355321882194,
+        "shap_value": -4.916055679321289,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.30619894837289,
+        "value": 2.30619894837289,
+        "shap_value": 1.4327672719955444,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.951900185260954,
+        "value": 0.951900185260954,
+        "shap_value": -1.2861815690994263,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V1",
+        "feature_value": 1.20908511058502,
+        "value": 1.20908511058502,
+        "shap_value": -1.19425368309021,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.3190856114264407,
+        "value": 1.3190856114264407,
+        "shap_value": 0.9265308380126953,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "7296cbc6-c31e-4148-a9d9-eb7a812ce606",
+    "merchant_name": "Urban Fuel",
+    "amount": 2.88,
+    "fraud_probability": 0.3466288447380066,
+    "risk_score": 34.66,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-08T02:40:06.070000+00:00",
+    "transaction_time_utc": "2026-06-08T02:40:06.070000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 2.13839678837273,
+        "value": 2.13839678837273,
+        "shap_value": -5.06853723526001,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 1.51523157365107,
+        "value": 1.51523157365107,
+        "shap_value": -2.8240222930908203,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.45601740623934,
+        "value": 2.45601740623934,
+        "shap_value": 1.3131523132324219,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V13",
+        "feature_value": 1.6366717075429,
+        "value": 1.6366717075429,
+        "shap_value": -1.1688594818115234,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.355835153635182,
+        "value": 1.355835153635182,
+        "shap_value": 0.859404444694519,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "d76b25e2-5c14-4e92-9b98-6380337fffa3",
+    "merchant_name": "Nova Travel",
+    "amount": 641.6,
+    "fraud_probability": 0.3350648880004883,
+    "risk_score": 33.51,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-06T18:41:06.198000+00:00",
+    "transaction_time_utc": "2026-06-06T18:41:06.198000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 2.22712703994746,
+        "value": 2.22712703994746,
+        "shap_value": -5.987460613250732,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V13",
+        "feature_value": 1.97531274397441,
+        "value": 1.97531274397441,
+        "shap_value": -1.4300795793533325,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.227999071089679,
+        "value": 0.227999071089679,
+        "shap_value": -1.0757780075073242,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 3.08922561068367,
+        "value": 3.08922561068367,
+        "shap_value": 1.0555487871170044,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V23",
+        "feature_value": -0.672513496704044,
+        "value": -0.672513496704044,
+        "shap_value": -0.939332902431488,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "8a96611d-e119-490f-9279-3bbae67480db",
+    "merchant_name": "Harbor Hotel",
+    "amount": 5.48,
+    "fraud_probability": 0.3235582411289215,
+    "risk_score": 32.36,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-05T09:43:06.091000+00:00",
+    "transaction_time_utc": "2026-06-05T09:43:06.091000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 1.79722108634195,
+        "value": 1.79722108634195,
+        "shap_value": -5.746596336364746,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V13",
+        "feature_value": 1.76016271927979,
+        "value": 1.76016271927979,
+        "shap_value": -1.2558252811431885,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -2.64023390603458,
+        "value": -2.64023390603458,
+        "shap_value": 0.9953803420066833,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 1.18161523162887,
+        "value": 1.18161523162887,
+        "shap_value": -0.8687873482704163,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.8687205103641833,
+        "value": 1.8687205103641833,
+        "shap_value": 0.7605341672897339,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "34c8f48d-05fe-4091-9f79-10b03f159730",
+    "merchant_name": "Metro Grocers",
+    "amount": 1490.22,
+    "fraud_probability": 0.22951650619506836,
+    "risk_score": 22.95,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-06T14:30:06.113000+00:00",
+    "transaction_time_utc": "2026-06-06T14:30:06.113000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 1.7232901404268,
+        "value": 1.7232901404268,
+        "shap_value": -4.796031951904297,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 1.34807917170464,
+        "value": 1.34807917170464,
+        "shap_value": -1.0958572626113892,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 7.307349855858554,
+        "value": 7.307349855858554,
+        "shap_value": -0.7484368681907654,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -1.39473779421728,
+        "value": -1.39473779421728,
+        "shap_value": 0.7219106554985046,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V23",
+        "feature_value": -1.34571317543214,
+        "value": -1.34571317543214,
+        "shap_value": -0.7157390713691711,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "a26c0704-4411-4fee-a09c-db0578dfde39",
+    "merchant_name": "Crescent Jewelry",
+    "amount": 13.6,
+    "fraud_probability": 0.16018223762512207,
+    "risk_score": 16.02,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-02T09:24:06.964000+00:00",
+    "transaction_time_utc": "2026-06-02T09:24:06.964000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": 2.68457659172825,
+        "value": 2.68457659172825,
+        "shap_value": -1.79567551612854,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V15",
+        "feature_value": 1.34885125055316,
+        "value": 1.34885125055316,
+        "shap_value": -1.3244349956512451,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 0.325236577693184,
+        "value": 0.325236577693184,
+        "shap_value": -0.8944963216781616,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -0.274059839732415,
+        "value": -0.274059839732415,
+        "shap_value": -0.8839010000228882,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V27",
+        "feature_value": -2.27708598791651,
+        "value": -2.27708598791651,
+        "shap_value": -0.8633476495742798,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "eefea8da-29df-4782-8b30-3c3bacc6fae0",
+    "merchant_name": "Nova Travel",
+    "amount": 2.9,
+    "fraud_probability": 0.14833872020244598,
+    "risk_score": 14.83,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-06T00:20:07.155000+00:00",
+    "transaction_time_utc": "2026-06-06T00:20:07.155000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.45313099593815,
+        "value": 0.45313099593815,
+        "shap_value": -3.193211317062378,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 1.38826614729425,
+        "value": 1.38826614729425,
+        "shap_value": -3.04209303855896,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.822957558276623,
+        "value": 0.822957558276623,
+        "shap_value": -1.2282297611236572,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.00332158138451,
+        "value": 2.00332158138451,
+        "shap_value": 1.0019065141677856,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.3609765531356006,
+        "value": 1.3609765531356006,
+        "shap_value": 0.8963862061500549,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "0d538140-68d2-45ec-b913-30a28723f609",
+    "merchant_name": "Peak Fitness",
+    "amount": 1169.47,
+    "fraud_probability": 0.1405811905860901,
+    "risk_score": 14.06,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-03T16:16:05.412000+00:00",
+    "transaction_time_utc": "2026-06-03T16:16:05.412000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.717742514835466,
+        "value": 0.717742514835466,
+        "shap_value": -4.309036731719971,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 6648.0,
+        "value": 6648.0,
+        "shap_value": -1.5948575735092163,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V8",
+        "feature_value": 0.495360206133554,
+        "value": 0.495360206133554,
+        "shap_value": -1.000812292098999,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -1.42055079338287,
+        "value": -1.42055079338287,
+        "shap_value": 0.9328755736351013,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 3.22701747868824,
+        "value": 3.22701747868824,
+        "shap_value": 0.9027549624443054,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "4032b062-0156-4e80-8f7a-c45d4b6cb1e4",
+    "merchant_name": "Harbor Hotel",
+    "amount": 203.95,
+    "fraud_probability": 0.13017964363098145,
+    "risk_score": 13.02,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-06T06:30:06.473000+00:00",
+    "transaction_time_utc": "2026-06-06T06:30:06.473000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V3",
+        "feature_value": 1.40331573861465,
+        "value": 1.40331573861465,
+        "shap_value": -2.530329465866089,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": 0.0332507303328953,
+        "value": 0.0332507303328953,
+        "shap_value": -2.2898902893066406,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V8",
+        "feature_value": -2.58660150190301,
+        "value": -2.58660150190301,
+        "shap_value": 1.3644295930862427,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": 0.304224784958661,
+        "value": 0.304224784958661,
+        "shap_value": -1.3217917680740356,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 7.0,
+        "value": 7.0,
+        "shap_value": -1.2102760076522827,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "cf58f2e7-6f69-4cf6-be84-5b38ec20fe65",
+    "merchant_name": "Bluebird Electronics",
+    "amount": 370.4,
+    "fraud_probability": 0.12819093465805054,
+    "risk_score": 12.82,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-04T04:17:05.893000+00:00",
+    "transaction_time_utc": "2026-06-04T04:17:05.893000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.491214514109318,
+        "value": 0.491214514109318,
+        "shap_value": -4.295587062835693,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V13",
+        "feature_value": 2.85568127177682,
+        "value": 2.85568127177682,
+        "shap_value": -1.2135164737701416,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 1.43635610079486,
+        "value": 1.43635610079486,
+        "shap_value": -1.078615427017212,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.20392499915247,
+        "value": 2.20392499915247,
+        "shap_value": 0.9554622769355774,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 0.992417225787381,
+        "value": 0.992417225787381,
+        "shap_value": -0.7964291572570801,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "7afeb7c8-a674-4f33-8772-13428b8b9755",
+    "merchant_name": "Crescent Jewelry",
+    "amount": 9.41,
+    "fraud_probability": 0.12751956284046173,
+    "risk_score": 12.75,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-03T19:13:06.475000+00:00",
+    "transaction_time_utc": "2026-06-03T19:13:06.475000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.715262326303277,
+        "value": 0.715262326303277,
+        "shap_value": -3.5710363388061523,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": 0.785576867990995,
+        "value": 0.785576867990995,
+        "shap_value": -2.7037301063537598,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 1.09610905960527,
+        "value": 1.09610905960527,
+        "shap_value": -1.2900269031524658,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V8",
+        "feature_value": -2.17772504823892,
+        "value": -2.17772504823892,
+        "shap_value": 1.0192559957504272,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.94042680676172,
+        "value": 2.94042680676172,
+        "shap_value": 0.9827833771705627,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "647c559a-fa96-4dc4-b8ea-9ad22fd68400",
+    "merchant_name": "Metro Grocers",
+    "amount": 144.49,
+    "fraud_probability": 0.1240861639380455,
+    "risk_score": 12.41,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-06T11:36:06.218000+00:00",
+    "transaction_time_utc": "2026-06-06T11:36:06.218000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V3",
+        "feature_value": 1.78653504987238,
+        "value": 1.78653504987238,
+        "shap_value": -3.6713032722473145,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -0.0317579968402995,
+        "value": -0.0317579968402995,
+        "shap_value": -2.308729887008667,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": 0.187240066364304,
+        "value": 0.187240066364304,
+        "shap_value": -1.100744366645813,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 3.10329800029084,
+        "value": 3.10329800029084,
+        "shap_value": 1.0781753063201904,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.686452091297773,
+        "value": 0.686452091297773,
+        "shap_value": -0.9865497350692749,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "bd2988bd-e997-4b1e-96ff-a2cc32b9e10b",
+    "merchant_name": "Harbor Hotel",
+    "amount": 29.68,
+    "fraud_probability": 0.11792123317718506,
+    "risk_score": 11.79,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-02T09:11:05.535000+00:00",
+    "transaction_time_utc": "2026-06-02T09:11:05.535000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 2.1503668233152,
+        "value": 2.1503668233152,
+        "shap_value": -5.261868953704834,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 1.36052211229159,
+        "value": 1.36052211229159,
+        "shap_value": -1.9699862003326416,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V2",
+        "feature_value": 2.16230941858775,
+        "value": 2.16230941858775,
+        "shap_value": -1.736425518989563,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 9698.0,
+        "value": 9698.0,
+        "shap_value": -1.489793062210083,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V20",
+        "feature_value": -1.06649991979321,
+        "value": -1.06649991979321,
+        "shap_value": 0.9967068433761597,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "2083190f-044a-4691-a5cc-2c301cfc72d9",
+    "merchant_name": "Acme Marketplace",
+    "amount": 89.99,
+    "fraud_probability": 0.11086922883987427,
+    "risk_score": 11.09,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-01T18:33:06.033000+00:00",
+    "transaction_time_utc": "2026-06-01T18:33:06.033000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 2.42801187132929,
+        "value": 2.42801187132929,
+        "shap_value": -5.542708396911621,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 1.82223449304873,
+        "value": 1.82223449304873,
+        "shap_value": -1.3846814632415771,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -0.518258784764837,
+        "value": -0.518258784764837,
+        "shap_value": -1.0840407609939575,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -2.52549252463935,
+        "value": -2.52549252463935,
+        "shap_value": 1.0788739919662476,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 5.0,
+        "value": 5.0,
+        "shap_value": -0.6993792653083801,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "4de45e4a-0c60-4712-a7cc-d626c6259d79",
+    "merchant_name": "Nova Travel",
+    "amount": 36.79,
+    "fraud_probability": 0.1107749193906784,
+    "risk_score": 11.08,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-06T05:02:06.570000+00:00",
+    "transaction_time_utc": "2026-06-06T05:02:06.570000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.835330240798825,
+        "value": 0.835330240798825,
+        "shap_value": -4.670985221862793,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": 0.598279154996418,
+        "value": 0.598279154996418,
+        "shap_value": -2.71181058883667,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.29993401054618,
+        "value": 2.29993401054618,
+        "shap_value": 1.3241487741470337,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.809404407466574,
+        "value": 0.809404407466574,
+        "shap_value": -0.9246572852134705,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 29441.0,
+        "value": 29441.0,
+        "shap_value": -0.7175842523574829,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "58dc11a4-883d-4db0-9bd4-e7eba06f2252",
+    "merchant_name": "QuickServe Dining",
+    "amount": 5.94,
+    "fraud_probability": 0.10741086304187775,
+    "risk_score": 10.74,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-07T18:47:06.890000+00:00",
+    "transaction_time_utc": "2026-06-07T18:47:06.890000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.900832070241382,
+        "value": 0.900832070241382,
+        "shap_value": -3.7550904750823975,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": 0.146795610437654,
+        "value": 0.146795610437654,
+        "shap_value": -1.9956111907958984,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.7957809514085,
+        "value": 2.7957809514085,
+        "shap_value": 1.245839238166809,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 1.0728505045219,
+        "value": 1.0728505045219,
+        "shap_value": -1.230887532234192,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.937301774518713,
+        "value": 1.937301774518713,
+        "shap_value": 0.6946587562561035,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "89795600-3558-4c19-b470-de051dcb6a9d",
+    "merchant_name": "Cloud Nine Digital",
+    "amount": 89.99,
+    "fraud_probability": 0.10732570290565491,
+    "risk_score": 10.73,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-02T14:38:06.113000+00:00",
+    "transaction_time_utc": "2026-06-02T14:38:06.113000+00:00",
+    "stored_at_utc": "2026-06-08T18:14:08.179000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V18",
+        "feature_value": 1.8948391327093,
+        "value": 1.8948391327093,
+        "shap_value": -1.8958691358566284,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V2",
+        "feature_value": 2.32409002907588,
+        "value": 2.32409002907588,
+        "shap_value": -1.6486787796020508,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 3.78705412813772,
+        "value": 3.78705412813772,
+        "shap_value": -1.6345820426940918,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V8",
+        "feature_value": 0.831789336755819,
+        "value": 0.831789336755819,
+        "shap_value": -1.3052442073822021,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -1.69920673123318,
+        "value": -1.69920673123318,
+        "shap_value": 0.9562458992004395,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "93e4a345-7ffd-45e5-a7f4-ddc85ce37ace",
+    "merchant_name": "Silverline Pharmacy",
+    "amount": 99.99,
+    "fraud_probability": 0.9999994039535522,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-05T14:06:10.764000+00:00",
+    "transaction_time_utc": "2026-06-05T14:06:10.764000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -8.00915938639777,
+        "value": -8.00915938639777,
+        "shap_value": 1.9953057765960693,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -5.58044712038062,
+        "value": -5.58044712038062,
+        "shap_value": 1.850806713104248,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -11.5885435992809,
+        "value": -11.5885435992809,
+        "shap_value": 1.7763415575027466,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -19.2108964179086,
+        "value": -19.2108964179086,
+        "shap_value": 1.6206122636795044,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -6.00866000668561,
+        "value": -6.00866000668561,
+        "shap_value": 1.4440313577651978,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "4bb658ff-fb2f-4a52-bcc7-9588fc1b191a",
+    "merchant_name": "Harbor Hotel",
+    "amount": 99.99,
+    "fraud_probability": 0.9999994039535522,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-03T20:25:10.605000+00:00",
+    "transaction_time_utc": "2026-06-03T20:25:10.605000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -8.303239351259,
+        "value": -8.303239351259,
+        "shap_value": 1.9954614639282227,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -6.57627643636006,
+        "value": -6.57627643636006,
+        "shap_value": 1.8564162254333496,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -12.2184817176797,
+        "value": -12.2184817176797,
+        "shap_value": 1.7764146327972412,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -17.9712120192706,
+        "value": -17.9712120192706,
+        "shap_value": 1.621464729309082,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -6.6992520739678,
+        "value": -6.6992520739678,
+        "shap_value": 1.4416123628616333,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "aa9f194a-6109-49b0-82fb-58ceaa2d82c3",
+    "merchant_name": "Metro Grocers",
+    "amount": 99.99,
+    "fraud_probability": 0.9999994039535522,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-03T04:43:10.584000+00:00",
+    "transaction_time_utc": "2026-06-03T04:43:10.584000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -8.51176669710133,
+        "value": -8.51176669710133,
+        "shap_value": 1.9954619407653809,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -7.3272215995796,
+        "value": -7.3272215995796,
+        "shap_value": 1.869422197341919,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -12.6888576275064,
+        "value": -12.6888576275064,
+        "shap_value": 1.776773452758789,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -17.1004924771637,
+        "value": -17.1004924771637,
+        "shap_value": 1.621464729309082,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -7.22001986441493,
+        "value": -7.22001986441493,
+        "shap_value": 1.4404455423355103,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "f9db3053-4809-4fa6-a0c1-021d44fd01d8",
+    "merchant_name": "Northstar Apparel",
+    "amount": 99.99,
+    "fraud_probability": 0.9999994039535522,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-02T09:22:10.709000+00:00",
+    "transaction_time_utc": "2026-06-02T09:22:10.709000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -8.12096173759343,
+        "value": -8.12096173759343,
+        "shap_value": 1.9953057765960693,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -5.84352838067721,
+        "value": -5.84352838067721,
+        "shap_value": 1.8503450155258179,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -11.7562556050179,
+        "value": -11.7562556050179,
+        "shap_value": 1.7764146327972412,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -18.7094788213717,
+        "value": -18.7094788213717,
+        "shap_value": 1.6206122636795044,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -6.21094112120869,
+        "value": -6.21094112120869,
+        "shap_value": 1.4416123628616333,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "40b0cf21-05bc-4269-95a4-34b9dc795b8d",
+    "merchant_name": "Peak Fitness",
+    "amount": 99.99,
+    "fraud_probability": 0.9999994039535522,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-03T20:48:10.552000+00:00",
+    "transaction_time_utc": "2026-06-03T20:48:10.552000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -8.85919405880884,
+        "value": -8.85919405880884,
+        "shap_value": 1.993710994720459,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -8.57897327333454,
+        "value": -8.57897327333454,
+        "shap_value": 1.8676867485046387,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -13.4728970076501,
+        "value": -13.4728970076501,
+        "shap_value": 1.778967022895813,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -15.6485074722661,
+        "value": -15.6485074722661,
+        "shap_value": 1.5929526090621948,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -8.08803351213651,
+        "value": -8.08803351213651,
+        "shap_value": 1.4377080202102661,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "3a478d99-627e-49c4-84d9-b250119d53be",
+    "merchant_name": "QuickServe Dining",
+    "amount": 99.99,
+    "fraud_probability": 0.9999994039535522,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-08T02:30:10.578000+00:00",
+    "transaction_time_utc": "2026-06-08T02:30:10.578000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -8.6507583293562,
+        "value": -8.6507583293562,
+        "shap_value": 1.9954619407653809,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -7.82789139878016,
+        "value": -7.82789139878016,
+        "shap_value": 1.869422197341919,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -13.0024594617382,
+        "value": -13.0024594617382,
+        "shap_value": 1.7759557962417603,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -16.519835984614,
+        "value": -16.519835984614,
+        "shap_value": 1.6206862926483154,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -7.56721354069937,
+        "value": -7.56721354069937,
+        "shap_value": 1.4404455423355103,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "2355b6e1-01f2-4814-90cc-bbe775f19c16",
+    "merchant_name": "Bluebird Electronics",
+    "amount": 1218.89,
+    "fraud_probability": 0.9999990463256836,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-08T03:32:10.144000+00:00",
+    "transaction_time_utc": "2026-06-08T03:32:10.144000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -11.2014000859835,
+        "value": -11.2014000859835,
+        "shap_value": 2.060582160949707,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -17.5066115481045,
+        "value": -17.5066115481045,
+        "shap_value": 1.9149168729782104,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -21.9228110340575,
+        "value": -21.9228110340575,
+        "shap_value": 1.7677867412567139,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -10.140200337183,
+        "value": -10.140200337183,
+        "shap_value": 1.5192418098449707,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -13.1049334662012,
+        "value": -13.1049334662012,
+        "shap_value": 1.4426556825637817,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "575fc9e9-28d5-43f8-9543-07fbfdabd825",
+    "merchant_name": "Urban Fuel",
+    "amount": 99.99,
+    "fraud_probability": 0.9999966621398926,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-04T04:40:10.470000+00:00",
+    "transaction_time_utc": "2026-06-04T04:40:10.470000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -9.22282550730978,
+        "value": -9.22282550730978,
+        "shap_value": 1.936447262763977,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -14.2595985921417,
+        "value": -14.2595985921417,
+        "shap_value": 1.7486107349395752,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -14.1188648469369,
+        "value": -14.1188648469369,
+        "shap_value": 1.5179142951965332,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -8.95219071159749,
+        "value": -8.95219071159749,
+        "shap_value": 1.4361480474472046,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -9.82505442102721,
+        "value": -9.82505442102721,
+        "shap_value": 1.4140803813934326,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "4f6492a1-2a0d-425a-aa03-133e8d52e9e7",
+    "merchant_name": "Bluebird Electronics",
+    "amount": 717.15,
+    "fraud_probability": 0.9999947547912598,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-04T18:34:11.371000+00:00",
+    "transaction_time_utc": "2026-06-04T18:34:11.371000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V17",
+        "feature_value": -5.07947908460579,
+        "value": -5.07947908460579,
+        "shap_value": 2.1352596282958984,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -3.50054226479879,
+        "value": -3.50054226479879,
+        "shap_value": 1.532623529434204,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -3.58281002008802,
+        "value": -3.58281002008802,
+        "shap_value": 1.4901498556137085,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V16",
+        "feature_value": -4.04629299726117,
+        "value": -4.04629299726117,
+        "shap_value": 0.8138827085494995,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V15",
+        "feature_value": 1.67025110352247,
+        "value": 1.67025110352247,
+        "shap_value": -0.7536849975585938,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "a6587157-53a4-4478-8d5c-3c48569f2a5a",
+    "merchant_name": "Peak Fitness",
+    "amount": 730.86,
+    "fraud_probability": 0.9999933242797852,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-05T13:26:10.718000+00:00",
+    "transaction_time_utc": "2026-06-05T13:26:10.718000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V17",
+        "feature_value": -5.84121800175148,
+        "value": -5.84121800175148,
+        "shap_value": 1.7436742782592773,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -3.65142656863483,
+        "value": -3.65142656863483,
+        "shap_value": 1.6146948337554932,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -3.83478156926117,
+        "value": -3.83478156926117,
+        "shap_value": 1.0984662771224976,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -3.18216808481143,
+        "value": -3.18216808481143,
+        "shap_value": 0.7811697125434875,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V27",
+        "feature_value": 0.220694023253282,
+        "value": 0.220694023253282,
+        "shap_value": -0.5693926811218262,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "1ecbe244-67fb-4763-91ed-f8c5a814e76a",
+    "merchant_name": "Silverline Pharmacy",
+    "amount": 89.99,
+    "fraud_probability": 0.9999839067459106,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-01T08:24:10.406000+00:00",
+    "transaction_time_utc": "2026-06-01T08:24:10.406000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -10.2306201984125,
+        "value": -10.2306201984125,
+        "shap_value": 1.7704343795776367,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -14.9387484996662,
+        "value": -14.9387484996662,
+        "shap_value": 1.6165878772735596,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -10.6369941284279,
+        "value": -10.6369941284279,
+        "shap_value": 1.4593182802200317,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -13.0178336706427,
+        "value": -13.0178336706427,
+        "shap_value": 1.4460638761520386,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -11.5583391302888,
+        "value": -11.5583391302888,
+        "shap_value": 0.9810961484909058,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "56fa3f0c-e1be-4ded-b0c1-b8662dfb4e3f",
+    "merchant_name": "Acme Marketplace",
+    "amount": 204.03,
+    "fraud_probability": 0.9999834299087524,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-05T16:27:09.169000+00:00",
+    "transaction_time_utc": "2026-06-05T16:27:09.169000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "Time",
+        "feature_value": 347.0,
+        "value": 347.0,
+        "shap_value": -2.1257574558258057,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -4.88759815712332,
+        "value": -4.88759815712332,
+        "shap_value": 1.7023497819900513,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -2.31102388434087,
+        "value": -2.31102388434087,
+        "shap_value": 1.6982903480529785,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -2.36104984988645,
+        "value": -2.36104984988645,
+        "shap_value": 1.0887876749038696,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -2.00337457519686,
+        "value": -2.00337457519686,
+        "shap_value": 0.8698810935020447,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "6b8a91a8-af01-4c8d-a091-64fafa82189d",
+    "merchant_name": "Acme Marketplace",
+    "amount": 89.99,
+    "fraud_probability": 0.9999829530715942,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-03T08:11:10.154000+00:00",
+    "transaction_time_utc": "2026-06-03T08:11:10.154000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -10.95755089007,
+        "value": -10.95755089007,
+        "shap_value": 1.663077473640442,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -16.5111433452125,
+        "value": -16.5111433452125,
+        "shap_value": 1.6022135019302368,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -13.1279711679022,
+        "value": -13.1279711679022,
+        "shap_value": 1.3842344284057617,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -14.7458493424181,
+        "value": -14.7458493424181,
+        "shap_value": 1.3764806985855103,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V27",
+        "feature_value": 2.07422617595988,
+        "value": 2.07422617595988,
+        "shap_value": -0.9922167658805847,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "963346f0-77de-4a1f-8a6b-d3eccfe93816",
+    "merchant_name": "Acme Marketplace",
+    "amount": 89.99,
+    "fraud_probability": 0.9999825954437256,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-01T11:09:10.441000+00:00",
+    "transaction_time_utc": "2026-06-01T11:09:10.441000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -9.87533126890905,
+        "value": -9.87533126890905,
+        "shap_value": 1.914719581604004,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -14.1531470387412,
+        "value": -14.1531470387412,
+        "shap_value": 1.7488263845443726,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": -13.0516970232644,
+        "value": -13.0516970232644,
+        "shap_value": 1.4793428182601929,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -12.1515838726847,
+        "value": -12.1515838726847,
+        "shap_value": 1.4342845678329468,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -9.38762445000577,
+        "value": -9.38762445000577,
+        "shap_value": 1.3131427764892578,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "21935ea3-b899-48f2-81db-0d7466b6ca09",
+    "merchant_name": "Metro Grocers",
+    "amount": 89.99,
+    "fraud_probability": 0.9999822378158569,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-03T01:03:10.370000+00:00",
+    "transaction_time_utc": "2026-06-03T01:03:10.370000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -10.3726252459688,
+        "value": -10.3726252459688,
+        "shap_value": 1.7153478860855103,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -15.2530634406203,
+        "value": -15.2530634406203,
+        "shap_value": 1.6119270324707031,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -11.1369069257137,
+        "value": -11.1369069257137,
+        "shap_value": 1.4774593114852905,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -13.3643965399656,
+        "value": -13.3643965399656,
+        "shap_value": 1.4470752477645874,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V27",
+        "feature_value": 1.90793842059604,
+        "value": 1.90793842059604,
+        "shap_value": -0.977448046207428,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "eabe2c84-88e4-4703-8c10-fee28b0b8c85",
+    "merchant_name": "Crescent Jewelry",
+    "amount": 89.99,
+    "fraud_probability": 0.9999815225601196,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-04T23:11:10.313000+00:00",
+    "transaction_time_utc": "2026-06-04T23:11:10.313000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": -10.5853663749267,
+        "value": -10.5853663749267,
+        "shap_value": 1.7136379480361938,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -15.724715104531,
+        "value": -15.724715104531,
+        "shap_value": 1.6068164110183716,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -11.8871737109064,
+        "value": -11.8871737109064,
+        "shap_value": 1.4032765626907349,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -13.8843925987509,
+        "value": -13.8843925987509,
+        "shap_value": 1.3882209062576294,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V27",
+        "feature_value": 1.97982515921143,
+        "value": 1.97982515921143,
+        "shap_value": -0.990504801273346,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "f5ea6378-8e5d-47d8-93ac-412612e5b43e",
+    "merchant_name": "Peak Fitness",
+    "amount": 239.93,
+    "fraud_probability": 0.9999797344207764,
+    "risk_score": 100.0,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-08T01:53:09.564000+00:00",
+    "transaction_time_utc": "2026-06-08T01:53:09.564000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V17",
+        "feature_value": -4.78183085597533,
+        "value": -4.78183085597533,
+        "shap_value": 1.5625100135803223,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -6.56012429505962,
+        "value": -6.56012429505962,
+        "shap_value": 1.4807665348052979,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V2",
+        "feature_value": 1.759247460267,
+        "value": 1.759247460267,
+        "shap_value": -1.079659342765808,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -1.52541162656194,
+        "value": -1.52541162656194,
+        "shap_value": 0.9249202609062195,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V16",
+        "feature_value": -2.28219382856251,
+        "value": -2.28219382856251,
+        "shap_value": 0.7340629696846008,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "18b7b684-f05d-4fbf-b5d3-492ff471af10",
+    "merchant_name": "Urban Fuel",
+    "amount": 179.66,
+    "fraud_probability": 0.9998891353607178,
+    "risk_score": 99.99,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-04T12:04:09.970000+00:00",
+    "transaction_time_utc": "2026-06-04T12:04:09.970000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": 1.01511287978593,
+        "value": 1.01511287978593,
+        "shap_value": -2.130631923675537,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -6.22060535304292,
+        "value": -6.22060535304292,
+        "shap_value": 1.6915348768234253,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -7.00432728360605,
+        "value": -7.00432728360605,
+        "shap_value": 1.448485016822815,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -5.04473569177435,
+        "value": -5.04473569177435,
+        "shap_value": 1.254306435585022,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V9",
+        "feature_value": 2.82082866173719,
+        "value": 2.82082866173719,
+        "shap_value": -1.2017757892608643,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "6ad22bc2-dfc3-4ff6-a485-81605e3df6ca",
+    "merchant_name": "Harbor Hotel",
+    "amount": 3.12,
+    "fraud_probability": 0.9996021389961243,
+    "risk_score": 99.96,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-01T20:33:10.464000+00:00",
+    "transaction_time_utc": "2026-06-01T20:33:10.464000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V4",
+        "feature_value": 3.1236723071222,
+        "value": 3.1236723071222,
+        "shap_value": 1.4686299562454224,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.415853163361435,
+        "value": 1.415853163361435,
+        "shap_value": 1.0715105533599854,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -3.76387384832398,
+        "value": -3.76387384832398,
+        "shap_value": 0.9276371598243713,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V6",
+        "feature_value": -1.18432299431215,
+        "value": -1.18432299431215,
+        "shap_value": -0.8419384956359863,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -0.971757538368114,
+        "value": -0.971757538368114,
+        "shap_value": -0.6985231041908264,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "0f626ca8-d8b0-4489-be7b-ee4a2f3733fb",
+    "merchant_name": "Crescent Jewelry",
+    "amount": 39.0,
+    "fraud_probability": 0.999420166015625,
+    "risk_score": 99.94,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-06T05:38:10.038000+00:00",
+    "transaction_time_utc": "2026-06-06T05:38:10.038000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": -0.56894860659901,
+        "value": -0.56894860659901,
+        "shap_value": -2.8913395404815674,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": -3.78602023396384,
+        "value": -3.78602023396384,
+        "shap_value": 2.0565898418426514,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -2.31111901443051,
+        "value": -2.31111901443051,
+        "shap_value": 1.6198093891143799,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 14446.0,
+        "value": 14446.0,
+        "shap_value": -1.1660897731781006,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -4.73493583012037,
+        "value": -4.73493583012037,
+        "shap_value": 0.8848055005073547,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "a274d1cd-6a3a-4ecd-af5a-e9f32ab0aabd",
+    "merchant_name": "Bluebird Electronics",
+    "amount": 104.81,
+    "fraud_probability": 0.9993782043457031,
+    "risk_score": 99.94,
+    "decision": "BLOCKED",
+    "recommended_action": "Block the transaction, notify the customer, and open a high-priority fraud investigation.",
+    "event_time_utc": "2026-06-03T12:48:11.044000+00:00",
+    "transaction_time_utc": "2026-06-03T12:48:11.044000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": 3.24508640095346,
+        "value": 3.24508640095346,
+        "shap_value": -1.5725071430206299,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -0.677096334427304,
+        "value": -0.677096334427304,
+        "shap_value": 1.283692717552185,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 1.19993009832405,
+        "value": 1.19993009832405,
+        "shap_value": -1.2428942918777466,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V15",
+        "feature_value": 1.60333192308268,
+        "value": 1.60333192308268,
+        "shap_value": -0.8513321280479431,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.86129223993172,
+        "value": 2.86129223993172,
+        "shap_value": 0.8168789744377136,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "7e9956a2-8f72-477d-844b-9bea61f9517a",
+    "merchant_name": "Cloud Nine Digital",
+    "amount": 3.93,
+    "fraud_probability": 0.9971259236335754,
+    "risk_score": 99.71,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-03T23:35:10.125000+00:00",
+    "transaction_time_utc": "2026-06-03T23:35:10.125000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V3",
+        "feature_value": 2.04100272504592,
+        "value": 2.04100272504592,
+        "shap_value": -2.9061343669891357,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": 1.50079377517002,
+        "value": 1.50079377517002,
+        "shap_value": -2.55653977394104,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -3.0217601822032,
+        "value": -3.0217601822032,
+        "shap_value": 1.1759295463562012,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 1.73159516277684,
+        "value": 1.73159516277684,
+        "shap_value": 0.9757470488548279,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.5953389880545987,
+        "value": 1.5953389880545987,
+        "shap_value": 0.9603646397590637,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "fea53664-396d-422d-b2dc-335b1e81e388",
+    "merchant_name": "Northstar Apparel",
+    "amount": 2.5,
+    "fraud_probability": 0.9255785346031189,
+    "risk_score": 92.56,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-02T02:06:10.780000+00:00",
+    "transaction_time_utc": "2026-06-02T02:06:10.780000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V12",
+        "feature_value": 0.787678742099831,
+        "value": 0.787678742099831,
+        "shap_value": -2.104123592376709,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.252762968495368,
+        "value": 1.252762968495368,
+        "shap_value": 1.0603151321411133,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 28759.0,
+        "value": 28759.0,
+        "shap_value": -0.9941781759262085,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 1.02085354537886,
+        "value": 1.02085354537886,
+        "shap_value": -0.8662230968475342,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 7.0,
+        "value": 7.0,
+        "shap_value": -0.7458019256591797,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "2c79cac2-8e65-4f6a-917c-0d4a07d6e9bc",
+    "merchant_name": "Cloud Nine Digital",
+    "amount": 189.64,
+    "fraud_probability": 0.9115810990333557,
+    "risk_score": 91.16,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-07T18:12:10.446000+00:00",
+    "transaction_time_utc": "2026-06-07T18:12:10.446000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 2.61994818073873,
+        "value": 2.61994818073873,
+        "shap_value": -5.343779563903809,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.64306636574086,
+        "value": 2.64306636574086,
+        "shap_value": 1.3557056188583374,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.414179849133903,
+        "value": 0.414179849133903,
+        "shap_value": -1.0379502773284912,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 5.250386832790487,
+        "value": 5.250386832790487,
+        "shap_value": -0.7300336956977844,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -2.74511183388058,
+        "value": -2.74511183388058,
+        "shap_value": 0.7192614078521729,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "ebed3b82-74b4-43e3-8499-b7bb80bb546b",
+    "merchant_name": "Peak Fitness",
+    "amount": 1.49,
+    "fraud_probability": 0.8715522289276123,
+    "risk_score": 87.16,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-05T08:09:11.090000+00:00",
+    "transaction_time_utc": "2026-06-05T08:09:11.090000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V15",
+        "feature_value": 1.43167510592938,
+        "value": 1.43167510592938,
+        "shap_value": -1.889049768447876,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V25",
+        "feature_value": 0.700116566498015,
+        "value": 0.700116566498015,
+        "shap_value": -1.6786872148513794,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -0.930599204013263,
+        "value": -0.930599204013263,
+        "shap_value": 1.0820751190185547,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 3.17360184279991,
+        "value": 3.17360184279991,
+        "shap_value": -0.9417566061019897,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V6",
+        "feature_value": -1.57685313546584,
+        "value": -1.57685313546584,
+        "shap_value": -0.8698936104774475,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "2257640e-c6d9-4506-b25c-77281d76c4f6",
+    "merchant_name": "Northstar Apparel",
+    "amount": 7.6,
+    "fraud_probability": 0.8522599339485168,
+    "risk_score": 85.23,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-02T01:07:10.516000+00:00",
+    "transaction_time_utc": "2026-06-02T01:07:10.516000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V12",
+        "feature_value": 0.120659367935089,
+        "value": 0.120659367935089,
+        "shap_value": -1.8456661701202393,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V8",
+        "feature_value": 0.482873988563869,
+        "value": 0.482873988563869,
+        "shap_value": -1.7096917629241943,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -0.798626173768538,
+        "value": -0.798626173768538,
+        "shap_value": -1.6476696729660034,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.70046696289748,
+        "value": 2.70046696289748,
+        "shap_value": 1.36387300491333,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 26148.0,
+        "value": 26148.0,
+        "shap_value": -0.8191282153129578,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "95ed8df3-6c70-47bd-b1c7-4eb03c768ef7",
+    "merchant_name": "Nova Travel",
+    "amount": 46.49,
+    "fraud_probability": 0.815636396408081,
+    "risk_score": 81.56,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-01T15:03:10.815000+00:00",
+    "transaction_time_utc": "2026-06-01T15:03:10.815000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V15",
+        "feature_value": 1.80478172371581,
+        "value": 1.80478172371581,
+        "shap_value": -1.5139734745025635,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V6",
+        "feature_value": -1.08042182731149,
+        "value": -1.08042182731149,
+        "shap_value": -0.9378018379211426,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 8.0,
+        "value": 8.0,
+        "shap_value": -0.8871869444847107,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 1.95282359765897,
+        "value": 1.95282359765897,
+        "shap_value": 0.8550464510917664,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -0.142211198086287,
+        "value": -0.142211198086287,
+        "shap_value": -0.6834877133369446,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "f8462706-4613-46d4-9310-0ed1813e4023",
+    "merchant_name": "Northstar Apparel",
+    "amount": 29.56,
+    "fraud_probability": 0.7830188870429993,
+    "risk_score": 78.3,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-01T10:57:10.837000+00:00",
+    "transaction_time_utc": "2026-06-01T10:57:10.837000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V12",
+        "feature_value": 0.101068179964064,
+        "value": 0.101068179964064,
+        "shap_value": -1.1272532939910889,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 8.0,
+        "value": 8.0,
+        "shap_value": -0.8874443769454956,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -0.576080905957749,
+        "value": -0.576080905957749,
+        "shap_value": -0.8410338759422302,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 29118.0,
+        "value": 29118.0,
+        "shap_value": -0.8199244737625122,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -1.12945893629927,
+        "value": -1.12945893629927,
+        "shap_value": -0.6261311173439026,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "6946ce10-4859-4265-84a6-a221cc83dfef",
+    "merchant_name": "Bluebird Electronics",
+    "amount": 24.58,
+    "fraud_probability": 0.7286158800125122,
+    "risk_score": 72.86,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-02T18:38:10.341000+00:00",
+    "transaction_time_utc": "2026-06-02T18:38:10.341000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 2.25789820438497,
+        "value": 2.25789820438497,
+        "shap_value": -5.303381443023682,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.40339437146734,
+        "value": 2.40339437146734,
+        "shap_value": 1.267932653427124,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 1.15565234946147,
+        "value": 1.15565234946147,
+        "shap_value": -0.8585157990455627,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -2.6360584362063,
+        "value": -2.6360584362063,
+        "shap_value": 0.7242317199707031,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V2",
+        "feature_value": 1.38548207020965,
+        "value": 1.38548207020965,
+        "shap_value": -0.5484107136726379,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "5b10d097-453b-4d8a-ab48-4add635f23e9",
+    "merchant_name": "Crescent Jewelry",
+    "amount": 124.4,
+    "fraud_probability": 0.7172870635986328,
+    "risk_score": 71.73,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-07T20:32:10.519000+00:00",
+    "transaction_time_utc": "2026-06-07T20:32:10.519000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V12",
+        "feature_value": 0.617787423996547,
+        "value": 0.617787423996547,
+        "shap_value": -1.9049875736236572,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 7.0,
+        "value": 7.0,
+        "shap_value": -1.022276759147644,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 4.83150862819882,
+        "value": 4.83150862819882,
+        "shap_value": -0.7981113195419312,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 26166.0,
+        "value": 26166.0,
+        "shap_value": -0.7656097412109375,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -0.783556012066945,
+        "value": -0.783556012066945,
+        "shap_value": -0.7513322830200195,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "88da8be7-e7d6-42ed-9fc9-447016b4f280",
+    "merchant_name": "Crescent Jewelry",
+    "amount": 43.06,
+    "fraud_probability": 0.685344398021698,
+    "risk_score": 68.53,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-06T17:05:10.127000+00:00",
+    "transaction_time_utc": "2026-06-06T17:05:10.127000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.383871466768383,
+        "value": 0.383871466768383,
+        "shap_value": -4.1658759117126465,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -0.884608819804057,
+        "value": -0.884608819804057,
+        "shap_value": -0.9883276224136353,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -1.54154687430343,
+        "value": -1.54154687430343,
+        "shap_value": 0.8321234583854675,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 1.742362598241,
+        "value": 1.742362598241,
+        "shap_value": -0.7085002660751343,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V13",
+        "feature_value": 1.40367277100824,
+        "value": 1.40367277100824,
+        "shap_value": -0.6211671829223633,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "f9ef1d7c-cc13-4dca-9651-7a4808f7b6de",
+    "merchant_name": "Bluebird Electronics",
+    "amount": 29.56,
+    "fraud_probability": 0.6448753476142883,
+    "risk_score": 64.49,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-02T08:00:11.390000+00:00",
+    "transaction_time_utc": "2026-06-02T08:00:11.390000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V12",
+        "feature_value": 0.694827425958953,
+        "value": 0.694827425958953,
+        "shap_value": -2.0827553272247314,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 1.50071981047142,
+        "value": 1.50071981047142,
+        "shap_value": -0.8504777550697327,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V18",
+        "feature_value": -0.58640310099518,
+        "value": -0.58640310099518,
+        "shap_value": -0.7888229489326477,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 9.0,
+        "value": 9.0,
+        "shap_value": -0.7702497243881226,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -0.844018096061181,
+        "value": -0.844018096061181,
+        "shap_value": -0.7455548644065857,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "5dccecca-1391-48ed-82e1-ee1a82705ba3",
+    "merchant_name": "Acme Marketplace",
+    "amount": 5.3,
+    "fraud_probability": 0.6410439610481262,
+    "risk_score": 64.1,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-06T10:16:09.552000+00:00",
+    "transaction_time_utc": "2026-06-06T10:16:09.552000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 1.76931054154314,
+        "value": 1.76931054154314,
+        "shap_value": -6.560850620269775,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 4291.0,
+        "value": 4291.0,
+        "shap_value": -1.4408948421478271,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.71969787933598,
+        "value": 2.71969787933598,
+        "shap_value": 1.2186055183410645,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.277781475683958,
+        "value": 0.277781475683958,
+        "shap_value": -0.9957589507102966,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.840549633397487,
+        "value": 1.840549633397487,
+        "shap_value": 0.69017094373703,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "a370a966-c92c-4133-b204-83382a00aa7d",
+    "merchant_name": "Metro Grocers",
+    "amount": 5.49,
+    "fraud_probability": 0.6129874587059021,
+    "risk_score": 61.3,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-01T10:32:09.699000+00:00",
+    "transaction_time_utc": "2026-06-01T10:32:09.699000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V18",
+        "feature_value": 1.74429408041545,
+        "value": 1.74429408041545,
+        "shap_value": -2.2470734119415283,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V2",
+        "feature_value": 1.75929294912248,
+        "value": 1.75929294912248,
+        "shap_value": -1.4032567739486694,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -2.62079820836163,
+        "value": -2.62079820836163,
+        "shap_value": 1.0426853895187378,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -2.62238723145044,
+        "value": -2.62238723145044,
+        "shap_value": 0.8917865753173828,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 3.18892175149401,
+        "value": 3.18892175149401,
+        "shap_value": -0.8295588493347168,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "a29b0737-0d82-442e-b379-1d33ac556f40",
+    "merchant_name": "Metro Grocers",
+    "amount": 30.9,
+    "fraud_probability": 0.5957192778587341,
+    "risk_score": 59.57,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-01T11:43:09.415000+00:00",
+    "transaction_time_utc": "2026-06-01T11:43:09.415000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "Time",
+        "feature_value": 2713.0,
+        "value": 2713.0,
+        "shap_value": -1.5614111423492432,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 0.0,
+        "value": 0.0,
+        "shap_value": -1.2294816970825195,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 1.82560640839197,
+        "value": 1.82560640839197,
+        "shap_value": -1.2193799018859863,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V28",
+        "feature_value": -1.08264214670519,
+        "value": -1.08264214670519,
+        "shap_value": -1.185442328453064,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V27",
+        "feature_value": -0.972764405960786,
+        "value": -0.972764405960786,
+        "shap_value": -1.0956000089645386,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "2abd9985-f404-4a04-9984-3849fb3528b5",
+    "merchant_name": "Harbor Hotel",
+    "amount": 144.26,
+    "fraud_probability": 0.5902619361877441,
+    "risk_score": 59.03,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-06T15:05:11.808000+00:00",
+    "transaction_time_utc": "2026-06-06T15:05:11.808000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V3",
+        "feature_value": 1.38001016983473,
+        "value": 1.38001016983473,
+        "shap_value": -3.720461368560791,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 1.67650084252647,
+        "value": 1.67650084252647,
+        "shap_value": -1.5012274980545044,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V15",
+        "feature_value": 2.40162591532115,
+        "value": 2.40162591532115,
+        "shap_value": -1.084030270576477,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V27",
+        "feature_value": -0.529513726206027,
+        "value": -0.529513726206027,
+        "shap_value": -0.829761266708374,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V8",
+        "feature_value": -2.03675362315846,
+        "value": -2.03675362315846,
+        "shap_value": 0.8034659028053284,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "fbf6dc58-7bb2-4174-9731-0b5a9284b805",
+    "merchant_name": "QuickServe Dining",
+    "amount": 200.0,
+    "fraud_probability": 0.5219557285308838,
+    "risk_score": 52.2,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-02T23:31:11.358000+00:00",
+    "transaction_time_utc": "2026-06-02T23:31:11.358000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.651979063457854,
+        "value": 0.651979063457854,
+        "shap_value": -4.203232288360596,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.66108143689756,
+        "value": 2.66108143689756,
+        "shap_value": 1.3256291151046753,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.649568265160255,
+        "value": 0.649568265160255,
+        "shap_value": -1.209873914718628,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 9.0,
+        "value": 9.0,
+        "shap_value": -0.8094655275344849,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V11",
+        "feature_value": -0.701971563382516,
+        "value": -0.701971563382516,
+        "shap_value": -0.7884411811828613,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "0f14252c-5669-4c59-bcdb-805961e6d6fd",
+    "merchant_name": "Peak Fitness",
+    "amount": 89.99,
+    "fraud_probability": 0.5161238312721252,
+    "risk_score": 51.61,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-04T07:28:11.768000+00:00",
+    "transaction_time_utc": "2026-06-04T07:28:11.768000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V18",
+        "feature_value": 1.69370385231903,
+        "value": 1.69370385231903,
+        "shap_value": -2.009690761566162,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V2",
+        "feature_value": 1.64247794091806,
+        "value": 1.64247794091806,
+        "shap_value": -1.4816443920135498,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V15",
+        "feature_value": 1.14423936696184,
+        "value": 1.14423936696184,
+        "shap_value": -1.4751229286193848,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 3.03397618148502,
+        "value": 3.03397618148502,
+        "shap_value": -1.085549235343933,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -3.03086152033738,
+        "value": -3.03086152033738,
+        "shap_value": 0.8546016812324524,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "66132ca6-53c5-4727-9bc1-a9e6eb0c8563",
+    "merchant_name": "QuickServe Dining",
+    "amount": 89.99,
+    "fraud_probability": 0.5016456246376038,
+    "risk_score": 50.16,
+    "decision": "FLAGGED",
+    "recommended_action": "Hold for step-up authentication or manual analyst review before approval.",
+    "event_time_utc": "2026-06-05T04:07:10.380000+00:00",
+    "transaction_time_utc": "2026-06-05T04:07:10.380000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V18",
+        "feature_value": 2.18801496766039,
+        "value": 2.18801496766039,
+        "shap_value": -2.0130774974823,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V2",
+        "feature_value": 1.70653997081572,
+        "value": 1.70653997081572,
+        "shap_value": -1.3843967914581299,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 3.61458736882807,
+        "value": 3.61458736882807,
+        "shap_value": -1.246182918548584,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -1.82169853254358,
+        "value": -1.82169853254358,
+        "shap_value": 0.9193610548973083,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -3.89613630014757,
+        "value": -3.89613630014757,
+        "shap_value": 0.8803657293319702,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "f3a1e71a-821b-4ad5-a404-118d7c7bb50a",
+    "merchant_name": "Northstar Apparel",
+    "amount": 7.55,
+    "fraud_probability": 0.4843188524246216,
+    "risk_score": 48.43,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-05T12:38:09.610000+00:00",
+    "transaction_time_utc": "2026-06-05T12:38:09.610000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": -0.626113676757534,
+        "value": -0.626113676757534,
+        "shap_value": -2.553849220275879,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 5340.0,
+        "value": 5340.0,
+        "shap_value": -1.2141542434692383,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.35401359291499,
+        "value": 2.35401359291499,
+        "shap_value": 1.1069191694259644,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 1.0,
+        "value": 1.0,
+        "shap_value": -0.8274539709091187,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V11",
+        "feature_value": -0.505067676431372,
+        "value": -0.505067676431372,
+        "shap_value": -0.7630730271339417,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "e2a1338f-3edc-4ff7-ab8b-35747659516e",
+    "merchant_name": "QuickServe Dining",
+    "amount": 18.92,
+    "fraud_probability": 0.4178948998451233,
+    "risk_score": 41.79,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-08T06:40:11.091000+00:00",
+    "transaction_time_utc": "2026-06-08T06:40:11.091000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.686555461633588,
+        "value": 0.686555461633588,
+        "shap_value": -4.367453575134277,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.851134724187245,
+        "value": 0.851134724187245,
+        "shap_value": -1.4120538234710693,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.37205927498004,
+        "value": 2.37205927498004,
+        "shap_value": 1.106742262840271,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 31200.0,
+        "value": 31200.0,
+        "shap_value": -0.8297245502471924,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -0.0360041387849088,
+        "value": -0.0360041387849088,
+        "shap_value": -0.8186343312263489,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "fd02bbb8-52bc-49a9-a409-a3f94c5402eb",
+    "merchant_name": "Peak Fitness",
+    "amount": 26.99,
+    "fraud_probability": 0.4063231945037842,
+    "risk_score": 40.63,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-03T10:41:11.039000+00:00",
+    "transaction_time_utc": "2026-06-03T10:41:11.039000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": -3.72285883365111,
+        "value": -3.72285883365111,
+        "shap_value": 2.2566285133361816,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V2",
+        "feature_value": 1.89283045356741,
+        "value": 1.89283045356741,
+        "shap_value": -1.5628230571746826,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.676584161993343,
+        "value": 0.676584161993343,
+        "shap_value": -1.412605881690979,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V18",
+        "feature_value": 2.00861516845097,
+        "value": 2.00861516845097,
+        "shap_value": -1.4121696949005127,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V7",
+        "feature_value": 1.19121067621916,
+        "value": 1.19121067621916,
+        "shap_value": -1.2502604722976685,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "eec9f4dc-5126-41f0-9fef-028cc2217888",
+    "merchant_name": "Crescent Jewelry",
+    "amount": 767.45,
+    "fraud_probability": 0.36330047249794006,
+    "risk_score": 36.33,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-04T20:28:11.678000+00:00",
+    "transaction_time_utc": "2026-06-04T20:28:11.678000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.442417973359676,
+        "value": 0.442417973359676,
+        "shap_value": -3.016998291015625,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V11",
+        "feature_value": -1.49493476781942,
+        "value": -1.49493476781942,
+        "shap_value": -1.3815674781799316,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 1.95254040204943,
+        "value": 1.95254040204943,
+        "shap_value": 0.9530423283576965,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 9.0,
+        "value": 9.0,
+        "shap_value": -0.9165817499160767,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 6.6443754990533215,
+        "value": 6.6443754990533215,
+        "shap_value": -0.8446438312530518,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "7eded78b-bf16-463c-a4e2-b725d087c547",
+    "merchant_name": "Urban Fuel",
+    "amount": 2.74,
+    "fraud_probability": 0.35723501443862915,
+    "risk_score": 35.72,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-08T07:47:12.002000+00:00",
+    "transaction_time_utc": "2026-06-08T07:47:12.002000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 1.00355321882194,
+        "value": 1.00355321882194,
+        "shap_value": -4.916055679321289,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.30619894837289,
+        "value": 2.30619894837289,
+        "shap_value": 1.4327672719955444,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.951900185260954,
+        "value": 0.951900185260954,
+        "shap_value": -1.2861815690994263,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V1",
+        "feature_value": 1.20908511058502,
+        "value": 1.20908511058502,
+        "shap_value": -1.19425368309021,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.3190856114264407,
+        "value": 1.3190856114264407,
+        "shap_value": 0.9265308380126953,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "8ce12bc7-9d15-4fd4-9bf0-33e94546f561",
+    "merchant_name": "Urban Fuel",
+    "amount": 2.88,
+    "fraud_probability": 0.3466288447380066,
+    "risk_score": 34.66,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-07T16:37:10.321000+00:00",
+    "transaction_time_utc": "2026-06-07T16:37:10.321000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 2.13839678837273,
+        "value": 2.13839678837273,
+        "shap_value": -5.06853723526001,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 1.51523157365107,
+        "value": 1.51523157365107,
+        "shap_value": -2.8240222930908203,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.45601740623934,
+        "value": 2.45601740623934,
+        "shap_value": 1.3131523132324219,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V13",
+        "feature_value": 1.6366717075429,
+        "value": 1.6366717075429,
+        "shap_value": -1.1688594818115234,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.355835153635182,
+        "value": 1.355835153635182,
+        "shap_value": 0.859404444694519,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "2719c592-a2ae-41d2-b4f9-4ba0dc57f6b6",
+    "merchant_name": "Nova Travel",
+    "amount": 641.6,
+    "fraud_probability": 0.3350648880004883,
+    "risk_score": 33.51,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-06T08:38:10.465000+00:00",
+    "transaction_time_utc": "2026-06-06T08:38:10.465000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 2.22712703994746,
+        "value": 2.22712703994746,
+        "shap_value": -5.987460613250732,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V13",
+        "feature_value": 1.97531274397441,
+        "value": 1.97531274397441,
+        "shap_value": -1.4300795793533325,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.227999071089679,
+        "value": 0.227999071089679,
+        "shap_value": -1.0757780075073242,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 3.08922561068367,
+        "value": 3.08922561068367,
+        "shap_value": 1.0555487871170044,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V23",
+        "feature_value": -0.672513496704044,
+        "value": -0.672513496704044,
+        "shap_value": -0.939332902431488,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "444fd9d7-c4aa-4b21-91f3-79ecbf915957",
+    "merchant_name": "Harbor Hotel",
+    "amount": 5.48,
+    "fraud_probability": 0.3235582411289215,
+    "risk_score": 32.36,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-04T23:40:10.341000+00:00",
+    "transaction_time_utc": "2026-06-04T23:40:10.341000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 1.79722108634195,
+        "value": 1.79722108634195,
+        "shap_value": -5.746596336364746,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V13",
+        "feature_value": 1.76016271927979,
+        "value": 1.76016271927979,
+        "shap_value": -1.2558252811431885,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -2.64023390603458,
+        "value": -2.64023390603458,
+        "shap_value": 0.9953803420066833,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 1.18161523162887,
+        "value": 1.18161523162887,
+        "shap_value": -0.8687873482704163,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.8687205103641833,
+        "value": 1.8687205103641833,
+        "shap_value": 0.7605341672897339,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "8d5b97f7-737d-4948-aa5b-b9a8b5174543",
+    "merchant_name": "Metro Grocers",
+    "amount": 1490.22,
+    "fraud_probability": 0.22951650619506836,
+    "risk_score": 22.95,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-06T04:27:10.373000+00:00",
+    "transaction_time_utc": "2026-06-06T04:27:10.373000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 1.7232901404268,
+        "value": 1.7232901404268,
+        "shap_value": -4.796031951904297,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 1.34807917170464,
+        "value": 1.34807917170464,
+        "shap_value": -1.0958572626113892,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 7.307349855858554,
+        "value": 7.307349855858554,
+        "shap_value": -0.7484368681907654,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -1.39473779421728,
+        "value": -1.39473779421728,
+        "shap_value": 0.7219106554985046,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V23",
+        "feature_value": -1.34571317543214,
+        "value": -1.34571317543214,
+        "shap_value": -0.7157390713691711,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "1f857b9a-f7ed-4d65-a673-14a2abe51caa",
+    "merchant_name": "Crescent Jewelry",
+    "amount": 13.6,
+    "fraud_probability": 0.16018223762512207,
+    "risk_score": 16.02,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-01T23:21:11.252000+00:00",
+    "transaction_time_utc": "2026-06-01T23:21:11.252000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V10",
+        "feature_value": 2.68457659172825,
+        "value": 2.68457659172825,
+        "shap_value": -1.79567551612854,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V15",
+        "feature_value": 1.34885125055316,
+        "value": 1.34885125055316,
+        "shap_value": -1.3244349956512451,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 0.325236577693184,
+        "value": 0.325236577693184,
+        "shap_value": -0.8944963216781616,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -0.274059839732415,
+        "value": -0.274059839732415,
+        "shap_value": -0.8839010000228882,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V27",
+        "feature_value": -2.27708598791651,
+        "value": -2.27708598791651,
+        "shap_value": -0.8633476495742798,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "5061747a-df5b-44f7-a82b-ff3af0c80e46",
+    "merchant_name": "Nova Travel",
+    "amount": 2.9,
+    "fraud_probability": 0.14833872020244598,
+    "risk_score": 14.83,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-05T14:17:11.461000+00:00",
+    "transaction_time_utc": "2026-06-05T14:17:11.461000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.45313099593815,
+        "value": 0.45313099593815,
+        "shap_value": -3.193211317062378,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 1.38826614729425,
+        "value": 1.38826614729425,
+        "shap_value": -3.04209303855896,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.822957558276623,
+        "value": 0.822957558276623,
+        "shap_value": -1.2282297611236572,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.00332158138451,
+        "value": 2.00332158138451,
+        "shap_value": 1.0019065141677856,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.3609765531356006,
+        "value": 1.3609765531356006,
+        "shap_value": 0.8963862061500549,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "5bea6295-0344-4104-89a3-c6b605ab1555",
+    "merchant_name": "Peak Fitness",
+    "amount": 1169.47,
+    "fraud_probability": 0.1405811905860901,
+    "risk_score": 14.06,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-03T06:13:09.666000+00:00",
+    "transaction_time_utc": "2026-06-03T06:13:09.666000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.717742514835466,
+        "value": 0.717742514835466,
+        "shap_value": -4.309036731719971,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 6648.0,
+        "value": 6648.0,
+        "shap_value": -1.5948575735092163,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V8",
+        "feature_value": 0.495360206133554,
+        "value": 0.495360206133554,
+        "shap_value": -1.000812292098999,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -1.42055079338287,
+        "value": -1.42055079338287,
+        "shap_value": 0.9328755736351013,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 3.22701747868824,
+        "value": 3.22701747868824,
+        "shap_value": 0.9027549624443054,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "7f2e0677-acd9-4841-ad83-09c58171682b",
+    "merchant_name": "Harbor Hotel",
+    "amount": 203.95,
+    "fraud_probability": 0.13017964363098145,
+    "risk_score": 13.02,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-05T20:27:10.757000+00:00",
+    "transaction_time_utc": "2026-06-05T20:27:10.757000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V3",
+        "feature_value": 1.40331573861465,
+        "value": 1.40331573861465,
+        "shap_value": -2.530329465866089,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": 0.0332507303328953,
+        "value": 0.0332507303328953,
+        "shap_value": -2.2898902893066406,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V8",
+        "feature_value": -2.58660150190301,
+        "value": -2.58660150190301,
+        "shap_value": 1.3644295930862427,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": 0.304224784958661,
+        "value": 0.304224784958661,
+        "shap_value": -1.3217917680740356,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 7.0,
+        "value": 7.0,
+        "shap_value": -1.2102760076522827,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "539dd2df-94ff-47c7-98d6-cb64d1a0a2f4",
+    "merchant_name": "Bluebird Electronics",
+    "amount": 370.4,
+    "fraud_probability": 0.12819093465805054,
+    "risk_score": 12.82,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-03T18:14:10.140000+00:00",
+    "transaction_time_utc": "2026-06-03T18:14:10.140000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.491214514109318,
+        "value": 0.491214514109318,
+        "shap_value": -4.295587062835693,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V13",
+        "feature_value": 2.85568127177682,
+        "value": 2.85568127177682,
+        "shap_value": -1.2135164737701416,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 1.43635610079486,
+        "value": 1.43635610079486,
+        "shap_value": -1.078615427017212,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.20392499915247,
+        "value": 2.20392499915247,
+        "shap_value": 0.9554622769355774,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 0.992417225787381,
+        "value": 0.992417225787381,
+        "shap_value": -0.7964291572570801,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "4a10af36-4b75-4e80-a3db-7eca5e381680",
+    "merchant_name": "Crescent Jewelry",
+    "amount": 9.41,
+    "fraud_probability": 0.12751956284046173,
+    "risk_score": 12.75,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-03T09:10:10.763000+00:00",
+    "transaction_time_utc": "2026-06-03T09:10:10.763000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.715262326303277,
+        "value": 0.715262326303277,
+        "shap_value": -3.5710363388061523,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": 0.785576867990995,
+        "value": 0.785576867990995,
+        "shap_value": -2.7037301063537598,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 1.09610905960527,
+        "value": 1.09610905960527,
+        "shap_value": -1.2900269031524658,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V8",
+        "feature_value": -2.17772504823892,
+        "value": -2.17772504823892,
+        "shap_value": 1.0192559957504272,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.94042680676172,
+        "value": 2.94042680676172,
+        "shap_value": 0.9827833771705627,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "34675c75-54c8-4661-80b9-d6a6f89e9e7f",
+    "merchant_name": "Metro Grocers",
+    "amount": 144.49,
+    "fraud_probability": 0.1240861639380455,
+    "risk_score": 12.41,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-06T01:33:10.479000+00:00",
+    "transaction_time_utc": "2026-06-06T01:33:10.479000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V3",
+        "feature_value": 1.78653504987238,
+        "value": 1.78653504987238,
+        "shap_value": -3.6713032722473145,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V14",
+        "feature_value": -0.0317579968402995,
+        "value": -0.0317579968402995,
+        "shap_value": -2.308729887008667,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": 0.187240066364304,
+        "value": 0.187240066364304,
+        "shap_value": -1.100744366645813,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 3.10329800029084,
+        "value": 3.10329800029084,
+        "shap_value": 1.0781753063201904,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.686452091297773,
+        "value": 0.686452091297773,
+        "shap_value": -0.9865497350692749,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "5504544f-c226-4a7a-a138-e70672ffa653",
+    "merchant_name": "Harbor Hotel",
+    "amount": 29.68,
+    "fraud_probability": 0.11792123317718506,
+    "risk_score": 11.79,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-01T23:08:09.798000+00:00",
+    "transaction_time_utc": "2026-06-01T23:08:09.798000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 2.1503668233152,
+        "value": 2.1503668233152,
+        "shap_value": -5.261868953704834,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V3",
+        "feature_value": 1.36052211229159,
+        "value": 1.36052211229159,
+        "shap_value": -1.9699862003326416,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V2",
+        "feature_value": 2.16230941858775,
+        "value": 2.16230941858775,
+        "shap_value": -1.736425518989563,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 9698.0,
+        "value": 9698.0,
+        "shap_value": -1.489793062210083,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V20",
+        "feature_value": -1.06649991979321,
+        "value": -1.06649991979321,
+        "shap_value": 0.9967068433761597,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "f59eadca-7acd-45aa-98a3-618c727d7124",
+    "merchant_name": "Acme Marketplace",
+    "amount": 89.99,
+    "fraud_probability": 0.11086922883987427,
+    "risk_score": 11.09,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-01T08:30:10.284000+00:00",
+    "transaction_time_utc": "2026-06-01T08:30:10.284000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 2.42801187132929,
+        "value": 2.42801187132929,
+        "shap_value": -5.542708396911621,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 1.82223449304873,
+        "value": 1.82223449304873,
+        "shap_value": -1.3846814632415771,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -0.518258784764837,
+        "value": -0.518258784764837,
+        "shap_value": -1.0840407609939575,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": -2.52549252463935,
+        "value": -2.52549252463935,
+        "shap_value": 1.0788739919662476,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "hour_of_day",
+        "feature_value": 5.0,
+        "value": 5.0,
+        "shap_value": -0.6993792653083801,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "ec985c16-d273-4623-86c1-02efab7fa14c",
+    "merchant_name": "Nova Travel",
+    "amount": 36.79,
+    "fraud_probability": 0.1107749193906784,
+    "risk_score": 11.08,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-05T18:59:10.872000+00:00",
+    "transaction_time_utc": "2026-06-05T18:59:10.872000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.835330240798825,
+        "value": 0.835330240798825,
+        "shap_value": -4.670985221862793,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": 0.598279154996418,
+        "value": 0.598279154996418,
+        "shap_value": -2.71181058883667,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.29993401054618,
+        "value": 2.29993401054618,
+        "shap_value": 1.3241487741470337,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 0.809404407466574,
+        "value": 0.809404407466574,
+        "shap_value": -0.9246572852134705,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "Time",
+        "feature_value": 29441.0,
+        "value": 29441.0,
+        "shap_value": -0.7175842523574829,
+        "direction": "risk_decreasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "252c7853-4477-4c50-9eb6-0c323dbbc154",
+    "merchant_name": "QuickServe Dining",
+    "amount": 5.94,
+    "fraud_probability": 0.10741086304187775,
+    "risk_score": 10.74,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-07T08:44:11.178000+00:00",
+    "transaction_time_utc": "2026-06-07T08:44:11.178000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V14",
+        "feature_value": 0.900832070241382,
+        "value": 0.900832070241382,
+        "shap_value": -3.7550904750823975,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V12",
+        "feature_value": 0.146795610437654,
+        "value": 0.146795610437654,
+        "shap_value": -1.9956111907958984,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V4",
+        "feature_value": 2.7957809514085,
+        "value": 2.7957809514085,
+        "shap_value": 1.245839238166809,
+        "direction": "risk_increasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": 1.0728505045219,
+        "value": 1.0728505045219,
+        "shap_value": -1.230887532234192,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "amount_log",
+        "feature_value": 1.937301774518713,
+        "value": 1.937301774518713,
+        "shap_value": 0.6946587562561035,
+        "direction": "risk_increasing"
+      }
+    ]
+  },
+  {
+    "transaction_id": "3427f43d-a5c2-4869-b5b6-99c1f26a676f",
+    "merchant_name": "Cloud Nine Digital",
+    "amount": 89.99,
+    "fraud_probability": 0.10732570290565491,
+    "risk_score": 10.73,
+    "decision": "REVIEW",
+    "recommended_action": "Route to the review queue and monitor related customer activity.",
+    "event_time_utc": "2026-06-02T04:35:10.373000+00:00",
+    "transaction_time_utc": "2026-06-02T04:35:10.373000+00:00",
+    "stored_at_utc": "2026-06-08T08:11:12.573000+00:00",
+    "amount_source": "raw_creditcard_csv",
+    "top_shap_features": [
+      {
+        "feature": "V18",
+        "feature_value": 1.8948391327093,
+        "value": 1.8948391327093,
+        "shap_value": -1.8958691358566284,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V2",
+        "feature_value": 2.32409002907588,
+        "value": 2.32409002907588,
+        "shap_value": -1.6486787796020508,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V17",
+        "feature_value": 3.78705412813772,
+        "value": 3.78705412813772,
+        "shap_value": -1.6345820426940918,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V8",
+        "feature_value": 0.831789336755819,
+        "value": 0.831789336755819,
+        "shap_value": -1.3052442073822021,
+        "direction": "risk_decreasing"
+      },
+      {
+        "feature": "V10",
+        "feature_value": -1.69920673123318,
+        "value": -1.69920673123318,
+        "shap_value": 0.9562458992004395,
+        "direction": "risk_increasing"
+      }
+    ]
+  }
+]

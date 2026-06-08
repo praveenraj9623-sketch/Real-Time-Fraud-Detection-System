@@ -10,6 +10,7 @@ from __future__ import annotations
 import os
 import random
 import uuid
+import json
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict
@@ -41,8 +42,12 @@ from src.utils.risk import (
 load_dotenv()
 
 DATA_PATH = Path(os.getenv("DATA_PATH", "data/raw/creditcard.csv"))
+DEMO_SEED_PATH = Path(os.getenv("DEMO_ALERTS_SEED_PATH", "data/demo/demo_alerts_seed.json"))
 MODEL_PATH = Path(os.getenv("MODEL_PATH", "models/fraud_classifier.joblib"))
 OPTIMAL_THRESHOLD_PATH = Path(os.getenv("OPTIMAL_THRESHOLD_PATH", "models/optimal_threshold.txt"))
+DEPLOYMENT_SEED_MESSAGE = (
+    "Using deployment demo seed because raw Kaggle dataset is not available on Streamlit Cloud."
+)
 
 MERCHANT_NAMES = [
     "Metro Grocers",
@@ -109,6 +114,89 @@ def build_transaction(row: pd.Series, rng: random.Random | None = None) -> dict[
     return event
 
 
+def load_demo_seed(seed_path: Path | None = None) -> list[dict[str, Any]]:
+    """Load deployment fallback alerts when raw Kaggle data is unavailable."""
+    seed_path = seed_path or DEMO_SEED_PATH
+    if not seed_path.exists():
+        raise FileNotFoundError(f"Deployment demo seed not found at {seed_path}")
+    with seed_path.open("r", encoding="utf-8") as file:
+        records = json.load(file)
+    if not isinstance(records, list) or not records:
+        raise ValueError(f"Deployment demo seed at {seed_path} is empty or invalid.")
+    return [record for record in records if isinstance(record, dict)]
+
+
+def refresh_seed_alert(
+    seed_record: dict[str, Any],
+    *,
+    alert_threshold: float,
+    index: int,
+) -> dict[str, Any]:
+    """Return a Mongo-ready copy of a packaged fallback alert.
+
+    This is only used on deployments where the raw Kaggle CSV and local model
+    artifacts are intentionally unavailable.
+    """
+    now = datetime.now(timezone.utc)
+    record = dict(seed_record)
+    amount = record.get("Amount", record.get("amount", 0.0))
+    record.pop("amount", None)
+    record["Amount"] = float(amount)
+    record["transaction_id"] = str(uuid.uuid4())
+    record["stored_at_utc"] = now - timedelta(seconds=index)
+    record["processing_timestamp"] = now.isoformat()
+    record["scored_at_utc"] = now
+    record["amount_source"] = record.get("amount_source") or "deployment_seed_alert"
+    record["alert_reason"] = "deployment_seed_alert"
+    if "top_shap_features" not in record:
+        record["top_shap_features"] = (
+            record.get("shap_top_features") or record.get("shap_features") or []
+        )
+
+    return normalize_alert_document(
+        record,
+        default_threshold=float(record.get("threshold", 0.999)),
+        save_threshold=alert_threshold,
+        recompute_decision=False,
+    )
+
+
+def insert_seed_demo_alerts(
+    *,
+    alert_threshold: float,
+    max_alerts: int,
+    mongo_client: MongoDBClient | None = None,
+) -> dict[str, Any]:
+    """Insert packaged demo alerts when creditcard.csv is not available."""
+    seed_records = load_demo_seed()
+    alert_threshold = clip_probability(alert_threshold)
+    candidates = [
+        record for record in seed_records
+        if clip_probability(record.get("fraud_probability", 0.0)) >= alert_threshold
+    ]
+    selected = (candidates or seed_records)[:max_alerts]
+    alerts = [
+        refresh_seed_alert(record, alert_threshold=alert_threshold, index=index)
+        for index, record in enumerate(selected)
+    ]
+
+    client = mongo_client or MongoDBClient()
+    inserted = client.insert_many_fraud_alerts(alerts)
+    return {
+        "scanned": len(seed_records),
+        "candidates": int(len(candidates)),
+        "inserted": inserted,
+        "alert_threshold": alert_threshold,
+        "used_fallback_seed": True,
+        "message": DEPLOYMENT_SEED_MESSAGE,
+        "decision_mix": {
+            "review": sum(alert["decision"] == "REVIEW" for alert in alerts),
+            "flagged": sum(alert["decision"] == "FLAGGED" for alert in alerts),
+            "blocked": sum(alert["decision"] == "BLOCKED" for alert in alerts),
+        },
+    }
+
+
 def generate_demo_alerts(
     max_rows: int = 20000,
     alert_threshold: float = 0.1,
@@ -119,7 +207,11 @@ def generate_demo_alerts(
 ) -> dict[str, Any]:
     """Score CSV rows and insert the highest-risk demo alerts into MongoDB."""
     if not DATA_PATH.exists():
-        raise FileNotFoundError(f"Dataset not found at {DATA_PATH}")
+        return insert_seed_demo_alerts(
+            alert_threshold=alert_threshold,
+            max_alerts=max_alerts,
+            mongo_client=mongo_client,
+        )
 
     bundle = load_model_bundle()
     predictor = bundle.get("model") or bundle.get("pipeline")

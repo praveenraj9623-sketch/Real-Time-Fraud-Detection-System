@@ -75,6 +75,21 @@ If the Live Feed is empty, use the dashboard sidebar button **Generate Demo Aler
 It scores real rows from `data/raw/creditcard.csv` and stores a realistic mix of
 review, flagged, and blocked alerts in MongoDB.
 
+### Streamlit Cloud demo data
+
+The full Kaggle `data/raw/creditcard.csv` file is intentionally not committed to
+GitHub. In local development, **Generate Demo Alerts** uses that real CSV and the
+trained model exactly as described above. On Streamlit Cloud, when the CSV is not
+available, the button inserts packaged deployment seed alerts from:
+
+```text
+data/demo/demo_alerts_seed.json
+```
+
+Those seed alerts are safe dashboard demo records exported from prior local demo
+alerts. They do not contain database credentials, secrets, or the full Kaggle
+dataset.
+
 ### 1. Create and activate a virtual environment
 
 ```powershell

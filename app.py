@@ -625,13 +625,19 @@ with st.sidebar:
 
     if st.button("Generate Demo Alerts", type="primary", use_container_width=True):
         with st.spinner("Scoring transactions and saving realistic demo alerts…"):
-            result = generate_demo_alerts(
-                max_rows=int(demo_rows),
-                alert_threshold=float(demo_threshold),
-                max_alerts=int(demo_max_alerts),
-                include_shap=True,
-                mongo_client=mongo_client,
-            )
+            try:
+                result = generate_demo_alerts(
+                    max_rows=int(demo_rows),
+                    alert_threshold=float(demo_threshold),
+                    max_alerts=int(demo_max_alerts),
+                    include_shap=True,
+                    mongo_client=mongo_client,
+                )
+            except FileNotFoundError as exc:
+                st.error(str(exc))
+                st.stop()
+        if result.get("used_fallback_seed"):
+            st.info("Using deployment demo seed because raw Kaggle dataset is not available on Streamlit Cloud.")
         mix = result.get("decision_mix", {})
         st.success(
             f"Inserted {result['inserted']} alerts from {result['scanned']} scanned rows. "
