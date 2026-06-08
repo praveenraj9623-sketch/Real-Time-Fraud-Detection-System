@@ -227,7 +227,56 @@ st.markdown(
 
 @st.cache_resource(show_spinner=False)
 def get_mongo_client() -> MongoDBClient:
-    return MongoDBClient()
+    mongo_uri = get_config_value(
+        secret_keys=("MONGODB_URI", "MONGO_URI"),
+        env_keys=("MONGODB_URI", "MONGO_URI"),
+        fallback="mongodb://localhost:27017",
+    )
+    mongo_db = get_config_value(
+        secret_keys=("MONGODB_DB", "MONGO_DATABASE"),
+        env_keys=("MONGODB_DB", "MONGO_DATABASE"),
+        fallback="fraud_detection",
+    )
+    mongo_collection = get_config_value(
+        secret_keys=("MONGODB_COLLECTION", "MONGO_COLLECTION"),
+        env_keys=("MONGODB_COLLECTION", "MONGO_COLLECTION"),
+        fallback="fraud_alerts",
+    )
+    return MongoDBClient(
+        uri=mongo_uri,
+        database_name=mongo_db,
+        collection_name=mongo_collection,
+    )
+
+
+def get_streamlit_secret(*keys: str) -> str | None:
+    """Return the first configured Streamlit secret from a list of names."""
+    try:
+        secrets = st.secrets
+        for key in keys:
+            value = secrets.get(key)
+            if value is not None and str(value).strip():
+                return str(value).strip()
+    except Exception:
+        return None
+    return None
+
+
+def get_config_value(
+    *,
+    secret_keys: tuple[str, ...],
+    env_keys: tuple[str, ...],
+    fallback: str,
+) -> str:
+    """Read Streamlit secrets first, then environment variables, then fallback."""
+    secret_value = get_streamlit_secret(*secret_keys)
+    if secret_value:
+        return secret_value
+    for key in env_keys:
+        env_value = os.getenv(key)
+        if env_value is not None and env_value.strip():
+            return env_value.strip()
+    return fallback
 
 
 def load_json(path: Path) -> Dict[str, Any]:
@@ -549,9 +598,8 @@ last_refresh     = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 try:
     mongo_client = get_mongo_client()
-except Exception as exc:
-    st.error("MongoDB is not reachable. Start MongoDB service, then refresh.")
-    st.exception(exc)
+except Exception:
+    st.error("MongoDB is not reachable. Configure MongoDB URI in Streamlit secrets or start MongoDB locally.")
     st.stop()
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────

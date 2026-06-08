@@ -18,9 +18,9 @@ from src.utils.risk import normalize_alert_document
 
 load_dotenv()
 
-MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
-MONGO_DATABASE = os.getenv("MONGO_DATABASE", "fraud_detection")
-MONGO_COLLECTION = os.getenv("MONGO_COLLECTION", "fraud_alerts")
+MONGO_URI = os.getenv("MONGODB_URI") or os.getenv("MONGO_URI", "mongodb://localhost:27017")
+MONGO_DATABASE = os.getenv("MONGODB_DB") or os.getenv("MONGO_DATABASE", "fraud_detection")
+MONGO_COLLECTION = os.getenv("MONGODB_COLLECTION") or os.getenv("MONGO_COLLECTION", "fraud_alerts")
 
 
 def clean_for_mongo(value: Any) -> Any:
@@ -64,23 +64,27 @@ class MongoDBClient:
 
     def __init__(
         self,
-        uri: str = MONGO_URI,
-        database_name: str = MONGO_DATABASE,
-        collection_name: str = MONGO_COLLECTION,
+        uri: str | None = None,
+        database_name: str | None = None,
+        collection_name: str | None = None,
     ) -> None:
-        self.uri = uri
-        self.database_name = database_name
-        self.collection_name = collection_name
-        self.client = MongoClient(uri)
-        self.database = self.client[database_name]
-        self.collection = self.database[collection_name]
+        self.uri = uri or MONGO_URI
+        self.database_name = database_name or MONGO_DATABASE
+        self.collection_name = collection_name or MONGO_COLLECTION
+        self.client = MongoClient(self.uri)
+        self.client.admin.command("ping")
+        self.database = self.client[self.database_name]
+        self.collection = self.database[self.collection_name]
         self._ensure_indexes()
 
     def _ensure_indexes(self) -> None:
-        self.collection.create_index([("transaction_id", ASCENDING)])
-        self.collection.create_index([("stored_at_utc", DESCENDING)])
-        self.collection.create_index([("merchant_name", ASCENDING)])
-        self.collection.create_index([("fraud_probability", DESCENDING)])
+        try:
+            self.collection.create_index([("transaction_id", ASCENDING)])
+            self.collection.create_index([("stored_at_utc", DESCENDING)])
+            self.collection.create_index([("merchant_name", ASCENDING)])
+            self.collection.create_index([("fraud_probability", DESCENDING)])
+        except Exception:
+            return
 
     def insert_fraud_alert(self, transaction_data: Dict[str, Any]) -> str:
         """Insert one fraud alert document and return its MongoDB id."""
