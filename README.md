@@ -1,263 +1,188 @@
-# Real-Time Fraud Detection System
+﻿# Real-Time Fraud Detection System
 
-Portfolio-grade real-time fraud detection system using PySpark, SMOTE, XGBoost,
-Isolation Forest, MLflow, FastAPI, Kafka, Spark Structured Streaming, MongoDB,
-and Streamlit.
+**GitHub Repository:** [praveenraj9623-sketch/Real-Time-Fraud-Detection-System](https://github.com/praveenraj9623-sketch/Real-Time-Fraud-Detection-System)
 
-## Dataset
+> A real-time fraud monitoring platform with transaction scoring, XGBoost and anomaly models, Kafka-style streaming components, MongoDB storage, FastAPI scoring endpoints, threshold tuning, risk investigation views, and a Streamlit monitoring dashboard.
 
-Place the Kaggle credit card fraud dataset here:
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://python.org)
+[![Streaming](https://img.shields.io/badge/Streaming-Kafka-231F20?logo=apachekafka&logoColor=white)](https://kafka.apache.org)
+[![PySpark](https://img.shields.io/badge/Processing-PySpark-E25A1C?logo=apachespark&logoColor=white)](https://spark.apache.org)
+[![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![MongoDB](https://img.shields.io/badge/Storage-MongoDB-47A248?logo=mongodb&logoColor=white)](https://mongodb.com)
+[![Streamlit](https://img.shields.io/badge/Dashboard-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io)
+[![MLflow](https://img.shields.io/badge/Tracking-MLflow-0194E2)](https://mlflow.org)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Praveen_Raj-0F172A)](https://praveenraj9623-sketch.github.io/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/praveenraj9623-sketch/Real-Time-Fraud-Detection-System)
 
-```text
-data/raw/creditcard.csv
+---
+
+## Demo Preview
+
+![Real-Time Fraud Detection Monitor demo](assets/fraud-detection-monitor-portfolio-demo.gif)
+
+---
+
+## What is This Project?
+
+This project scores card transactions for fraud risk, tunes alert thresholds, stores investigation-ready alerts, and presents a monitoring interface for fraud analysts. It includes a local demo mode so the dashboard can show realistic alerts even without a full Kafka/MongoDB stack.
+
+**Core outcome:** transaction data -> feature engineering -> fraud model -> threshold tuning -> API scoring -> streaming alerts -> dashboard investigation.
+
+---
+
+## System Architecture
+
+```mermaid
+flowchart TD
+    A["Transaction Source<br/>CSV or producer"] --> B["Feature Engineering"]
+    B --> C["Batch Model Training<br/>XGBoost + Isolation Forest"]
+    C --> D["Threshold Tuning"]
+    D --> E["FastAPI Scoring Service"]
+    A --> F["Kafka-style Producer"]
+    F --> G["Spark / Consumer Pipeline"]
+    E --> G
+    G --> H["MongoDB Alert Store"]
+    H --> I["Streamlit Fraud Monitor"]
+    C --> J["Metrics + Artifacts"]
+    J --> I
 ```
 
-Expected columns:
+---
 
-```text
-Time, V1, V2, ..., V28, Amount, Class
+## Tech Stack
+
+| Category | Tools & Libraries |
+|---|---|
+| Data Processing | Pandas, NumPy, PySpark |
+| Machine Learning | scikit-learn, XGBoost, imbalanced-learn |
+| Explainability | SHAP |
+| Streaming | kafka-python, local producer/consumer demo |
+| Storage | MongoDB, PyMongo |
+| API | FastAPI, Uvicorn |
+| Dashboard | Streamlit, Plotly, Matplotlib |
+| Experiment Tracking | MLflow |
+| Deployment | Docker, Docker Compose |
+| Testing | pytest |
+
+---
+
+## API Endpoints
+
+Start the API locally:
+
+```bash
+uvicorn src.api.main:app --reload --host 0.0.0.0 --port 8001
 ```
 
-`Class = 1` means fraud and `Class = 0` means legitimate.
+| Method | Endpoint | Purpose |
+|---|---|---|
+| `GET` | `/health` | API health check |
+| `POST` | `/score` | Score one transaction |
+| `POST` | `/batch-score` | Score a batch of transactions |
 
-## End-to-End Commands
-
-Run from the project root.
-
-### Beginner Command Prompt quick start
-
-Use these commands in **Command Prompt** from:
-
-```bat
-C:\Users\admin\Desktop\Real-Time Fraud Detection System
-```
-
-Install or refresh dependencies:
-
-```bat
-venv\Scripts\activate.bat
-python -m pip install --upgrade pip setuptools wheel
-pip install -r requirements.txt
-```
-
-Build features, train the model, and tune the threshold:
-
-```bat
-python -m src.processing.feature_engineering
-python -m src.modeling.train_batch
-python -m src.modeling.threshold_tuner
-```
-
-Start the API in one Command Prompt:
-
-```bat
-venv\Scripts\activate.bat
-cd /d "C:\Users\admin\Desktop\Real-Time Fraud Detection System"
-uvicorn src.api.main:app --host 127.0.0.1 --port 8001 --reload
-```
-
-Start the dashboard in another Command Prompt:
-
-```bat
-venv\Scripts\activate.bat
-cd /d "C:\Users\admin\Desktop\Real-Time Fraud Detection System"
-streamlit run app.py --server.port 8502
-```
-
-Open:
-
-```text
-API docs:  http://127.0.0.1:8001/docs
-Dashboard: http://127.0.0.1:8502
-```
-
-If the Live Feed is empty, use the dashboard sidebar button **Generate Demo Alerts**.
-It scores real rows from `data/raw/creditcard.csv` and stores a realistic mix of
-review, flagged, and blocked alerts in MongoDB.
-
-### Streamlit Cloud demo data
-
-The full Kaggle `data/raw/creditcard.csv` file is intentionally not committed to
-GitHub. In local development, **Generate Demo Alerts** uses that real CSV and the
-trained model exactly as described above. On Streamlit Cloud, when the CSV is not
-available, the button inserts packaged deployment seed alerts from:
-
-```text
-data/demo/demo_alerts_seed.json
-```
-
-Those seed alerts are safe dashboard demo records exported from prior local demo
-alerts. They do not contain database credentials, secrets, or the full Kaggle
-dataset.
-
-### 1. Create and activate a virtual environment
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
-
-### 2. Install dependencies
-
-```powershell
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-### 3. Create environment file
-
-```powershell
-Copy-Item .env.example .env
-```
-
-### 4. Start Kafka and MongoDB
-
-```powershell
-docker compose up -d zookeeper kafka mongodb
-```
-
-### 5. Build processed parquet features
-
-```powershell
-python -m src.processing.feature_engineering
-```
-
-This writes:
-
-```text
-data/processed/fraud_features.parquet
-data/processed/feature_stats.json
-```
-
-### 6. Train and track batch models
-
-```powershell
-python -m src.modeling.train_batch
-```
-
-This trains XGBoost and Isolation Forest in separate MLflow runs, logs metrics
-and plots, saves both models under `models/`, and registers the best model as
-`FraudDetector` when the local MLflow registry is available.
-
-### 7. Tune the XGBoost threshold
-
-```powershell
-python -m src.modeling.threshold_tuner
-```
-
-This writes:
-
-```text
-models/optimal_threshold.txt
-models/threshold_metrics.csv
-models/precision_recall_tradeoff.png
-```
-
-### 8. Start the FastAPI scoring service
-
-```powershell
-uvicorn src.api.main:app --host 0.0.0.0 --port 8001 --reload
-```
-
-Open:
+API docs:
 
 ```text
 http://127.0.0.1:8001/docs
 ```
 
-### 9. Start the Spark streaming fraud consumer
+---
 
-Open a second terminal with the virtual environment activated:
+## Quick Start
 
-```powershell
-python -m src.streaming.fraud_consumer --score-url http://127.0.0.1:8001/score
-```
-
-Spark needs Java installed. If Spark cannot start, install a JDK and set
-`JAVA_HOME`.
-
-### 10. Start the Kafka transaction producer
-
-Open a third terminal with the virtual environment activated:
-
-```powershell
-python -m src.streaming.transaction_producer --delay 0.1
-```
-
-For a quick demo:
-
-```powershell
-python -m src.streaming.transaction_producer --delay 0.02 --max-transactions 5000
-```
-
-### 11. Start the Streamlit dashboard
-
-Open a fourth terminal with the virtual environment activated:
-
-```powershell
+```bash
+git clone https://github.com/praveenraj9623-sketch/Real-Time-Fraud-Detection-System.git
+cd Real-Time-Fraud-Detection-System
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
 streamlit run app.py --server.port 8502
 ```
 
-Open:
+The dashboard opens at:
 
 ```text
 http://127.0.0.1:8502
 ```
 
-## Docker API and Dashboard
+---
 
-After training the models on the host, you can run the API and Streamlit
-dashboard in Docker:
+## Docker Workflow
 
-```powershell
-docker compose up --build -d
+```bash
+docker compose up --build
 ```
 
-Services:
+Use Docker when you want the API, dashboard, and supporting services to run together.
+
+---
+
+## Project Structure
 
 ```text
-FastAPI:   http://127.0.0.1:8001/docs
-Streamlit: http://127.0.0.1:8502
-Kafka:     localhost:9092
-MongoDB:   localhost:27017
+Real-Time-Fraud-Detection-System/
+|-- app.py
+|-- Dockerfile
+|-- docker-compose.yml
+|-- requirements.txt
+|-- data/demo/
+|-- docs/
+|-- models/
+|-- tests/
+`-- src/
+    |-- api/
+    |-- dashboard/
+    |-- modeling/
+    |-- processing/
+    |-- storage/
+    |-- streaming/
+    `-- utils/
 ```
 
-The Spark consumer and Kafka producer are typically run from the host virtual
-environment so Spark can download/use its Kafka connector cleanly.
+---
 
-## Main Files
+## Key Outputs
 
-- `src/processing/feature_engineering.py` creates Spark engineered features and parquet data.
-- `src/modeling/train_batch.py` trains XGBoost and Isolation Forest with MLflow tracking.
-- `src/modeling/threshold_tuner.py` optimizes the fraud threshold.
-- `src/api/main.py` exposes `/health`, `/score`, and `/batch-score`.
-- `src/streaming/transaction_producer.py` publishes CSV rows to Kafka.
-- `src/streaming/fraud_consumer.py` scores Kafka events and stores alerts.
-- `src/storage/mongodb_client.py` wraps MongoDB storage and analytics queries.
-- `app.py` is the Streamlit monitoring dashboard.
-- `docker-compose.yml` defines Kafka, MongoDB, FastAPI, and Streamlit services.
+| Output | Description |
+|---|---|
+| `models/model_metrics.json` | Model evaluation metrics |
+| `models/optimal_threshold.txt` | Selected fraud alert threshold |
+| `models/threshold_tuning_summary.json` | Threshold tuning report |
+| `models/training_stats.json` | Training summary |
+| `data/demo/demo_alerts_seed.json` | Dashboard demo alert seed data |
 
-## Dashboard Notes
+---
 
-This is a local real-time simulation project. The production-style architecture
-is Kafka producer -> Spark streaming consumer -> FastAPI scoring -> MongoDB
-alerts -> Streamlit dashboard. For an easy Windows demo, the dashboard also has
-a **Generate Demo Alerts** button that bypasses Kafka and writes scored example
-alerts directly to MongoDB.
+## Running Tests
 
-The dashboard displays:
+```bash
+pytest -q
+```
 
-- Live Feed: recent alerts, decision counts, average risk, blocked amount, and top risky transactions.
-- Analytics: alert count by hour, amount distribution, merchant risk, and volume vs risk.
-- Model Performance: XGBoost vs Isolation Forest metrics, threshold tradeoff, confusion matrix, PR curve, ROC curve, and business counts.
-- Risk Investigation: transaction lookup, SHAP drivers, recommended action, and full alert JSON.
+---
 
-`V1` through `V28` are anonymized PCA features from the Kaggle dataset. That
-means SHAP can explain which mathematical model features moved the score, but it
-cannot name direct business reasons like IP address, device, city, or merchant
-category.
+## Limitations
 
-Fraud is very rare, so accuracy is not the headline metric. AUPRC, recall,
-precision, F1, false positives, and false negatives are more useful for judging
-this project.
-"# Real-Time-Fraud-Detection-System" 
+- Fraud systems require live monitoring, feedback loops, and investigation outcomes before production decisions.
+- Thresholds must be tuned to business cost and false-positive tolerance.
+- Demo alerts are useful for portfolio review but are not a substitute for real streaming traffic.
+
+---
+
+## Future Improvements
+
+- Add real-time feature store integration.
+- Add analyst feedback loop for reviewed alerts.
+- Add drift and fraud-pattern monitoring.
+- Add authentication and role-based alert review.
+
+---
+
+## Author
+
+Built by **Praveen Raj A**
+
+- Portfolio: https://praveenraj9623-sketch.github.io/
+- LinkedIn: https://www.linkedin.com/in/praveen-raj-a-b05abb2a3/
+- GitHub: https://github.com/praveenraj9623-sketch
+- Repository: https://github.com/praveenraj9623-sketch/Real-Time-Fraud-Detection-System
